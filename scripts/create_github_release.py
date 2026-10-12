@@ -136,9 +136,9 @@ def main():
         if args.only and kind != args.only:
             continue
         tag = f"{args.tag_prefix}-{args.date}-{kind}"
-        rel_name = f"容量级联 · {name}（{args.date}）"
+        rel_name = f"遗忘的边界 · {name}（{args.date}）"
         body = (f"{desc}\n\n"
-                f"本书为理论专著《容量级联：有限容量下的多尺度自适应》。"
+                f"本书为理论专著《遗忘的边界：有限容量下的记忆、智能与自我》。"
                 f"本 release 仅承载一个产物（一个产物一个 tag）。\n"
                 f"内容许可 CC BY 4.0；代码许可 MIT。")
         rel = ensure_release(tok, args.repo, tag, rel_name, body,

@@ -1,7 +1,9 @@
-# 容量级联 · Capacity-Cascade
+# 遗忘的边界 · The Boundary of Forgetting
 
-> 有限容量下的多尺度自适应：从大语言模型、智能体到人类记忆
-> Multi-Scale Adaptation under Finite Capacity
+> 有限容量下的记忆、智能与自我
+> Memory, Intelligence, and the Self under Finite Capacity
+
+> 支撑本书的形式结构称为**容量级联**（capacity cascade）。仓库代号 `capacity-cascade` 即由此而来。
 
 [![License: CC BY 4.0](https://img.shields.io/badge/Content-CC%20BY%204.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE-MIT)

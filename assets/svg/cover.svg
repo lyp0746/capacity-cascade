@@ -27,12 +27,12 @@ text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;}
 .au{font-size:30px;fill:#e8e6df;letter-spacing:2px;}
 .rule{stroke:#9aa0a6;stroke-width:1;opacity:0.6;}
 </style>
-<text x="80" y="180" class="eng">CAPACITY&#160;·&#160;CASCADE</text>
-<text x="80" y="300" class="ttl">容量级联</text>
+<text x="80" y="180" class="eng">THE&#160;BOUNDARY&#160;OF&#160;FORGETTING</text>
+<text x="80" y="300" class="ttl">遗忘的边界</text>
 <line x1="84" y1="340" x2="620" y2="340" class="rule"/>
-<text x="84" y="392" class="sub">有限容量下的多尺度自适应</text>
+<text x="84" y="392" class="sub">有限容量下的记忆、智能与自我</text>
 <text x="84" y="432" class="sub">从大语言模型、智能体到人类记忆</text>
 <text x="80" y="1180" class="au">李毅芃　著</text>
-<text x="80" y="1230" class="eng">Capacity-Cascade: Multi-Scale Adaptation under Finite Capacity</text>
+<text x="80" y="1230" class="eng">Memory, Intelligence, and the Self under Finite Capacity</text>
 <text x="80" y="1270" class="eng">理论专著 · 2026</text>
 </svg>
