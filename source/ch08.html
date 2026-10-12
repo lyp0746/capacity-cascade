@@ -20,6 +20,18 @@
 
 <p>当事件增加，<i>C</i><sub>q</sub> 与 <i>C</i><sub>sys</sub> 被迫压缩。关键的不对称在于：<b>系统提示通常固定，而新事件不断到来；于是被牺牲的，往往不是最新的，而是最旧的、却可能最重要的那部分。</b>这不是系统的“恶意”，而是（8.2）在预算压力下的自然分配。</p>
 
+<p>之所以能把两者放在同一章讨论，是因为它们的机制可以逐一对应。但要强调：这是一张<b>映射假设</b>，不是“两者相同”的断言（见第 2.2 节的四级统一）。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 8.1　LLM 与智能体的概念对应（映射假设）</b></caption>
+<tr><th class="l">大语言模型</th><th class="l">智能体</th><th class="l">对应强度</th></tr>
+<tr><td class="l">键值缓存</td><td class="l">当前观察 + 历史事件</td><td class="l">强（同一机制的两种用法）</td></tr>
+<tr><td class="l">注意力权重</td><td class="l">优先级 / 检索排序</td><td class="l">强</td></tr>
+<tr><td class="l">微调</td><td class="l">经验回放 / 记忆写入</td><td class="l">中（目标不同：拟合 vs 任务完成）</td></tr>
+<tr><td class="l">位置编码</td><td class="l">轮次索引 / 时间戳</td><td class="l">中（实现差异大）</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>概念对应表。质量等级 C（映射为本书构造）；<b>注释：</b>“对应强度”指机制相似度，不指性能等价。此表是全文“LLM 与智能体融合最强”这一说法的依据；若某行被证明不成立，据第 2.3 节，仅需修正该行而不必推翻整框架。</div>
+
 <h3>8.3　目标漂移的动力学模型</h3>
 
 <p>设智能体的内部状态为 <i>s</i> ∈ ℝ<sup><i>d</i></sup>，初始状态 <i>s</i><sub>0</sub> 编码了系统提示与初始目标。每一轮，状态被事件 <i>e</i><sub><i>i</i></sub> 更新：</p>
@@ -45,7 +57,7 @@
 <p>把 <i>ε̄</i> 拆开，可以得到三个可干预的来源，以及一个常见的误判。</p>
 
 <table class="nat">
-<caption class="cap"><b>表 8.1　漂移的来源、机制与干预</b></caption>
+<caption class="cap"><b>表 8.2　漂移的来源、机制与干预</b></caption>
 <tr><th class="l">来源</th><th class="l">机制</th><th class="l">是随机还是偏差</th><th class="l">干预方向</th></tr>
 <tr><td class="l">容量竞争</td><td class="l">目标被新内容挤出注意</td><td class="l">偏置（旧信息系统性劣势）</td><td class="l">显式重述、检索置顶</td></tr>
 <tr><td class="l">覆盖改写</td><td class="l">新指令覆盖旧目标的表示</td><td class="l">偏置</td><td class="l">目标隔离、版本化</td></tr>
@@ -75,12 +87,12 @@
 设目标 <i>g</i> 对应状态空间中的吸引子 <i>A</i>*<sub><i>g</i></sub>，盆半径为 <i>r</i>。称智能体在 <i>n</i> 轮内<b>目标稳定</b>，若对任意 <i>k</i> ≤ <i>n</i>，<i>s</i><sub><i>k</i></sub> 仍在 <i>A</i>*<sub><i>g</i></sub> 的盆内。目标稳定性阈值 <i>n</i><sub>c</sub> 由式(8.5)给出。</div>
 
 <div class="warning"><span class="bt">警告 8.6.1　容量扩张不是万能药</span>
-如果漂移主要由偏置造成（表 8.1 前三行），那么扩容只能把 <i>n</i><sub>c</sub> 线性推后；要获得平方级的改善，必须<b>降低每轮的有偏成分</b>——这属于调度问题，不属于容量问题。混淆这两者，是“越做越大却越来越忘”的根本原因。</div>
+如果漂移主要由偏置造成（表 8.2 前三行），那么扩容只能把 <i>n</i><sub>c</sub> 线性推后；要获得平方级的改善，必须<b>降低每轮的有偏成分</b>——这属于调度问题，不属于容量问题。混淆这两者，是“越做越大却越来越忘”的根本原因。</div>
 
 <h3>8.7　工程含义与可检验预言</h3>
 
 <table class="nat">
-<caption class="cap"><b>表 8.2　本章可检验预言及其登记状态</b></caption>
+<caption class="cap"><b>表 8.3　本章可检验预言及其登记状态</b></caption>
 <tr><th class="l">预言</th><th class="l">判据</th><th class="l">登记</th></tr>
 <tr><td class="l">漂移随轮次呈平方根增长，而非线性增长（无偏置干预下）</td><td class="l">在控制偏置后，偏移—轮次曲线斜率约为 0.5</td><td class="l">附录 E · P4</td></tr>
 <tr><td class="l">扩大容量使 <i>n</i><sub>c</sub> 线性增长，但降低偏置可使 <i>n</i><sub>c</sub> 平方增长</td><td class="l">对比两种干预下 <i>n</i><sub>c</sub> 的标度指数</td><td class="l">附录 E · P5</td></tr>
