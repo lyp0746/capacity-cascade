@@ -20,8 +20,16 @@ authors:
     email: "1610369302@qq.com"
 date-released: "2026-10-12"
 license: CC-BY-4.0
+doi: "10.5281/zenodo.23323277"
 repository-code: "https://github.com/lyp0746/capacity-cascade"
-url: "https://github.com/lyp0746/capacity-cascade"
+url: "https://doi.org/10.5281/zenodo.23323277"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23323277"
+    description: "Zenodo 归档 DOI（本版）"
+  - type: url
+    value: "https://github.com/lyp0746/capacity-cascade"
+    description: "源码与构建流程"
 keywords:
   - 容量级联
   - 信息瓶颈

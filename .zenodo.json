@@ -52,6 +52,11 @@
       "identifier": "https://github.com/lyp0746/capacity-cascade",
       "relation": "isSupplementedBy",
       "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.23323277",
+      "relation": "isIdenticalTo",
+      "scheme": "doi"
     }
   ]
 }
