@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 340" width="620" height="340">
+<rect x="0" y="0" width="620" height="340" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="26" class="t">意识窗口与潜意识空间（示意）</text>
+<circle cx="310" cy="185" r="135" fill="#fafafa" stroke="#666" stroke-width="1.4"/>
+<circle cx="310" cy="185" r="46" fill="#f4f8fb" stroke="#3a6ea5" stroke-width="2"/>
+<text x="310" y="182" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700">C</text>
+<text x="310" y="202" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="normal">意识窗口</text>
+<text x="310" y="330" class="l" text-anchor="middle" fill="#666" font-weight="700">Ω</text>
+<text x="440" y="90" class="l" text-anchor="start" fill="#666" font-weight="700">U = Ω \ C</text>
+<text x="440" y="112" class="l" text-anchor="start" fill="#666" font-weight="normal">潜意识：维度更高</text>
+<line x1="330" y1="230" x2="410" y2="120" stroke="#b8862f" stroke-width="1.8" marker-end="url(#f)"/>
+<defs><marker id="f" markerWidth="8" markerHeight="8" refX="4" refY="6" orient="auto"><path d="M0,0 L4,6 L8,0" fill="none" stroke="#b8862f"/></marker></defs>
+<text x="392" y="250" class="l" text-anchor="start" fill="#b8862f" font-weight="700">浮现</text>
+<text x="310" y="60" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">意识是极小的广播窗口，潜意识是极大的补集</text>
+</svg>

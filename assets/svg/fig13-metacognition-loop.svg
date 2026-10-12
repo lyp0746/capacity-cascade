@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 340" width="640" height="340">
+<rect x="0" y="0" width="640" height="340" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="26" class="t">元认知的监控—调节环路</text>
+<rect x="220" y="60" width="200" height="60" rx="8" fill="#fff6ee" stroke="#b8862f" stroke-width="1.8"/>
+<text x="320" y="88" class="l" text-anchor="middle" fill="#b8862f" font-weight="700">元认知层</text>
+<text x="320" y="108" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">估计容量使用与效果</text>
+<rect x="220" y="230" width="200" height="60" rx="8" fill="#f4f8fb" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="320" y="258" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700">底层学习</text>
+<text x="320" y="278" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">清醒 / 睡眠</text>
+<path d="M420,90 C520,90 520,260 420,260" fill="none" stroke="#b8862f" stroke-width="1.8" marker-end="url(#g2)"/>
+<path d="M220,260 C120,260 120,90 220,90" fill="none" stroke="#3a6ea5" stroke-width="1.8" marker-end="url(#g1)"/>
+<defs><marker id="g1" markerWidth="8" markerHeight="8" refX="4" refY="6" orient="auto"><path d="M0,0 L4,6 L8,0" fill="none" stroke="#3a6ea5"/></marker><marker id="g2" markerWidth="8" markerHeight="8" refX="4" refY="6" orient="auto"><path d="M0,0 L4,6 L8,0" fill="none" stroke="#b8862f"/></marker></defs>
+<text x="500" y="175" class="l" text-anchor="start" fill="#b8862f" font-weight="normal">调节：学习率、容量分配、模式切换</text>
+<text x="100" y="175" class="l" text-anchor="end" fill="#3a6ea5" font-weight="normal">反馈：本次学习的效果</text>
+</svg>

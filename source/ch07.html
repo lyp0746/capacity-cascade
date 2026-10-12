@@ -1,0 +1,110 @@
+<h2 class="chapter">第 7 章　大语言模型：位置偏差的信息论解剖</h2>
+
+<p class="lead">现在把同一套工具对准第一个系统。本章的目标只有一个：<b>把“长上下文里中间的信息容易被忽略”这一现象，拆成四个可以互相竞争的机制，并给出区分它们的判据。</b>本章不会宣布“找到了原因”——恰恰相反，它会展示一个现象可以同时被多种机制解释，而科学的工作正是在这些机制之间做判决。这种“多因一果”的诚实，是本书区别于许多“用一个模型解释一切”的叙事的地方。</p>
+
+<h3>7.1　导论：不要用一个现象去定义一个系统的本质</h3>
+
+<p>位置偏差很容易被当成大语言模型的“本质缺陷”。这是一个陷阱。同一个现象，在短序列、固定长度、不同位置编码、不同训练长度分布下，会呈现不同的形态。<b>把它读成“架构的宿命”，会让我们放弃追问；把它读成“多个候选机制的叠加”，才会逼出可做的实验。</b>本章选择后者。</p>
+
+<h3>7.2　注意力作为条件期望与软选择</h3>
+
+<p>标准注意力机制是：</p>
+
+<div class="eq"><span class="body">Attention(<i>Q</i>,<i>K</i>,<i>V</i>) = softmax(<i>Q</i><i>K</i><sup>T</sup> / √<i>d</i>) · <i>V</i></span><span class="num">(7.1)</span></div>
+
+<p>把它读成概率分布会更有启发。令 <i>p</i>(<i>i</i>|<i>j</i>) 为位置 <i>j</i> 的查询选择历史位置 <i>i</i> 的权重，则注意力输出是：</p>
+
+<div class="eq"><span class="body">输出<sub><i>j</i></sub> = Σ<sub><i>i</i></sub> <i>p</i>(<i>i</i>|<i>j</i>) <i>v</i><sub><i>i</i></sub> = <b>E</b>[<i>V</i> | 查询 <i>j</i>]</span><span class="num">(7.2)</span></div>
+
+<p><b>注意力是一次条件期望，也就是一次“软选择”。</b>这句话立刻带来一个信息论问题：这次选择保留了多少关于位置 <i>i</i> 的信息？答案由下式度量：</p>
+
+<div class="eq"><span class="body"><i>I</i>(token<sub><i>i</i></sub> ; 输出<sub><i>j</i></sub> | 其余 token)</span><span class="num">(7.3)</span></div>
+
+<p>式(7.3)可以理解为“位置 <i>i</i> 的信息有多少被送到了位置 <i>j</i> 的输出”。位置偏差，就是式(7.3)随 <i>i</i> 与 <i>j</i> 的相对位置发生系统性变化的现象。</p>
+
+<h3>7.3　键值缓存的信息论重参数化</h3>
+
+<p>键值缓存的名义规模是 <i>n</i> × <i>d</i>（<i>n</i> 为序列长度，<i>d</i> 为维度），但其中真正独立的信息远少于此。三个可观测的原因：</p>
+
+<ul>
+<li><b>秩衰减。</b>后面的键逐渐失去满秩性，rank<sub>eff</sub>(<i>K</i>) ≪ min(<i>n</i>, <i>d</i>)（第 5.4 节）。</li>
+<li><b>冗余。</b>许多键彼此相似：<i>I</i>(<i>K</i><sub><i>i</i></sub>; <i>K</i><sub><i>j</i></sub> | context) 在距离远时趋近于零，意味着“写了但没写进新东西”。</li>
+<li><b>相关性衰减。</b>早期键与当前查询的相关性随距离衰减，形式常近似为 <i>∝</i> exp(−<i>λ</i>·距离)。</li>
+</ul>
+
+<p>合并起来，可以得到一个比名义容量小得多的有效容量表达：</p>
+
+<div class="eq"><span class="body"><i>C</i><sub>eff</sub> ≈ <i>d</i> · log(<i>n</i>)　≪　<i>d</i> · <i>n</i>（名义上界）</span><span class="num">(7.4)</span></div>
+
+<p>式(7.4)是<b>量级关系</b>而非精确等式（等级 C）。它想说的是：<b>长度带来的是容量的对数增长，而计算成本是线性增长——这笔账迟早要还。</b>这解释了为什么“把上下文窗口开得更大”会继续有效，却越来越不划算。</p>
+
+<img class="fig" src="assets/svg/fig07-attention-position.svg" alt="位置偏差与三个候选机制">
+
+<div class="cap"><b>图 7.1　位置偏差与三个候选机制</b>。实线为观察到的 U 形准确度曲线（两端高、中部低）。虚线分别为：干扰累积假说预测的单调衰减、压缩阶段假说预测的“中段低谷”、吸引子振荡假说预测的双吸引子起伏。<b>三个机制都能生成“中部偏低”的定性特征——这正是为什么单看曲线形状无法判定原因。</b></div>
+
+<h3>7.4　位置偏差的四个竞争假说</h3>
+
+<p>本书区分四个候选，它们并非互斥，而是可能同时起作用。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 7.1　位置偏差的四个竞争假说</b></caption>
+<tr><th class="l">假说</th><th class="l">核心机制</th><th class="l">预测的曲线形状</th><th class="l">区分判据</th></tr>
+<tr><td class="l">H1 干扰累积</td><td class="l">早期信息被后续 token 反复覆盖</td><td class="l">随位置单调衰减（近端优势）</td><td class="l">若控制“覆盖次数”，曲线应塌缩到一条</td></tr>
+<tr><td class="l">H2 压缩阶段</td><td class="l">中段恰在信息瓶颈的相变转折点</td><td class="l">中段低谷（U 形）</td><td class="l">改变 <i>β</i>／训练阶段，低谷位置应随之移动</td></tr>
+<tr><td class="l">H3 位置编码</td><td class="l">位置编码的外推／内插偏置</td><td class="l">与训练长度强相关</td><td class="l">换位置编码方案，偏差形态应显著改变</td></tr>
+<tr><td class="l">H4 注意力振荡</td><td class="l">权重在“均匀”与“集中”两吸引子间摆动</td><td class="l">不规则的起伏</td><td class="l">应可见于注意力权重分布的双峰／切换</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>竞争假说表。质量等级 B（现象稳健）／C（机制排序为本书判断）；<b>注释：</b>H1—H4 可能同时成立。真正的问题不是“哪个对”，而是“在什么条件下各自贡献多少”。</div>
+
+<h3>7.5　对四个假说的排序与判据</h3>
+
+<p>如果被逼着排序，本书的赌注是：<b>H1 与 H3 的贡献最大，H2 在特定训练设置下显著，H4 是前者的动力学表现而非独立机制。</b>这个排序是<b>可错的</b>，而且给出了明确的翻案条件：</p>
+
+<ul>
+<li>若在固定覆盖次数、仅改变位置编码的条件下，曲线仍呈 U 形，则 H3 被削弱、H2 被增强。</li>
+<li>若在极短序列（远短于训练长度）上仍然出现中部低谷，则 H3 被削弱，因为外推不是主因。</li>
+<li>若注意力权重从未出现稳定的双吸引子切换，则 H4 作为独立机制不成立。</li>
+</ul>
+
+<p>请注意这套判据的形式：<b>它们不是“支持我的证据”，而是“如果成立就推翻我的条件”。</b>这才是让排序有意义的方式。</p>
+
+<div class="warning"><span class="bt">警告 7.5.1　“位置偏差＝容量不足”是一个诱人但过早的结论</span>
+如果位置偏差只是容量不足，那么加大容量应当按比例改善它。但已有观察显示，容量与位置偏差的关系并不总成正比——这暗示至少有一部分偏差来自<b>如何选择</b>，而非<b>能选多少</b>。区分这两者，直接决定改进方向：是加预算，还是改调度（第 17 章）。</div>
+
+<h3>7.6　可检验预言与它们的状态</h3>
+
+<table class="nat">
+<caption class="cap"><b>表 7.2　本章可检验预言及其登记状态</b></caption>
+<tr><th class="l">预言</th><th class="l">判据</th><th class="l">登记</th></tr>
+<tr><td class="l">控制“覆盖次数”后，位置—准确度曲线塌缩为单一曲线</td><td class="l">不同序列长度下归一化曲线互相重合</td><td class="l">附录 E · P1</td></tr>
+<tr><td class="l">改变位置编码会使 U 形低谷位置移动</td><td class="l">低谷相对位置随编码方案单调变化</td><td class="l">附录 E · P2</td></tr>
+<tr><td class="l">有效秩随长度饱和，且饱和点与偏差出现点相关</td><td class="l">rank<sub>eff</sub> 曲线出现平台，且平台与偏差上升同序</td><td class="l">附录 E · P3</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>可检验预言登记表。质量等级 C（本书登记）；<b>注释：</b>“状态”一列指向附录 E 的登记条目；本书不宣称这些预言已被检验。</div>
+
+<div class="note"><b>本章的关键产出（强／弱／不确定）</b>
+<ul>
+<li><b>强（可直接使用）：</b>位置偏差是稳健现象；注意力可被读作条件期望与软选择。［已知，B／甲］</li>
+<li><b>中（可用作工作假设）：</b>有效容量随长度对数增长、随干扰指数衰减。［假说，C／乙］</li>
+<li><b>不确定（本章的核心诚实）：</b>四个机制中哪个主导，尚无定论；本书只给出排序与翻案条件。［待验证］</li>
+</ul></div>
+
+<h3>7.7　本章小结：一个现象，多种机制</h3>
+
+<ol>
+<li>注意力是条件期望，位置偏差是式(7.3)随位置的系统性变化。</li>
+<li>键值缓存的有效容量远小于名义容量，秩衰减、冗余与相关性衰减是三个可观测原因。</li>
+<li>位置偏差有四个竞争机制（干扰累积、压缩阶段、位置编码、注意力振荡），它们可能同时成立。</li>
+<li>本书给出排序与<b>翻案条件</b>，而不是一个“已证明的原因”。</li>
+<li>“容量不足”与“选择不当”必须区分：前者要求加预算，后者要求改调度。</li>
+</ol>
+
+<h3>本章参考文献</h3>
+<div class="refs">
+<p>Liu, N. F., et al. (2023). Lost in the Middle: How Language Models Use Long Contexts. <i>TACL</i> (arXiv:2307.03172).</p>
+<p>Vaswani, A., et al. (2017). Attention Is All You Need. <i>NeurIPS</i> 30.</p>
+<p>Su, J., Lu, Y., Pan, S., Murtadha, A., Wen, B., &amp; Liu, Y. (2021). RoFormer: Enhanced Transformer with Rotary Position Embedding. arXiv:2104.09864.</p>
+<p>Press, O., Smith, N. A., &amp; Lewis, M. (2022). Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation. <i>ICLR</i>.</p>
+<p>Chen, S., Wong, S., Chen, L., &amp; Tian, Y. (2023). Extending Context Window of Large Language Models via Positional Interpolation. arXiv:2306.15595.</p>
+<p>Dong, Y., Cordonnier, J.-B., &amp; Loukas, A. (2021). Attention Is Not All You Need. <i>ICML</i>.</p>
+</div>

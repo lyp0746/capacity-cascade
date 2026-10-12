@@ -1,0 +1,31 @@
+name: 建议 / Feature request
+description: 提出反例、竞争模型、地图安放修正或设计检验方案
+title: "[建议] "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 类型
+      options:
+        - 反例（与某主张不符）
+        - 竞争模型
+        - 地图安放/边界修正
+        - C 级量级被用得过重
+        - 形式化改进
+        - 设计原则检验
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议内容
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: 理由与可证伪形式
+      description: 若可能，请说明如何检验它、以及在什么观测下它会被推翻
+    validations:
+      required: true

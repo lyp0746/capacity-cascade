@@ -1,0 +1,1668 @@
+{
+  "A1_terms": {
+    "有效容量": {
+      "total": 14,
+      "by_chapter": [
+        [
+          "ch05.html",
+          10
+        ],
+        [
+          "ch07.html",
+          3
+        ],
+        [
+          "ch09.html",
+          1
+        ]
+      ],
+      "first": "ch05.html"
+    },
+    "容量级联": {
+      "total": 8,
+      "by_chapter": [
+        [
+          "ch06.html",
+          3
+        ],
+        [
+          "ch09.html",
+          2
+        ],
+        [
+          "ch16.html",
+          1
+        ],
+        [
+          "ch17.html",
+          1
+        ],
+        [
+          "ch19.html",
+          1
+        ]
+      ],
+      "first": "ch06.html"
+    },
+    "时间尺度分离": {
+      "total": 5,
+      "by_chapter": [
+        [
+          "ch06.html",
+          4
+        ],
+        [
+          "ch14.html",
+          1
+        ]
+      ],
+      "first": "ch06.html"
+    },
+    "表示坍塌": {
+      "total": 6,
+      "by_chapter": [
+        [
+          "ch05.html",
+          6
+        ]
+      ],
+      "first": "ch05.html"
+    },
+    "信息瓶颈": {
+      "total": 29,
+      "by_chapter": [
+        [
+          "ch02.html",
+          2
+        ],
+        [
+          "ch03.html",
+          2
+        ],
+        [
+          "ch04.html",
+          9
+        ],
+        [
+          "ch07.html",
+          1
+        ],
+        [
+          "ch14.html",
+          4
+        ],
+        [
+          "ch15.html",
+          10
+        ],
+        [
+          "ch19.html",
+          1
+        ]
+      ],
+      "first": "ch02.html"
+    },
+    "率失真": {
+      "total": 11,
+      "by_chapter": [
+        [
+          "ch03.html",
+          1
+        ],
+        [
+          "ch04.html",
+          9
+        ],
+        [
+          "ch14.html",
+          1
+        ]
+      ],
+      "first": "ch03.html"
+    },
+    "同约束": {
+      "total": 20,
+      "by_chapter": [
+        [
+          "ch01.html",
+          6
+        ],
+        [
+          "ch02.html",
+          11
+        ],
+        [
+          "ch03.html",
+          1
+        ],
+        [
+          "ch19.html",
+          2
+        ]
+      ],
+      "first": "ch01.html"
+    },
+    "内源模拟": {
+      "total": 14,
+      "by_chapter": [
+        [
+          "ch02.html",
+          1
+        ],
+        [
+          "ch04.html",
+          1
+        ],
+        [
+          "ch06.html",
+          1
+        ],
+        [
+          "ch11.html",
+          9
+        ],
+        [
+          "ch15.html",
+          2
+        ]
+      ],
+      "first": "ch02.html"
+    },
+    "意识窗口": {
+      "total": 11,
+      "by_chapter": [
+        [
+          "ch12.html",
+          9
+        ],
+        [
+          "ch16.html",
+          1
+        ],
+        [
+          "ch19.html",
+          1
+        ]
+      ],
+      "first": "ch12.html"
+    },
+    "潜意识": {
+      "total": 19,
+      "by_chapter": [
+        [
+          "ch03.html",
+          1
+        ],
+        [
+          "ch12.html",
+          18
+        ]
+      ],
+      "first": "ch03.html"
+    },
+    "元认知": {
+      "total": 46,
+      "by_chapter": [
+        [
+          "ch02.html",
+          1
+        ],
+        [
+          "ch06.html",
+          2
+        ],
+        [
+          "ch08.html",
+          2
+        ],
+        [
+          "ch13.html",
+          29
+        ],
+        [
+          "ch16.html",
+          6
+        ],
+        [
+          "ch17.html",
+          5
+        ],
+        [
+          "ch19.html",
+          1
+        ]
+      ],
+      "first": "ch02.html"
+    },
+    "显著性": {
+      "total": 34,
+      "by_chapter": [
+        [
+          "ch08.html",
+          1
+        ],
+        [
+          "ch11.html",
+          2
+        ],
+        [
+          "ch12.html",
+          5
+        ],
+        [
+          "ch13.html",
+          3
+        ],
+        [
+          "ch14.html",
+          3
+        ],
+        [
+          "ch16.html",
+          11
+        ],
+        [
+          "ch17.html",
+          5
+        ],
+        [
+          "ch19.html",
+          4
+        ]
+      ],
+      "first": "ch08.html"
+    },
+    "目标稳定性": {
+      "total": 6,
+      "by_chapter": [
+        [
+          "ch08.html",
+          6
+        ]
+      ],
+      "first": "ch08.html"
+    },
+    "吸引子": {
+      "total": 39,
+      "by_chapter": [
+        [
+          "ch01.html",
+          2
+        ],
+        [
+          "ch03.html",
+          2
+        ],
+        [
+          "ch07.html",
+          4
+        ],
+        [
+          "ch08.html",
+          6
+        ],
+        [
+          "ch09.html",
+          11
+        ],
+        [
+          "ch11.html",
+          4
+        ],
+        [
+          "ch15.html",
+          3
+        ],
+        [
+          "ch18.html",
+          7
+        ]
+      ],
+      "first": "ch01.html"
+    },
+    "巩固": {
+      "total": 22,
+      "by_chapter": [
+        [
+          "ch02.html",
+          1
+        ],
+        [
+          "ch03.html",
+          1
+        ],
+        [
+          "ch06.html",
+          5
+        ],
+        [
+          "ch09.html",
+          4
+        ],
+        [
+          "ch10.html",
+          5
+        ],
+        [
+          "ch11.html",
+          2
+        ],
+        [
+          "ch14.html",
+          1
+        ],
+        [
+          "ch15.html",
+          1
+        ],
+        [
+          "ch16.html",
+          1
+        ],
+        [
+          "ch19.html",
+          1
+        ]
+      ],
+      "first": "ch02.html"
+    },
+    "干扰": {
+      "total": 61,
+      "by_chapter": [
+        [
+          "ch01.html",
+          2
+        ],
+        [
+          "ch02.html",
+          1
+        ],
+        [
+          "ch03.html",
+          1
+        ],
+        [
+          "ch04.html",
+          3
+        ],
+        [
+          "ch05.html",
+          31
+        ],
+        [
+          "ch06.html",
+          3
+        ],
+        [
+          "ch07.html",
+          4
+        ],
+        [
+          "ch09.html",
+          8
+        ],
+        [
+          "ch11.html",
+          2
+        ],
+        [
+          "ch14.html",
+          1
+        ],
+        [
+          "ch17.html",
+          2
+        ],
+        [
+          "ch19.html",
+          3
+        ]
+      ],
+      "first": "ch01.html"
+    },
+    "遗忘": {
+      "total": 50,
+      "by_chapter": [
+        [
+          "ch01.html",
+          3
+        ],
+        [
+          "ch03.html",
+          1
+        ],
+        [
+          "ch04.html",
+          16
+        ],
+        [
+          "ch08.html",
+          3
+        ],
+        [
+          "ch09.html",
+          10
+        ],
+        [
+          "ch11.html",
+          2
+        ],
+        [
+          "ch13.html",
+          3
+        ],
+        [
+          "ch14.html",
+          5
+        ],
+        [
+          "ch15.html",
+          3
+        ],
+        [
+          "ch17.html",
+          3
+        ],
+        [
+          "ch19.html",
+          1
+        ]
+      ],
+      "first": "ch01.html"
+    },
+    "有效秩": {
+      "total": 8,
+      "by_chapter": [
+        [
+          "ch05.html",
+          6
+        ],
+        [
+          "ch07.html",
+          1
+        ],
+        [
+          "ch19.html",
+          1
+        ]
+      ],
+      "first": "ch05.html"
+    }
+  },
+  "A1_definitions": {
+    "1.1": "ch01.html",
+    "1.2": "ch01.html",
+    "1.3": "ch01.html",
+    "2.1": "ch02.html",
+    "2.2": "ch02.html",
+    "3.1": "ch03.html",
+    "3.2": "ch03.html",
+    "4.1": "ch04.html",
+    "4.2": "ch04.html",
+    "4.3": "ch04.html",
+    "5.1": "ch05.html",
+    "5.2": "ch05.html",
+    "5.3": "ch05.html",
+    "5.4": "ch05.html",
+    "6.1": "ch06.html",
+    "6.2": "ch06.html",
+    "6.3": "ch06.html",
+    "8.1": "ch08.html",
+    "9.1": "ch09.html",
+    "11.1": "ch11.html",
+    "12.1": "ch12.html",
+    "12.2": "ch12.html",
+    "13.1": "ch13.html",
+    "16.1": "ch16.html"
+  },
+  "A2_formulas_defined": [
+    "10.1",
+    "10.2",
+    "11.1",
+    "11.2",
+    "12.1",
+    "12.2",
+    "13.1",
+    "13.2",
+    "13.3",
+    "15.1",
+    "15.2",
+    "18.1",
+    "2.1",
+    "4.1",
+    "4.2",
+    "4.3",
+    "5.1",
+    "5.2",
+    "5.3",
+    "6.1",
+    "6.2",
+    "7.1",
+    "7.2",
+    "7.3",
+    "7.4",
+    "8.1",
+    "8.2",
+    "8.3",
+    "8.4",
+    "8.5",
+    "9.1",
+    "9.2"
+  ],
+  "A2_formula_refs": {
+    "10.2": [
+      "ch10.html"
+    ],
+    "11.1": [
+      "ch11.html"
+    ],
+    "11.2": [
+      "ch11.html"
+    ],
+    "12.1": [
+      "ch12.html"
+    ],
+    "12.2": [
+      "ch12.html"
+    ],
+    "13.3": [
+      "ch13.html"
+    ],
+    "15.1": [
+      "ch15.html"
+    ],
+    "15.2": [
+      "ch15.html",
+      "ch15.html",
+      "ch15.html"
+    ],
+    "18.1": [
+      "ch18.html",
+      "ch18.html",
+      "ch18.html"
+    ],
+    "2.1": [
+      "ch02.html",
+      "ch03.html"
+    ],
+    "4.1": [
+      "ch04.html",
+      "ch04.html",
+      "ch04.html",
+      "ch15.html"
+    ],
+    "5.1": [
+      "ch05.html",
+      "ch05.html"
+    ],
+    "5.2": [
+      "ch05.html"
+    ],
+    "5.3": [
+      "ch03.html",
+      "ch05.html"
+    ],
+    "6.1": [
+      "ch06.html",
+      "ch06.html"
+    ],
+    "6.2": [
+      "ch06.html"
+    ],
+    "7.3": [
+      "ch07.html",
+      "ch07.html",
+      "ch07.html"
+    ],
+    "7.4": [
+      "ch07.html"
+    ],
+    "8.5": [
+      "ch08.html"
+    ]
+  },
+  "A2_refs_missing_def": [],
+  "A2_continuity": {
+    "ch02.html": {
+      "numbers": [
+        1
+      ],
+      "continuous": true
+    },
+    "ch04.html": {
+      "numbers": [
+        1,
+        2,
+        3
+      ],
+      "continuous": true
+    },
+    "ch05.html": {
+      "numbers": [
+        1,
+        2,
+        3
+      ],
+      "continuous": true
+    },
+    "ch06.html": {
+      "numbers": [
+        1,
+        2
+      ],
+      "continuous": true
+    },
+    "ch07.html": {
+      "numbers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "continuous": true
+    },
+    "ch08.html": {
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "continuous": true
+    },
+    "ch09.html": {
+      "numbers": [
+        1,
+        2
+      ],
+      "continuous": true
+    },
+    "ch10.html": {
+      "numbers": [
+        1,
+        2
+      ],
+      "continuous": true
+    },
+    "ch11.html": {
+      "numbers": [
+        1,
+        2
+      ],
+      "continuous": true
+    },
+    "ch12.html": {
+      "numbers": [
+        1,
+        2
+      ],
+      "continuous": true
+    },
+    "ch13.html": {
+      "numbers": [
+        1,
+        2,
+        3
+      ],
+      "continuous": true
+    },
+    "ch15.html": {
+      "numbers": [
+        1,
+        2
+      ],
+      "continuous": true
+    },
+    "ch18.html": {
+      "numbers": [
+        1
+      ],
+      "continuous": true
+    }
+  },
+  "A3_tables_defined": [
+    "1.1",
+    "10.1",
+    "11.1",
+    "12.1",
+    "13.1",
+    "14.1",
+    "14.2",
+    "14.3",
+    "14.4",
+    "15.1",
+    "15.2",
+    "16.1",
+    "16.2",
+    "17.1",
+    "17.2",
+    "19.1",
+    "19.2",
+    "2.1",
+    "2.2",
+    "3.1",
+    "3.2",
+    "3.3",
+    "4.1",
+    "4.2",
+    "5.1",
+    "5.2",
+    "6.1",
+    "7.1",
+    "7.2",
+    "8.1",
+    "8.2",
+    "9.1",
+    "9.2"
+  ],
+  "A3_figures_defined": [
+    "1.1",
+    "10.1",
+    "11.1",
+    "12.1",
+    "13.1",
+    "14.1",
+    "15.1",
+    "18.1",
+    "2.1",
+    "4.1",
+    "5.1",
+    "6.1",
+    "7.1",
+    "8.1",
+    "9.1"
+  ],
+  "A3_table_refs_missing_def": [],
+  "A3_figure_refs_missing_def": [],
+  "A3_tables_unreferenced": [],
+  "A3_figures_unreferenced": [],
+  "A4_c_grade": [
+    {
+      "chapter": "ch01.html",
+      "snippet": "图 1.1　三个观察的统一示意图"
+    },
+    {
+      "chapter": "ch01.html",
+      "snippet": "给出一个状态偏移的动力学模型，并把“临界轮次 nc”作为一个可测的（尽管目前只是示意性的）量"
+    },
+    {
+      "chapter": "ch03.html",
+      "snippet": "C稀疏／构造／思辨单一来源、本书构造的示意量级、或纯推演临界轮次 nc 的数值"
+    },
+    {
+      "chapter": "ch03.html",
+      "snippet": "本书的防护措施有三：（一）所有 C 级量级在句内即标注“示意”或“量级”"
+    },
+    {
+      "chapter": "ch04.html",
+      "snippet": "图中曲线为定性示意，非实测"
+    },
+    {
+      "chapter": "ch05.html",
+      "snippet": "因此本章同时给出可测形式与不可测边界，并明确哪些预测只是量级示意"
+    },
+    {
+      "chapter": "ch05.html",
+      "snippet": "图 5.1　有效容量随干扰的衰减（示意）"
+    },
+    {
+      "chapter": "ch05.html",
+      "snippet": "本图为定性示意，参数不代表任何具体系统"
+    },
+    {
+      "chapter": "ch06.html",
+      "snippet": "图 6.1　容量级联（示意）"
+    },
+    {
+      "chapter": "ch09.html",
+      "snippet": "图 9.1　系统巩固的互补学习系统（示意）"
+    },
+    {
+      "chapter": "ch09.html",
+      "snippet": "（图为原则示意，不代表具体解剖通路"
+    },
+    {
+      "chapter": "ch11.html",
+      "snippet": "图 11.1　内源模拟打破局部吸引子（示意）"
+    },
+    {
+      "chapter": "ch12.html",
+      "snippet": "图 12.1　意识窗口与潜意识空间（示意）"
+    },
+    {
+      "chapter": "ch18.html",
+      "snippet": "图 18.1　身份的三种改变（示意）"
+    },
+    {
+      "chapter": "ch18.html",
+      "snippet": "图为原则示意，不代表可量化的神经过程"
+    }
+  ],
+  "A5_chapter_refs": {
+    "1": [
+      "ch01.html",
+      "ch02.html"
+    ],
+    "10": [
+      "ch10.html"
+    ],
+    "11": [
+      "ch10.html",
+      "ch11.html",
+      "ch15.html",
+      "ch17.html"
+    ],
+    "12": [
+      "ch12.html",
+      "ch16.html"
+    ],
+    "13": [
+      "ch08.html",
+      "ch13.html",
+      "ch16.html",
+      "ch17.html"
+    ],
+    "14": [
+      "ch02.html",
+      "ch14.html",
+      "ch15.html",
+      "ch16.html"
+    ],
+    "15": [
+      "ch13.html",
+      "ch15.html"
+    ],
+    "16": [
+      "ch16.html",
+      "ch19.html"
+    ],
+    "17": [
+      "ch03.html",
+      "ch05.html",
+      "ch07.html",
+      "ch12.html",
+      "ch17.html",
+      "ch19.html"
+    ],
+    "18": [
+      "ch03.html",
+      "ch18.html"
+    ],
+    "19": [
+      "ch19.html"
+    ],
+    "2": [
+      "ch01.html",
+      "ch02.html",
+      "ch03.html",
+      "ch06.html",
+      "ch09.html",
+      "ch14.html"
+    ],
+    "3": [
+      "ch02.html",
+      "ch03.html",
+      "ch14.html"
+    ],
+    "4": [
+      "ch04.html",
+      "ch05.html"
+    ],
+    "5": [
+      "ch02.html",
+      "ch05.html",
+      "ch09.html",
+      "ch19.html"
+    ],
+    "6": [
+      "ch02.html",
+      "ch04.html",
+      "ch06.html",
+      "ch09.html",
+      "ch14.html",
+      "ch15.html",
+      "ch17.html",
+      "ch19.html"
+    ],
+    "7": [
+      "ch01.html",
+      "ch05.html",
+      "ch07.html",
+      "ch19.html"
+    ],
+    "8": [
+      "ch01.html",
+      "ch04.html",
+      "ch05.html",
+      "ch08.html",
+      "ch17.html",
+      "ch19.html"
+    ],
+    "9": [
+      "ch01.html",
+      "ch02.html",
+      "ch09.html",
+      "ch14.html",
+      "ch16.html",
+      "ch18.html",
+      "ch19.html"
+    ]
+  },
+  "A5_chapter_refs_invalid": [],
+  "A5_section_refs": {
+    "0.5": [
+      "ch08.html"
+    ],
+    "1.1": [
+      "ch01.html"
+    ],
+    "1.2": [
+      "ch01.html",
+      "ch09.html"
+    ],
+    "1.3": [
+      "ch01.html"
+    ],
+    "1.4": [
+      "ch01.html",
+      "ch09.html"
+    ],
+    "1.5": [
+      "ch01.html"
+    ],
+    "1.6": [
+      "ch01.html"
+    ],
+    "10.1": [
+      "ch10.html"
+    ],
+    "10.2": [
+      "ch10.html"
+    ],
+    "10.3": [
+      "ch10.html"
+    ],
+    "10.4": [
+      "ch10.html"
+    ],
+    "10.5": [
+      "ch10.html"
+    ],
+    "10.6": [
+      "ch10.html"
+    ],
+    "10.7": [
+      "ch10.html"
+    ],
+    "11.1": [
+      "ch11.html"
+    ],
+    "11.2": [
+      "ch11.html"
+    ],
+    "11.3": [
+      "ch11.html"
+    ],
+    "11.4": [
+      "ch11.html"
+    ],
+    "11.5": [
+      "ch11.html"
+    ],
+    "11.6": [
+      "ch11.html"
+    ],
+    "11.7": [
+      "ch11.html"
+    ],
+    "12.1": [
+      "ch12.html"
+    ],
+    "12.2": [
+      "ch12.html"
+    ],
+    "12.3": [
+      "ch12.html"
+    ],
+    "12.4": [
+      "ch12.html"
+    ],
+    "12.5": [
+      "ch12.html",
+      "ch14.html"
+    ],
+    "12.6": [
+      "ch12.html"
+    ],
+    "12.7": [
+      "ch12.html"
+    ],
+    "13.1": [
+      "ch13.html",
+      "ch16.html"
+    ],
+    "13.2": [
+      "ch13.html"
+    ],
+    "13.3": [
+      "ch13.html",
+      "ch16.html",
+      "ch17.html"
+    ],
+    "13.4": [
+      "ch13.html"
+    ],
+    "13.5": [
+      "ch13.html",
+      "ch17.html"
+    ],
+    "13.6": [
+      "ch13.html"
+    ],
+    "13.7": [
+      "ch13.html"
+    ],
+    "14.1": [
+      "ch14.html"
+    ],
+    "14.2": [
+      "ch14.html"
+    ],
+    "14.3": [
+      "ch14.html"
+    ],
+    "14.4": [
+      "ch14.html"
+    ],
+    "14.5": [
+      "ch14.html"
+    ],
+    "14.6": [
+      "ch14.html"
+    ],
+    "14.7": [
+      "ch02.html",
+      "ch14.html",
+      "ch16.html"
+    ],
+    "14.8": [
+      "ch14.html"
+    ],
+    "15.1": [
+      "ch15.html"
+    ],
+    "15.2": [
+      "ch15.html"
+    ],
+    "15.3": [
+      "ch02.html",
+      "ch15.html"
+    ],
+    "15.4": [
+      "ch04.html",
+      "ch15.html",
+      "ch16.html"
+    ],
+    "15.5": [
+      "ch15.html"
+    ],
+    "15.6": [
+      "ch15.html"
+    ],
+    "15.7": [
+      "ch15.html"
+    ],
+    "16.1": [
+      "ch16.html"
+    ],
+    "16.2": [
+      "ch16.html"
+    ],
+    "16.3": [
+      "ch14.html",
+      "ch16.html"
+    ],
+    "16.4": [
+      "ch16.html"
+    ],
+    "16.5": [
+      "ch16.html"
+    ],
+    "16.6": [
+      "ch12.html",
+      "ch14.html",
+      "ch16.html",
+      "ch19.html"
+    ],
+    "16.7": [
+      "ch16.html"
+    ],
+    "1606.04671": [
+      "ch17.html"
+    ],
+    "17.1": [
+      "ch17.html"
+    ],
+    "17.2": [
+      "ch17.html"
+    ],
+    "17.3": [
+      "ch17.html"
+    ],
+    "17.4": [
+      "ch17.html"
+    ],
+    "17.5": [
+      "ch09.html",
+      "ch10.html",
+      "ch17.html"
+    ],
+    "17.6": [
+      "ch17.html"
+    ],
+    "17.7": [
+      "ch17.html"
+    ],
+    "1703.00810": [
+      "ch04.html"
+    ],
+    "18.1": [
+      "ch18.html"
+    ],
+    "18.2": [
+      "ch18.html"
+    ],
+    "18.3": [
+      "ch18.html"
+    ],
+    "18.4": [
+      "ch18.html"
+    ],
+    "18.5": [
+      "ch18.html"
+    ],
+    "18.6": [
+      "ch02.html",
+      "ch16.html",
+      "ch18.html"
+    ],
+    "18.7": [
+      "ch18.html"
+    ],
+    "19.1": [
+      "ch19.html"
+    ],
+    "19.2": [
+      "ch18.html",
+      "ch19.html"
+    ],
+    "19.3": [
+      "ch19.html"
+    ],
+    "19.4": [
+      "ch19.html"
+    ],
+    "19.5": [
+      "ch19.html"
+    ],
+    "19.6": [
+      "ch19.html"
+    ],
+    "19.7": [
+      "ch19.html"
+    ],
+    "2.1": [
+      "ch02.html",
+      "ch03.html"
+    ],
+    "2.2": [
+      "ch02.html"
+    ],
+    "2.3": [
+      "ch01.html",
+      "ch02.html",
+      "ch09.html"
+    ],
+    "2.4": [
+      "ch02.html"
+    ],
+    "2.5": [
+      "ch02.html"
+    ],
+    "2.6": [
+      "ch02.html"
+    ],
+    "2.7": [
+      "ch02.html"
+    ],
+    "2104.09864": [
+      "ch07.html"
+    ],
+    "2306.15595": [
+      "ch07.html"
+    ],
+    "2307.03172": [
+      "ch01.html",
+      "ch07.html"
+    ],
+    "2308.14508": [
+      "ch01.html"
+    ],
+    "2310.08560": [
+      "ch08.html",
+      "ch17.html"
+    ],
+    "3.1": [
+      "ch03.html"
+    ],
+    "3.2": [
+      "ch03.html"
+    ],
+    "3.3": [
+      "ch03.html"
+    ],
+    "3.4": [
+      "ch03.html"
+    ],
+    "3.5": [
+      "ch03.html"
+    ],
+    "3.6": [
+      "ch03.html"
+    ],
+    "3.7": [
+      "ch03.html"
+    ],
+    "4.1": [
+      "ch04.html",
+      "ch15.html"
+    ],
+    "4.2": [
+      "ch04.html"
+    ],
+    "4.3": [
+      "ch04.html"
+    ],
+    "4.4": [
+      "ch04.html"
+    ],
+    "4.5": [
+      "ch04.html"
+    ],
+    "4.6": [
+      "ch04.html",
+      "ch05.html",
+      "ch08.html",
+      "ch09.html"
+    ],
+    "4.7": [
+      "ch04.html"
+    ],
+    "5.1": [
+      "ch05.html"
+    ],
+    "5.2": [
+      "ch04.html",
+      "ch05.html"
+    ],
+    "5.3": [
+      "ch03.html",
+      "ch05.html",
+      "ch17.html"
+    ],
+    "5.4": [
+      "ch05.html",
+      "ch07.html"
+    ],
+    "5.5": [
+      "ch05.html"
+    ],
+    "5.6": [
+      "ch05.html"
+    ],
+    "5.7": [
+      "ch05.html"
+    ],
+    "5.8": [
+      "ch05.html"
+    ],
+    "6.1": [
+      "ch06.html",
+      "ch09.html"
+    ],
+    "6.2": [
+      "ch06.html"
+    ],
+    "6.3": [
+      "ch06.html"
+    ],
+    "6.4": [
+      "ch06.html"
+    ],
+    "6.5": [
+      "ch06.html"
+    ],
+    "6.6": [
+      "ch06.html"
+    ],
+    "6.7": [
+      "ch06.html"
+    ],
+    "7.1": [
+      "ch07.html"
+    ],
+    "7.2": [
+      "ch07.html"
+    ],
+    "7.3": [
+      "ch07.html"
+    ],
+    "7.4": [
+      "ch07.html"
+    ],
+    "7.5": [
+      "ch07.html"
+    ],
+    "7.6": [
+      "ch07.html"
+    ],
+    "7.7": [
+      "ch07.html"
+    ],
+    "8.1": [
+      "ch08.html"
+    ],
+    "8.2": [
+      "ch08.html"
+    ],
+    "8.3": [
+      "ch08.html",
+      "ch17.html"
+    ],
+    "8.4": [
+      "ch08.html"
+    ],
+    "8.5": [
+      "ch08.html"
+    ],
+    "8.6": [
+      "ch01.html",
+      "ch08.html"
+    ],
+    "8.7": [
+      "ch08.html"
+    ],
+    "8.8": [
+      "ch08.html"
+    ],
+    "9.1": [
+      "ch09.html"
+    ],
+    "9.2": [
+      "ch09.html"
+    ],
+    "9.3": [
+      "ch09.html"
+    ],
+    "9.4": [
+      "ch09.html",
+      "ch17.html"
+    ],
+    "9.5": [
+      "ch09.html"
+    ],
+    "9.6": [
+      "ch09.html"
+    ],
+    "9.7": [
+      "ch09.html"
+    ],
+    "9.8": [
+      "ch09.html"
+    ]
+  },
+  "A6_cited": {},
+  "A6_defined": {
+    "Achille": [
+      "2018"
+    ],
+    "Amari": [
+      "1974"
+    ],
+    "Anderson": [
+      "1972",
+      "1994"
+    ],
+    "Baars": [
+      "1988"
+    ],
+    "Baddeley": [
+      "1974"
+    ],
+    "Bai": [
+      "2023"
+    ],
+    "Barrett": [
+      "2017"
+    ],
+    "Benna": [
+      "2016"
+    ],
+    "Buzs": [
+      "1989"
+    ],
+    "Cai": [
+      "2009"
+    ],
+    "Chalmers": [
+      "1996"
+    ],
+    "Chambers": [
+      "2022"
+    ],
+    "Chen": [
+      "2023"
+    ],
+    "Cover": [
+      "2006"
+    ],
+    "Damasio": [
+      "1994"
+    ],
+    "Dehaene": [
+      "2011"
+    ],
+    "Dennett": [
+      "1991"
+    ],
+    "Diekelmann": [
+      "2010"
+    ],
+    "Dijksterhuis": [
+      "2006"
+    ],
+    "Dong": [
+      "2021"
+    ],
+    "Dudai": [
+      "2004"
+    ],
+    "Finn": [
+      "2017"
+    ],
+    "Flavell": [
+      "1979"
+    ],
+    "Fleming": [
+      "2017"
+    ],
+    "Floridi": [
+      "2010"
+    ],
+    "Frankland": [
+      "2005"
+    ],
+    "Friston": [
+      "2010",
+      "2017"
+    ],
+    "Fusi": [
+      "2005"
+    ],
+    "Gelman": [
+      "2014"
+    ],
+    "Hinton": [
+      "1986"
+    ],
+    "Hobson": [
+      "1977"
+    ],
+    "Ioannidis": [
+      "2005"
+    ],
+    "Kahneman": [
+      "2011"
+    ],
+    "Kay": [
+      "1993"
+    ],
+    "Kirkpatrick": [
+      "2017"
+    ],
+    "Kording": [
+      "2007"
+    ],
+    "Kuhn": [
+      "1962"
+    ],
+    "Lakatos": [
+      "1976"
+    ],
+    "Lau": [
+      "2011"
+    ],
+    "Lewis": [
+      "2020"
+    ],
+    "Liu": [
+      "2023"
+    ],
+    "Marr": [
+      "1982"
+    ],
+    "Mashour": [
+      "2020"
+    ],
+    "McClelland": [
+      "1995"
+    ],
+    "Nagel": [
+      "1974"
+    ],
+    "Nelson": [
+      "1990"
+    ],
+    "Nosek": [
+      "2018"
+    ],
+    "Olson": [
+      "1997"
+    ],
+    "Packer": [
+      "2023"
+    ],
+    "Parfit": [
+      "1984"
+    ],
+    "Park": [
+      "2023"
+    ],
+    "Popper": [
+      "1959"
+    ],
+    "Press": [
+      "2022"
+    ],
+    "Ramsauer": [
+      "2021"
+    ],
+    "Revonsuo": [
+      "2000"
+    ],
+    "Rosenthal": [
+      "2005"
+    ],
+    "Roy": [
+      "2007"
+    ],
+    "Rusu": [
+      "2016"
+    ],
+    "Saxe": [
+      "2018"
+    ],
+    "Seth": [
+      "2016"
+    ],
+    "Shannon": [
+      "1948"
+    ],
+    "Shinn": [
+      "2023"
+    ],
+    "Shwartz-Ziv": [
+      "2017"
+    ],
+    "Simon": [
+      "1962"
+    ],
+    "Stickgold": [
+      "2005"
+    ],
+    "Still": [
+      "2012"
+    ],
+    "Su": [
+      "2021"
+    ],
+    "Sutton": [
+      "2018"
+    ],
+    "Tishby": [
+      "1999",
+      "2015"
+    ],
+    "Tononi": [
+      "2004",
+      "2014"
+    ],
+    "Underwood": [
+      "1957"
+    ],
+    "Vaswani": [
+      "2017"
+    ],
+    "Wagner": [
+      "2004"
+    ],
+    "Walker": [
+      "2006",
+      "2009"
+    ],
+    "Wilson": [
+      "1994"
+    ],
+    "Wolpert": [
+      "1997"
+    ],
+    "Yao": [
+      "2023"
+    ]
+  },
+  "A6_cited_not_defined": [],
+  "A7_images_missing": [],
+  "A8_eq_malformed": [],
+  "A9_debug_strings": []
+}

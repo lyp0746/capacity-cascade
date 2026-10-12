@@ -1,0 +1,116 @@
+<h2 class="chapter">第 8 章　智能体：上下文漂移与目标稳定性</h2>
+
+<p class="lead">智能体是三个系统里最年轻、也最像“活物”的一个：它有一个要守住的目标，有一串不断到来的事件，还有一个总也不够用的上下文。本章要证明一件事：<b>“聊着聊着就忘了目标”不是健忘，而是状态在容量压力下的缓慢偏移。</b>这个区别决定了所有干预的方向——是想办法多记一点，还是想办法让状态不要漂。</p>
+
+<h3>8.1　导论：漂移不是遗忘，而是状态偏移</h3>
+
+<p>想象一个必须在一百轮对话中守住初始目标的智能体。每一轮，它都读入新的内容、更新自己的内部状态。它并没有“删除”目标；目标还写在最早的那几行里。但它当前的状态——由隐层激活、检索结果、注意力分布共同决定——已经离初始状态很远了。<b>信息没丢，位置变了；这才是漂移。</b></p>
+
+<p>把这一区分形式化，就得到一个可检验的判据：如果是“容量溢出”导致的，那么扩大上下文应当让临界轮次线性增长；如果是“状态偏移”导致的，那么扩大容量只会推迟它，而不会消除它。第 8.6 节把这条判据写成预言。</p>
+
+<h3>8.2　对话上下文的信息结构</h3>
+
+<p>智能体的上下文不是随机串，而是有结构的：</p>
+
+<div class="eq"><span class="body">context = [系统提示, 事件<sub>1</sub>, 事件<sub>2</sub>, …, 事件<sub><i>n</i></sub>, 当前查询]</span><span class="num">(8.1)</span></div>
+
+<p>每一项都占用容量预算。若把总预算记作 <i>C</i>，则：</p>
+
+<div class="eq"><span class="body"><i>C</i><sub>sys</sub> + Σ<sub><i>i</i></sub> <i>C</i><sub><i>i</i></sub> + <i>C</i><sub>q</sub> ≤ <i>C</i></span><span class="num">(8.2)</span></div>
+
+<p>当事件增加，<i>C</i><sub>q</sub> 与 <i>C</i><sub>sys</sub> 被迫压缩。关键的不对称在于：<b>系统提示通常固定，而新事件不断到来；于是被牺牲的，往往不是最新的，而是最旧的、却可能最重要的那部分。</b>这不是系统的“恶意”，而是（8.2）在预算压力下的自然分配。</p>
+
+<h3>8.3　目标漂移的动力学模型</h3>
+
+<p>设智能体的内部状态为 <i>s</i> ∈ ℝ<sup><i>d</i></sup>，初始状态 <i>s</i><sub>0</sub> 编码了系统提示与初始目标。每一轮，状态被事件 <i>e</i><sub><i>i</i></sub> 更新：</p>
+
+<div class="eq"><span class="body"><i>s</i><sub><i>i</i>+1</sub> = <i>s</i><sub><i>i</i></sub> + <i>ε</i><sub><i>i</i></sub>，　‖<i>ε</i><sub><i>i</i></sub>‖ ≈ <i>ε̄</i></span><span class="num">(8.3)</span></div>
+
+<p>若每步偏移近似独立且同分布，则 <i>n</i> 轮之后的期望偏移为：</p>
+
+<div class="eq"><span class="body">E[‖<i>s</i><sub><i>n</i></sub> − <i>s</i><sub>0</sub>‖] ≈ √<i>n</i> · <i>ε̄</i>　（随机游走）　或　<i>n</i> · <i>ε̄</i>　（有偏漂移）</span><span class="num">(8.4)</span></div>
+
+<p>这两个尺度差别巨大：随机游走下，偏移随 √<i>n</i> 增长；有偏漂移下，随 <i>n</i> 线性增长。因此“临界轮次” <i>n</i><sub>c</sub>——状态离开目标吸引子盆的轮次——在两种情形下分别是：</p>
+
+<div class="eq"><span class="body"><i>n</i><sub>c</sub> ≈ (<i>r</i>/<i>ε̄</i>)<sup>2</sup>（随机游走）　或　<i>n</i><sub>c</sub> ≈ <i>r</i>/<i>ε̄</i>（有偏），<i>r</i> 为吸引子盆半径</span><span class="num">(8.5)</span></div>
+
+<p><b>这个平方项是关键。</b>它意味着：只要能把每轮的有偏成分压掉一点，让漂移更接近随机游走，临界轮次就能从线性翻成平方——收益不是百分之几，而是数量级。这也解释了为什么“每轮都轻微地重述目标”这类朴素做法，有时比“换一个更大的模型”更有效。</p>
+
+<img class="fig" src="assets/svg/fig08-agent-drift.svg" alt="目标漂移：随机游走与有偏漂移">
+
+<div class="cap"><b>图 8.1　目标漂移的两种尺度</b>。纵轴为状态与初始目标的距离，横轴为轮次。实线为有偏漂移（线性），虚线为随机游走（平方根）。同一个 <i>ε̄</i> 下，两者的临界轮次相差一个数量级。图中阴影为吸引子盆边界 <i>r</i>：越过它，目标从“可辨认”变为“不可辨认”。</div>
+
+<h3>8.4　漂移的三个来源与一个误判</h3>
+
+<p>把 <i>ε̄</i> 拆开，可以得到三个可干预的来源，以及一个常见的误判。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 8.1　漂移的来源、机制与干预</b></caption>
+<tr><th class="l">来源</th><th class="l">机制</th><th class="l">是随机还是偏差</th><th class="l">干预方向</th></tr>
+<tr><td class="l">容量竞争</td><td class="l">目标被新内容挤出注意</td><td class="l">偏置（旧信息系统性劣势）</td><td class="l">显式重述、检索置顶</td></tr>
+<tr><td class="l">覆盖改写</td><td class="l">新指令覆盖旧目标的表示</td><td class="l">偏置</td><td class="l">目标隔离、版本化</td></tr>
+<tr><td class="l">检索启发式</td><td class="l">“新奇优先”压倒“重要优先”</td><td class="l">偏置</td><td class="l">用显著性而非新近性排序</td></tr>
+<tr><td class="l">采样噪声</td><td class="l">生成过程的随机性</td><td class="l">随机</td><td class="l">降低温度、多次投票</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>来源分解表。质量等级 C（本书构造的分解）；<b>注释：</b>前三项是<b>偏置</b>，第四项是<b>随机</b>。偏置是漂移的主要敌人，因为偏置随 <i>n</i> 线性累积；随机只随 √<i>n</i> 累积。</div>
+
+<p><b>那个误判是：把“检索失败”当作“遗忘”。</b>当智能体输出偏离目标，人们常以为目标信息“丢了”。但很多时候它仍在上下文中，只是当前的检索线索无法把它取出来。误判的代价是把资源花在“扩容”上，而真正需要的是“换线索”。第 4.6 节已为这一区分做了准备。</p>
+
+<h3>8.5　压缩策略的代价：摘要与选择性保留</h3>
+
+<p>当上下文过长，系统必须压缩。两种常见策略各有代价。</p>
+
+<ul>
+<li><b>摘要。</b>把历史压成一段概述。代价：细节丢失，而细节往往正是任务相关的（日期、数字、约束）。信息论上，<i>I</i>(history; summary) ≤ <i>H</i>(summary)，摘要的长度就是信息上限。</li>
+<li><b>选择性保留。</b>只保留“重要的”片段。代价：重要性判据本身的噪声会在长对话中累积，且“重要”的定义随任务变化——用旧判据筛掉的东西，可能正是后来需要的。</li>
+</ul>
+
+<p>两种策略的共同点是：<b>它们都在赌“什么将来会有用”。</b>压缩的质量，不取决于压缩得多狠，而取决于这个赌注押得准不准。而让赌注更准的，恰恰是元认知（第 13 章）——系统对“自己将来需要什么”的判断。</p>
+
+<h3>8.6　目标稳定性作为吸引子条件</h3>
+
+<p>把目标稳定性写成条件，可以让“漂移”从一个模糊的抱怨变成一个工程指标。</p>
+
+<div class="define"><span class="bt">定义 8.1　目标稳定性</span>
+设目标 <i>g</i> 对应状态空间中的吸引子 <i>A</i>*<sub><i>g</i></sub>，盆半径为 <i>r</i>。称智能体在 <i>n</i> 轮内<b>目标稳定</b>，若对任意 <i>k</i> ≤ <i>n</i>，<i>s</i><sub><i>k</i></sub> 仍在 <i>A</i>*<sub><i>g</i></sub> 的盆内。目标稳定性阈值 <i>n</i><sub>c</sub> 由式(8.5)给出。</div>
+
+<div class="warning"><span class="bt">警告 8.6.1　容量扩张不是万能药</span>
+如果漂移主要由偏置造成（表 8.1 前三行），那么扩容只能把 <i>n</i><sub>c</sub> 线性推后；要获得平方级的改善，必须<b>降低每轮的有偏成分</b>——这属于调度问题，不属于容量问题。混淆这两者，是“越做越大却越来越忘”的根本原因。</div>
+
+<h3>8.7　工程含义与可检验预言</h3>
+
+<table class="nat">
+<caption class="cap"><b>表 8.2　本章可检验预言及其登记状态</b></caption>
+<tr><th class="l">预言</th><th class="l">判据</th><th class="l">登记</th></tr>
+<tr><td class="l">漂移随轮次呈平方根增长，而非线性增长（无偏置干预下）</td><td class="l">在控制偏置后，偏移—轮次曲线斜率约为 0.5</td><td class="l">附录 E · P4</td></tr>
+<tr><td class="l">扩大容量使 <i>n</i><sub>c</sub> 线性增长，但降低偏置可使 <i>n</i><sub>c</sub> 平方增长</td><td class="l">对比两种干预下 <i>n</i><sub>c</sub> 的标度指数</td><td class="l">附录 E · P5</td></tr>
+<tr><td class="l">“检索失败”与“容量溢出”对线索干预的响应不同</td><td class="l">换线索能恢复表现的情形，不能由扩容替代</td><td class="l">附录 E · P6</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>可检验预言登记表。质量等级 C（登记）；<b>注释：</b>这些预言的检验需要受控的智能体实验，涉及模型选择、任务设计与噪声控制，难度不小；本书把它们登记下来，是为了让它们可以被未来工作直接使用或推翻。</div>
+
+<div class="note"><b>本章的关键产出（强／弱／不确定）</b>
+<ul>
+<li><b>强（可直接使用）：</b>漂移与遗忘是两个概念；偏置与随机两种漂移的标度不同。［论证，A／甲］</li>
+<li><b>中（可检验）：</b>容量扩张对偏置型漂移只提供线性改善。［假说，C／乙］</li>
+<li><b>不确定（最大缺口）：</b><i>n</i><sub>c</sub> 的具体数值依赖实现，尚无独立测定。［待验证］</li>
+</ul></div>
+
+<h3>8.8　本章小结</h3>
+
+<ol>
+<li>漂移是状态偏移，不是信息丢失；这个区分决定干预方向。</li>
+<li>上下文预算的不对称，使最旧的（可能是最重要的）部分最先被牺牲。</li>
+<li>漂移的尺度由偏置与随机决定：偏置线性累积，随机按平方根累积；压掉偏置能换来数量级收益。</li>
+<li>摘要与选择性保留都在赌“什么将来有用”；赌注的准度来自元认知。</li>
+<li>目标稳定性可被写成吸引子盆条件，从而成为可测指标。</li>
+</ol>
+
+<h3>本章参考文献</h3>
+<div class="refs">
+<p>Park, J. S., et al. (2023). Generative Agents: Interactive Simulacra of Human Behavior. <i>UIST 2023</i>.</p>
+<p>Shinn, N., Cassano, F., Gopinath, A., Narasimhan, K., &amp; Yao, S. (2023). Reflexion: Language Agents with Verbal Reinforcement Learning. <i>NeurIPS</i>.</p>
+<p>Yao, S., et al. (2023). ReAct: Synergizing Reasoning and Acting in Language Models. <i>ICLR</i>.</p>
+<p>Packer, C., et al. (2023). MemGPT: Towards LLMs as Operating Systems. arXiv:2310.08560.</p>
+<p>Lewis, P., et al. (2020). Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. <i>NeurIPS</i>.</p>
+<p>Amari, S. (1974). A Method of Statistical Neurodynamics. <i>Kybernetik</i>, 14, 201–215.</p>
+</div>

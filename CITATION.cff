@@ -1,0 +1,57 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below. 若使用本作，请按下述格式引用。"
+type: book
+title: "容量级联：有限容量下的多尺度自适应——从大语言模型、智能体到人类记忆 / Capacity-Cascade: Multi-Scale Adaptation under Finite Capacity"
+abstract: >-
+  本书处理一个被反复提出、却极少被严格表述的问题：大语言模型的键值缓存、AI 智能体的
+  上下文窗口、以及人类的记忆—学习系统，是否由同一机制主导？本书给出的是一次有意的
+  “降级”：三者不是同构（isomorphic）的，而是同约束（iso-constrained）的。它们受制于
+  同一组信息论约束——有限通道容量下的压缩、干扰与遗忘——却运行在相差约九个数量级的
+  时间尺度上，形成一个从毫秒（工作记忆）到终身（系统巩固）的“容量级联”。本书的贡献
+  不是宣布一个大一统理论，而是把这一主张拆解为可分级、可批判、可证伪的命题，并明确
+  写出框架能解释什么、不能解释什么。
+  English: Are the KV cache of an LLM, the context window of an AI agent, and human
+  memory–learning governed by the same mechanism? This monograph argues for a
+  deliberate demotion: the three are not isomorphic but iso-constrained — bound by
+  the same information-theoretic constraints while operating across roughly nine
+  orders of magnitude in timescale, forming a capacity cascade.
+authors:
+  - family-names: "李"
+    given-names: "毅芃"
+    alias: "Li Yipeng"
+    email: "1610369302@qq.com"
+date-released: "2026-10-12"
+license: CC-BY-4.0
+repository-code: "https://github.com/lyp0746/capacity-cascade"
+url: "https://github.com/lyp0746/capacity-cascade"
+keywords:
+  - 容量级联
+  - 信息瓶颈
+  - 多时间尺度
+  - 工作记忆
+  - 记忆巩固
+  - 灾难性遗忘
+  - 位置偏差
+  - 上下文漂移
+  - 忒修斯之船
+  - 内源模拟
+  - 梦
+  - 潜意识
+  - 元认知
+  - 自由能原理
+  - 理论地图
+  - 可证伪性
+  - Capacity-Cascade
+  - information bottleneck
+  - multi-timescale dynamics
+  - working memory
+  - memory consolidation
+  - catastrophic forgetting
+  - lost in the middle
+  - agent drift
+  - endogenous simulation
+  - dreams
+  - metacognition
+  - free energy principle
+  - theory map
+  - falsifiability

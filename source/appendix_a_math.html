@@ -1,0 +1,52 @@
+<h2 class="chapter">附录 A　数学补充</h2>
+
+<p class="lead">本附录汇总正文中使用的形式化定义与推导，供希望核对细节的读者查阅。所有公式均沿用正文的符号约定（表 0.5）。</p>
+
+<h3>A.1　信息瓶颈与率失真</h3>
+
+<p>信息瓶颈的拉格朗日形式：</p>
+<div class="eq"><span class="body"><i>L</i><sub>IB</sub>[<i>p</i>(<i>z</i>|<i>x</i>)] = <i>I</i>(<i>X</i>;<i>Z</i>) + <i>β</i> <i>I</i>(<i>Z</i>;<i>Y</i>)</span><span class="num">(A.1)</span></div>
+<p>其中 <i>β</i> ≥ 0。当 <i>β</i> → 0 时最优解为 <i>Z</i> ≈ <i>X</i>（无损）；当 <i>β</i> → ∞ 时 <i>Z</i> 退化为常数（零信息）。信息曲线 (<i>I</i>(<i>X</i>;<i>Z</i>), <i>I</i>(<i>Z</i>;<i>Y</i>)) 是一条凸曲线。</p>
+
+<p>率失真函数（式 4.2）与其对偶：</p>
+<div class="eq"><span class="body"><i>R</i>(<i>D</i>) = min_{<i>p</i>(<i>x̂</i>|<i>x</i>): <b>E</b>[<i>d</i>] ≤ <i>D</i>} <i>I</i>(<i>X</i>;<i>X</i>̂)　⟺　<i>D</i>(<i>C</i>) = min_{<i>I</i> ≤ <i>C</i>} <b>E</b>[<i>d</i>]</span><span class="num">(A.2)</span></div>
+<p>对高斯信源与平方失真，<i>R</i>(<i>D</i>) = ½ log<sub>2</sub>(<i>σ</i><sup>2</sup>/<i>D</i>)（<i>D</i> ≤ <i>σ</i><sup>2</sup>）。这是本书能给出的少数精确闭式之一。</p>
+
+<h3>A.2　数据处理不等式</h3>
+<div class="eq"><span class="body"><i>X</i> → <i>Z</i> → <i>Y</i>　⟹　<i>I</i>(<i>X</i>;<i>Y</i>) ≤ <i>I</i>(<i>X</i>;<i>Z</i>)</span><span class="num">(A.3)</span></div>
+<p>推论：若 <i>Z</i> 是 <i>X</i> 的确定性函数，则 <i>H</i>(<i>Z</i>) ≤ <i>H</i>(<i>X</i>)，且一般严格小于。信息不会因处理而增加。</p>
+
+<h3>A.3　有效容量的熵形式</h3>
+
+<p>给定可区分状态概率分布 {<i>p</i><sub><i>i</i></sub>}，有效容量定义为该分布的 Shannon 熵：</p>
+<div class="eq"><span class="body"><i>C</i><sub>eff</sub> = −Σ<sub><i>i</i></sub> <i>p</i><sub><i>i</i></sub> log<sub>2</sub> <i>p</i><sub><i>i</i></sub>　（式 5.1 的定义）</span><span class="num">(A.4)</span></div>
+<p>当状态等概率且数目为 <i>N</i> 时，<i>C</i><sub>eff</sub> = log<sub>2</sub> <i>N</i>，即名义容量。</p>
+
+<h3>A.4　有效秩（参与熵）</h3>
+<div class="eq"><span class="body">rank<sub>eff</sub>(<i>M</i>) = exp( −Σ<sub><i>i</i></sub> <i>p</i><sub><i>i</i></sub> ln <i>p</i><sub><i>i</i></sub> )，　<i>p</i><sub><i>i</i></sub> = <i>σ</i><sub><i>i</i></sub><sup>2</sup>/Σ<sub><i>j</i></sub> <i>σ</i><sub><i>j</i></sub><sup>2</sup></span><span class="num">(A.5)</span></div>
+<p>性质：rank<sub>eff</sub> ≤ rank(<i>M</i>) ≤ min(<i>n</i>,<i>d</i>)；等号成立当且仅当谱平坦。它在比例缩放下不变。</p>
+
+<h3>A.5　容量—干扰模型的推导</h3>
+
+<p>设干扰 <i>ι</i> 使表示中可用方向的数目按每单位干扰以速率 <i>k</i> 被占用（泊松型假设），则未被占用的比例约为 <i>e</i><sup>−<i>kι</i></sup>。加上结构本身提供的“保底容量” <i>C</i><sub>∞</sub>：</p>
+<div class="eq"><span class="body"><i>C</i><sub>eff</sub>(<i>ι</i>) = <i>C</i><sub>∞</sub> + (<i>C</i><sub>max</sub> − <i>C</i><sub>∞</sub>) e<sup>−<i>kι</i></sup></span><span class="num">(A.6)</span></div>
+<p>半衰点：<i>C</i><sub>eff</sub> 降到中值处，<i>ι</i><sub>1/2</sub> = ln 2 / <i>k</i>。低干扰展开：<i>C</i><sub>eff</sub> ≈ <i>C</i><sub>max</sub> − (<i>C</i><sub>max</sub>−<i>C</i><sub>∞</sub>)<i>kι</i> + O(<i>ι</i><sup>2</sup>)。<b>该推导依赖泊松型占用假设，因此是条件性结果（等级 C）。</b></p>
+
+<h3>A.6　目标漂移的标度</h3>
+
+<p>设每轮偏移 <i>ε</i><sub><i>i</i></sub> = <i>μ</i> + <i>ξ</i><sub><i>i</i></sub>，其中 <i>μ</i> 为偏置、<i>ξ</i><sub><i>i</i></sub> 为零均值独立噪声，Var(<i>ξ</i>) = <i>σ</i><sup>2</sup>。累积位移 <i>S</i><sub><i>n</i></sub> = Σ<sub><i>i</i>≤<i>n</i></sub> <i>ε</i><sub><i>i</i></sub> 的均值与方差为：</p>
+<div class="eq"><span class="body"><b>E</b>[<i>S</i><sub><i>n</i></sub>] = <i>nμ</i>，　Var(<i>S</i><sub><i>n</i></sub>) = <i>nσ</i><sup>2</sup>，　<b>E</b>[‖<i>S</i><sub><i>n</i></sub>‖<sup>2</sup>] = <i>n</i><sup>2</sup><i>μ</i><sup>2</sup> + <i>nσ</i><sup>2</sup></span><span class="num">(A.7)</span></div>
+<p>因此：当偏置占优（<i>nμ</i><sup>2</sup> ≫ <i>σ</i><sup>2</sup>）时，位移随 <i>n</i> 线性增长；当噪声占优时，随 √<i>n</i> 增长。临界轮次分别为 <i>n</i><sub>c</sub> ≈ <i>r</i>/<i>μ</i> 与 <i>n</i><sub>c</sub> ≈ <i>r</i><sup>2</sup>/<i>σ</i><sup>2</sup>（<i>r</i> 为盆半径）。正文式(8.5)即此。</p>
+
+<h3>A.7　总数据不等式（多级）</h3>
+
+<p>对 Markov 链 <i>X</i> → <i>Z</i><sub>1</sub> → <i>Z</i><sub>2</sub> → … → <i>Y</i>：<i>I</i>(<i>X</i>;<i>Y</i>) ≤ <i>I</i>(<i>X</i>;<i>Z</i><sub>1</sub>) ≤ …。级联的每一层都在做信息上的“只减不增”操作，这为第 6 章的“丢弃是层间唯一传送带”提供了严格基础。</p>
+
+<h3>A.8　形式化的边界</h3>
+
+<p>本附录中的所有公式，都是<b>在明示假设下的条件性结果</b>。它们不构成对任何具体系统的直接预测。特别是：</p>
+<ul>
+<li>式(A.6)的 <i>k</i>、<i>C</i><sub>∞</sub> 不能先验给出；</li>
+<li>式(A.7)假设偏移独立同分布，而真实系统中的偏移往往相关；</li>
+<li>互信息在高维连续情形下难以精确估计，本书只用其方向与相对大小。</li>
+</ul>

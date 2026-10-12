@@ -1,0 +1,56 @@
+name: 数据补充 / Data contribution
+description: 提交可用于检验附录 E 某条预言的数据或实验方案
+title: "[数据] "
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢补充。请尽量让每个数值都可追溯。质量等级：A＝官方可复现；B＝稳定公开估算；C＝稀疏/构造，仅方向。
+  - type: dropdown
+    id: prediction
+    attributes:
+      label: 对应的登记条目
+      options:
+        - P1 位置—准确度曲线塌缩
+        - P2 位置编码改变低谷位置
+        - P3 有效秩饱和与偏差
+        - P4 漂移的平方根标度
+        - P5 扩容线性 / 降偏置平方
+        - P6 检索失败与容量溢出
+        - P7 容量—干扰曲线形态
+        - P8 显著性加权重放
+        - P9 离线重组阶段
+        - P10 子模性损失
+        - P11 最优离线探索强度
+        - P12 显著性的可还原性
+        - 其他 / 新增
+    validations:
+      required: true
+  - type: textarea
+    id: values
+    attributes:
+      label: 数据或实验方案
+      description: 可直接粘贴 CSV / Markdown 表格 / 实验设计
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: 来源链接或文献
+    validations:
+      required: true
+  - type: dropdown
+    id: quality
+    attributes:
+      label: 质量等级
+      options: ["A", "B", "C"]
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: 对结论的影响
+      description: 该数据是否改变某条结论的方向或强度？
+    validations:
+      required: true

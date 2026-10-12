@@ -1,0 +1,125 @@
+<h2 class="chapter">第 5 章　容量、干扰与表示坍塌</h2>
+
+<p class="lead">第 4 章给出了压缩的规范性基准。本章引入两个更难、也更接近真实系统的量：<b>有效容量</b>与<b>干扰</b>，并说明它们如何共同造成“表示坍塌”。本章的核心模型——容量随干扰指数衰减——是本书最可能被实验直接检验的部分之一；因此本章同时给出<b>可测形式</b>与<b>不可测边界</b>，并明确哪些预测只是量级示意。</p>
+
+<h3>5.1　导论：容量不是一个数，而是一条曲线</h3>
+
+<p>说一个系统“容量为 <i>C</i>”是一种简化。真实系统里，能可靠区分多少状态，取决于<b>信噪比</b>、<b>可用的编码时间</b>、以及<b>其他信息造成的干扰</b>。因此，容量应当被写成一条<b>曲线</b>：<i>C</i><sub>eff</sub> 随干扰强度、随任务难度、随允许误差变化。把容量当成一个固定的数，会导致两类错误：低估“容量其实够用但选择不当”的情况，以及高估“容量一定不够”的情况。</p>
+
+<img class="fig" src="assets/svg/fig05-capacity-interference.svg" alt="有效容量随干扰指数衰减">
+
+<div class="cap"><b>图 5.1　有效容量随干扰的衰减（示意）</b>。横轴为归一化干扰强度 <i>ι</i>，纵轴为归一化有效容量 <i>C</i><sub>eff</sub>/<i>C</i><sub>max</sub>。实线为式(5.3)的指数衰减；虚线为更乐观的对数衰减；点线为线性衰减。三条曲线在低干扰区相近，在高干扰区差异极大——这正是“必须实测而非假设形状”的原因。<b>本图为定性示意，参数不代表任何具体系统。</b></div>
+
+<h3>5.2　有效容量的定义</h3>
+
+<p>容量有两种常用定义：信息论意义上的通道容量，与物理意义上的“可区分状态数”。本书采用后者作为<b>操作定义</b>，因为它更接近可测量的东西。</p>
+
+<div class="define"><span class="bt">定义 5.1　有效容量</span>
+设表示 <i>Z</i> 在一个可容忍失真 <i>ε</i> 下可被可靠区分的状态数为 <i>N</i><sub><i>ε</i></sub>，则定义<b>有效容量</b>：<br>
+<i>C</i><sub>eff</sub>(<i>ε</i>) := log<sub>2</sub> <i>N</i><sub><i>ε</i></sub>　（单位：bit）<br>
+当 <i>ε</i> → 0 时，<i>N</i><sub><i>ε</i></sub> 收缩，<i>C</i><sub>eff</sub> 下降；当 <i>ε</i> 宽松时，<i>C</i><sub>eff</sub> 上升。<b>因此容量总是相对于一个失真容忍度而言的。</b></div>
+
+<p>这个定义对上界给出直观约束。若名义维度为 <i>d</i>、每个维度有 <i>m</i> 个可区分水平，则名义容量为 <i>d</i> log<sub>2</sub><i>m</i>；而实际 <i>C</i><sub>eff</sub> 通常远小于它，原因就是下一节的干扰与第 5.4 节的表示坍塌。</p>
+
+<div class="define"><span class="bt">定义 5.2　名义容量与有效容量之比</span>
+定义<b>容量效率</b> <i>η</i><sub>C</sub> := <i>C</i><sub>eff</sub> / (<i>d</i> log<sub>2</sub> <i>m</i>)。<i>η</i><sub>C</sub> → 1 表示每个名义自由度都被有效利用；<i>η</i><sub>C</sub> ≪ 1 表示大量自由度被冗余、噪声或干扰占据。</div>
+
+<h3>5.3　干扰的三种来源</h3>
+
+<p>干扰不是单一现象。本书区分三种，它们在三个系统中都有对应物。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 5.1　干扰的三种来源及其在各系统中的表现</b></caption>
+<tr><th class="l">来源</th><th class="l">机制</th><th class="l">LLM</th><th class="l">智能体</th><th class="l">人类</th></tr>
+<tr><td class="l">容量竞争</td><td class="l">竞争同一有限资源</td><td class="l">注意力权重被分摊</td><td class="l">上下文预算被占用</td><td class="l">工作记忆槽位被占</td></tr>
+<tr><td class="l">覆盖改写</td><td class="l">新写入改变旧表示</td><td class="l">键值被新 token “淹没”</td><td class="l">新指令改写旧目标</td><td class="l">突触资源被重分配</td></tr>
+<tr><td class="l">分布偏移</td><td class="l">统计特性变化使旧表示失配</td><td class="l">长尾分布下注意力错配</td><td class="l">话题切换导致检索失败</td><td class="l">情境变化导致提取线索失效</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>机制对应表。质量等级 C（跨系统对应为本书构造）；<b>注释：</b>三类干扰在各系统中的具体机制不同，本表只做“位置对应”，不主张机制相同。表中“分布偏移”对应第 4.6 节的“检索失败”。</div>
+
+<h3>5.4　表示坍塌：从满秩到低秩</h3>
+
+<p>在长序列与大模型中，一个可观测的现象是：表示矩阵（如键矩阵 <i>K</i>）的<b>有效秩</b>往往远小于其名义维度，且随序列增长趋于饱和。本书称这一现象为<b>表示坍塌</b>（representation collapse）。它不是“模型崩溃”，而是一种效率现象——表示把力气挤到少数主方向上，换来了对外部变化的稳定。</p>
+
+<div class="define"><span class="bt">定义 5.3　有效秩</span>
+给定表示矩阵 <i>M</i> ∈ ℝ<sup><i>n</i>×<i>d</i></sup>，设其奇异值为 <i>σ</i><sub>1</sub> ≥ <i>σ</i><sub>2</sub> ≥ …，定义<b>有效秩</b>：<br>
+rank<sub>eff</sub>(<i>M</i>) := exp( − Σ<sub><i>i</i></sub> <i>p</i><sub><i>i</i></sub> ln <i>p</i><sub><i>i</i></sub> )，其中 <i>p</i><sub><i>i</i></sub> = <i>σ</i><sub><i>i</i></sub><sup>2</sup> / Σ<sub><i>j</i></sub> <i>σ</i><sub><i>j</i></sub><sup>2</sup><br>
+这是奇异值谱的“参与熵”。当谱集中时 rank<sub>eff</sub> 小；谱平坦时 rank<sub>eff</sub> 接近 min(<i>n</i>,<i>d</i>)。</div>
+
+<p>有效秩之所以重要，是因为它把“容量”与“维度”解耦：<b>增加维度 <i>d</i> 不保证增加有效容量 <i>C</i><sub>eff</sub></b>，如果新增方向没有承载独立信息。这就是“把模型做得更大”不总等于“让它记住更多”的数学理由——第 8 章把它变成对智能体漂移的判据。</p>
+
+<h3>5.5　容量—干扰的指数衰减模型</h3>
+
+<p>把上述观察合并，可以得到本章的核心模型：</p>
+
+<div class="eq"><span class="body"><i>C</i><sub>eff</sub>(<i>ι</i>) = <i>C</i><sub>∞</sub> + (<i>C</i><sub>max</sub> − <i>C</i><sub>∞</sub>) · exp(−<i>k</i> · <i>ι</i>)</span><span class="num">(5.1)</span></div>
+
+<p>其中 <i>ι</i> 是归一化干扰强度，<i>C</i><sub>max</sub> 是无干扰容量，<i>C</i><sub>∞</sub> 是干扰极大时残留的容量（通常接近 0，但不为零：结构本身仍携带任务先验），<i>k</i> 是灵敏度。这个模型给出三条可检验的方向性预言：</p>
+
+<ol>
+<li><b>低干扰区近似线性</b>：<i>ι</i> 小时，exp(−<i>kι</i>) ≈ 1 − <i>kι</i>，容量近似线性下降。</li>
+<li><b>高干扰区指数衰减</b>：<i>ι</i> 大时，容量对干扰极其敏感；这是“性能断崖”的来源。</li>
+<li><b>存在一个“半衰”点</b>：<i>ι</i><sub>1/2</sub> = ln2 / <i>k</i>，此时容量损失一半。它是一个可测的标量。</li>
+</ol>
+
+<p>把干扰与位置／时间联系起来的经验形式，常被写成指数衰减的准确度曲线：</p>
+
+<div class="eq"><span class="body">acc(<i>s</i>) ≈ <i>A</i><sub>∞</sub> + (1 − <i>A</i><sub>∞</sub>) · exp(−<i>α</i> · <i>φ</i>(<i>s</i>))</span><span class="num">(5.2)</span></div>
+
+<p>其中 <i>s</i> 是信息在输入中的相对位置（或时间间隔），<i>φ</i> 是单调递增的“有效干扰”函数，<i>α</i> 是速率常数。第 7 章会说明：式(5.2)是一个<b>家族</b>，而非单一模型；位置偏差的“U 形”意味着 <i>φ</i> 不是简单的线性距离。</p>
+
+<div class="warning"><span class="bt">警告 5.5.1　指数模型不是定律</span>
+式(5.1)—(5.2)是<b>候选模型</b>，不是定理。它们的作用是提供一个可被拒绝的靶子：如果实测的容量—干扰曲线明显偏离单一指数（例如出现平台或多段斜率），那就需要更复杂的模型。<b>本书明确欢迎这种失败</b>——一个能被证伪的模型，好过一个能解释一切的模型。</div>
+
+<h3>5.6　子模性：为什么能力不能简单相加</h3>
+
+<p>互信息具有子模性（submodularity）：</p>
+
+<div class="eq"><span class="body"><i>I</i>(<i>Z</i>; <i>X</i><sub>1</sub> ∪ <i>X</i><sub>2</sub>) ≤ <i>I</i>(<i>Z</i>;<i>X</i><sub>1</sub>) + <i>I</i>(<i>Z</i>;<i>X</i><sub>2</sub>)</span><span class="num">(5.3)</span></div>
+
+<p>其含义是：<b>两个信息源的联合贡献不超过各自贡献之和</b>；当二者相关时，存在“重叠”造成的冗余损失。由此可以推出一个对“多头注意力容量加性”的限定：若多头之间存在相关（它们经常相关），则总有效容量小于单头容量之和。</p>
+
+<div class="define"><span class="bt">定义 5.4　子模性损失</span>
+对 <i>n</i> 个信息源，定义 <i>Δ</i> := Σ<sub><i>i</i></sub> <i>C</i><sub>eff</sub><sup>(<i>i</i>)</sup> − <i>C</i><sub>eff</sub><sup>(all)</sup> ≥ 0。当 <i>Δ</i> = 0 时容量完全可加；<i>Δ</i> 越大，冗余或冲突越多。</div>
+
+<p>这条性质对工程有直接含义：<b>“多加几个头／多开几个检索通道”不会线性提升有效容量</b>，除非这些通道承载的信息相互独立。第 17 章的设计原则之一（“冗余与鲁棒性的权衡”）正是从这里导出的。</p>
+
+<h3>5.7　模型能预测什么、不能预测什么</h3>
+
+<p>把本章的模型能做的与不能做的分开，是本书方法论的要求。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 5.2　容量—干扰模型的能力边界</b></caption>
+<tr><th class="l">能预测（方向性）</th><th class="l">不能预测（或需要额外信息）</th></tr>
+<tr><td class="l">干扰增加时容量单调下降</td><td class="l">具体 <i>k</i>、<i>C</i><sub>max</sub> 的数值</td></tr>
+<tr><td class="l">存在半衰点 <i>ι</i><sub>1/2</sub> = ln2/<i>k</i></td><td class="l">该点在给定模型中的绝对位置</td></tr>
+<tr><td class="l">高干扰区的“断崖”行为</td><td class="l">断崖的确切阈值（依赖实现）</td></tr>
+<tr><td class="l">多头／多通道容量不可简单相加</td><td class="l">具体的子模性损失 <i>Δ</i></td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>能力边界表。质量等级 B（论证）；<b>注释：</b>“方向性”指预测符号与单调性，而非数量。本书允许并鼓励对方向性预言做实验检验。</div>
+
+<div class="note"><b>本章的关键产出（强／弱／不确定）</b>
+<ul>
+<li><b>强（可直接使用）：</b>子模性与有效秩是明确的数学量；DPI 已在第 4 章给出。［已知，A／甲］</li>
+<li><b>弱（有条件使用）：</b>指数容量—干扰模型是候选；欢迎被更复杂模型替换。［假说，C／乙］</li>
+<li><b>不确定（尚不可用）：</b>把式(5.1)的参数用于具体系统，本书不做。［边界］</li>
+</ul></div>
+
+<h3>5.8　本章小结</h3>
+
+<ol>
+<li>容量不是一个数，而是一条相对于失真容忍度的曲线；用“容量效率” <i>η</i><sub>C</sub> 度量名义自由度的有效利用。</li>
+<li>干扰分三类：容量竞争、覆盖改写、分布偏移。</li>
+<li>表示坍塌指有效秩远小于名义维度；它把容量与维度解耦。</li>
+<li>容量—干扰的指数模型是可被拒绝的靶子；其可测标量是半衰点 <i>ι</i><sub>1/2</sub>。</li>
+<li>子模性说明能力不可简单相加，冗余有代价也有收益。</li>
+</ol>
+
+<h3>本章参考文献</h3>
+<div class="refs">
+<p>Cover, T. M., &amp; Thomas, J. A. (2006). <i>Elements of Information Theory</i> (2nd ed.). Hoboken: Wiley.</p>
+<p>Kay, S. M. (1993). <i>Fundamentals of Statistical Signal Processing: Estimation Theory</i>. Englewood Cliffs: Prentice Hall.</p>
+<p>Ramsauer, H., et al. (2021). Hopfield Networks Is All You Need. <i>International Conference on Learning Representations</i>.</p>
+<p>Dong, Y., Cordonnier, J.-B., &amp; Loukas, A. (2021). Attention Is Not All You Need: Pure Attention Loses Rank Doubly Exponentially with Depth. <i>International Conference on Machine Learning</i>.</p>
+<p>Roy, O., &amp; Vetterli, M. (2007). The Effective Rank: A Measure of Effective Dimensionality. <i>European Signal Processing Conference</i>.</p>
+</div>

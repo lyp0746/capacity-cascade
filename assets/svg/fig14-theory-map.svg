@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400">
+<rect x="0" y="0" width="760" height="400" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="26" class="t">母题下的理论地图</text>
+<circle cx="380" cy="205" r="72" fill="#fff6ee" stroke="#b8862f" stroke-width="2.2"/>
+<text x="380" y="198" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">信息约束下的</text>
+<text x="380" y="218" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">多尺度自适应</text>
+<ellipse cx="120" cy="90" rx="96" ry="66" fill="#fafafa" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="120" y="46" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700">结构</text>
+<text x="120" y="70" class="l" text-anchor="middle" fill="#666" font-weight="normal">Shannon</text>
+<text x="120" y="90" class="l" text-anchor="middle" fill="#666" font-weight="normal">率失真</text>
+<text x="120" y="110" class="l" text-anchor="middle" fill="#666" font-weight="normal">有效秩</text>
+<text x="120" y="130" class="l" text-anchor="middle" fill="#666" font-weight="normal">Hopfield</text>
+<line x1="216" y1="90" x2="452" y2="205" stroke="#3a6ea5" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="120" cy="300" rx="96" ry="66" fill="#fafafa" stroke="#009E73" stroke-width="1.6"/>
+<text x="120" y="256" class="l" text-anchor="middle" fill="#009E73" font-weight="700">动力学</text>
+<text x="120" y="280" class="l" text-anchor="middle" fill="#666" font-weight="normal">信息瓶颈</text>
+<text x="120" y="300" class="l" text-anchor="middle" fill="#666" font-weight="normal">预测加工</text>
+<text x="120" y="320" class="l" text-anchor="middle" fill="#666" font-weight="normal">强化学习</text>
+<text x="120" y="340" class="l" text-anchor="middle" fill="#666" font-weight="normal">遗忘曲线</text>
+<line x1="216" y1="300" x2="452" y2="205" stroke="#009E73" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="610" cy="195" rx="96" ry="66" fill="#fafafa" stroke="#c94f4f" stroke-width="1.6"/>
+<text x="610" y="151" class="l" text-anchor="middle" fill="#c94f4f" font-weight="700">协调</text>
+<text x="610" y="175" class="l" text-anchor="middle" fill="#666" font-weight="normal">主动推理</text>
+<text x="610" y="195" class="l" text-anchor="middle" fill="#666" font-weight="normal">系统巩固</text>
+<text x="610" y="215" class="l" text-anchor="middle" fill="#666" font-weight="normal">全脑工作空间</text>
+<text x="610" y="235" class="l" text-anchor="middle" fill="#666" font-weight="normal">元认知</text>
+<line x1="514" y1="195" x2="308" y2="205" stroke="#c94f4f" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="380" y="385" class="l" text-anchor="middle" fill="#666" font-weight="normal">虚线 = 安放位置仍有争议；地图只定性，不含权重</text>
+</svg>

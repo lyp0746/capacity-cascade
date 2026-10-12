@@ -1,0 +1,57 @@
+<h2 class="chapter">术语、记号与断言分级速查</h2>
+
+<p class="lead">本章是阅读时的随手工具。第一部分给记号与核心定义，第二部分给断言分级规则，第三部分给术语表。完整术语表见附录 D，完整规则见第 3 章。</p>
+
+<h3>一、记号</h3>
+
+<table class="nat">
+<caption class="cap"><b>表 0.5　全书主要记号</b></caption>
+<tr><th class="l">记号</th><th class="l">含义</th><th class="l">单位／取值</th></tr>
+<tr><td class="l"><i>X</i></td><td class="l">输入（token 序列、观测、刺激）</td><td class="l">随机变量</td></tr>
+<tr><td class="l"><i>Z</i></td><td class="l">内部表示（隐层、工作记忆内容）</td><td class="l">随机变量</td></tr>
+<tr><td class="l"><i>Y</i></td><td class="l">任务目标（下一个 token、决策、奖励）</td><td class="l">随机变量</td></tr>
+<tr><td class="l"><i>I</i>(·;·)</td><td class="l">互信息</td><td class="l">bit 或 nat</td></tr>
+<tr><td class="l"><i>H</i>(·)</td><td class="l">熵</td><td class="l">bit 或 nat</td></tr>
+<tr><td class="l"><i>β</i></td><td class="l">信息瓶颈中的压缩强度参数</td><td class="l">≥ 0</td></tr>
+<tr><td class="l"><i>C</i><sub>eff</sub></td><td class="l">有效容量（可区分状态的数目以 log 计）</td><td class="l">bit 或 nat</td></tr>
+<tr><td class="l"><i>τ</i></td><td class="l">时间常数</td><td class="l">秒（s）</td></tr>
+<tr><td class="l"><i>n</i><sub>c</sub></td><td class="l">智能体目标漂移的临界轮次</td><td class="l">整数</td></tr>
+<tr><td class="l"><i>d</i></td><td class="l">表示维度（隐层／模型维度）</td><td class="l">整数</td></tr>
+<tr><td class="l"><i>ρ</i></td><td class="l">冗余系数或相关系数（按上下文）</td><td class="l">[0,1] 或 [−1,1]</td></tr>
+<tr><td class="l"><i>A</i>*</td><td class="l">动力学吸引子（“自我”的结构载体）</td><td class="l">状态空间中的集合</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>记号表。<b>注释：</b>同一符号在不同章节可能因语境微调，正文会在首次出现处重申其局部定义；凡有冲突，以局部定义为准。本书不使用未定义的“信息量”口语含义。</div>
+
+<h3>二、断言分级规则（速查）</h3>
+
+<div class="define"><span class="bt">定义 0.2　证据等级（经验支持）</span>
+<b>A（官方可复现）：</b>存在可公开复现的数据或成熟定理，结论不依赖本书的构造。<br>
+<b>B（稳定公开估计／稳健观察）：</b>有多个独立来源支持，或是一个跨样本稳健的观察，但存在口径或估计不确定性。<br>
+<b>C（稀疏／构造／思辨）：</b>仅有单一来源、本书构造的示意性量级，或纯思辨推演。<b>仅可用于方向判断，不得转引为经验事实。</b></div>
+
+<div class="define"><span class="bt">定义 0.3　概念等级（形式化程度）</span>
+<b>甲：</b>有明确的形式化定义，并能由此导出可检验预言。<br>
+<b>乙：</b>有形式化框架，但尚无可独立判定的预言，或预言依赖未定参数。<br>
+<b>丙：</b>仅为启发式类比或思辨性重构，无形式化。</div>
+
+<div class="note"><b>四类断言标记</b>　<b>［已知］</b>有 A／B 级经验支持；<b>［论证］</b>在明示假设下的推理，结论随假设成立；<b>［假说］</b>有间接证据但未被独立检验的机制主张；<b>［待验证］</b>已登记判据与时点、但尚无结果的预言。<b>注意：</b>“假说”不是“不成立”，而是“未被独立检验”；本书不把假说说成结论，也不因它是假说就省略论证。</div>
+
+<h3>三、术语速查</h3>
+
+<table class="nat">
+<caption class="cap"><b>表 0.6　核心术语的本书定义</b></caption>
+<tr><th class="l">术语</th><th class="l">本书中的含义</th><th class="l">容易混淆的说法</th></tr>
+<tr><td class="l">容量（capacity）</td><td class="l">可被可靠区分的状态数目的对数 <i>C</i><sub>eff</sub></td><td class="l">≠“存储字节数”；≠“参数数量”</td></tr>
+<tr><td class="l">压缩（compression）</td><td class="l">在保持任务相关性的前提下减少表示中的信息</td><td class="l">≠单纯的“变短”</td></tr>
+<tr><td class="l">遗忘（forgetting）</td><td class="l">可用信息随时间或干扰下降；本书区分消退、干扰、检索失败三种</td><td class="l">≠一律是缺陷</td></tr>
+<tr><td class="l">表示坍塌</td><td class="l">表示的有效秩随时间／深度下降至远小于名义维度</td><td class="l">≠“模型崩溃”</td></tr>
+<tr><td class="l">干扰</td><td class="l">新信息与旧信息竞争同一有限资源导致的可读性下降</td><td class="l">≠“噪声”</td></tr>
+<tr><td class="l">巩固</td><td class="l">把脆弱表示转为稳定结构的过程（跨时间尺度）</td><td class="l">≠“记住更多”</td></tr>
+<tr><td class="l">时间尺度分离</td><td class="l"><i>τ</i><sub>fast</sub> ≪ <i>τ</i><sub>slow</sub>，使快机制可逆、慢机制稳定</td><td class="l">≠“处理速度不同”</td></tr>
+<tr><td class="l">同约束</td><td class="l">共享同一组约束（容量、时间、结构），但无结构保持映射</td><td class="l">≠同构（isomorphic）</td></tr>
+<tr><td class="l">内源模拟</td><td class="l">无外部输入时的自生成激活模式（梦的候选功能）</td><td class="l">≠“回忆”</td></tr>
+<tr><td class="l">吸引子</td><td class="l">状态空间中动力学趋于的集合 <i>A</i>*</td><td class="l">≠“平衡点”（更一般）</td></tr>
+<tr><td class="l">元认知</td><td class="l">对自身容量使用与学习过程的监控与再分配</td><td class="l">≠“自我意识”</td></tr>
+<tr><td class="l">级联</td><td class="l">从毫秒到终身的相互耦合的容量约束链条</td><td class="l">≠“流水线”</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>术语定义表。质量等级 B（定义本身）；<b>注释：</b>这些定义是本书的“局部工作定义”，可能与某些文献中的用法不同；当与某文献的精确术语冲突时，本书会显式说明采用哪种用法。</div>

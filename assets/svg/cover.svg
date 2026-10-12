@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1414" width="1000" height="1414">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#10131a"/><stop offset="0.55" stop-color="#161b24"/>
+<stop offset="1" stop-color="#0c0f15"/>
+</linearGradient>
+</defs>
+<rect x="0" y="0" width="1000" height="1414" fill="url(#bg)"/>
+<rect x="0" y="0" width="1000" height="8" fill="#b8862f" opacity="0.85"/>
+<circle cx="500" cy="560" r="300" fill="none" stroke="#3a6ea5" stroke-width="2" opacity="0.16"/>
+<circle cx="500" cy="560" r="270" fill="none" stroke="#3a6ea5" stroke-width="1" opacity="0.112" stroke-dasharray="6,7"/>
+<circle cx="500" cy="570" r="230" fill="none" stroke="#b8862f" stroke-width="2" opacity="0.24"/>
+<circle cx="500" cy="570" r="200" fill="none" stroke="#b8862f" stroke-width="1" opacity="0.168" stroke-dasharray="6,7"/>
+<circle cx="500" cy="580" r="160" fill="none" stroke="#009E73" stroke-width="2" opacity="0.34"/>
+<circle cx="500" cy="580" r="130" fill="none" stroke="#009E73" stroke-width="1" opacity="0.238" stroke-dasharray="6,7"/>
+<line x1="290" y1="900" x2="710" y2="900" stroke="#9aa0a6" stroke-width="1" opacity="0.50"/>
+<line x1="318" y1="934" x2="682" y2="934" stroke="#9aa0a6" stroke-width="1" opacity="0.44"/>
+<line x1="346" y1="968" x2="654" y2="968" stroke="#9aa0a6" stroke-width="1" opacity="0.38"/>
+<line x1="374" y1="1002" x2="626" y2="1002" stroke="#9aa0a6" stroke-width="1" opacity="0.32"/>
+<line x1="402" y1="1036" x2="598" y2="1036" stroke="#9aa0a6" stroke-width="1" opacity="0.26"/>
+<line x1="430" y1="1070" x2="570" y2="1070" stroke="#9aa0a6" stroke-width="1" opacity="0.20"/>
+<style>
+text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;}
+.ttl{font-size:104px;font-weight:700;letter-spacing:10px;fill:#e8e6df;}
+.sub{font-size:30px;fill:#9aa0a6;letter-spacing:2px;}
+.eng{font-size:22px;fill:#9aa0a6;letter-spacing:1px;}
+.au{font-size:30px;fill:#e8e6df;letter-spacing:2px;}
+.rule{stroke:#9aa0a6;stroke-width:1;opacity:0.6;}
+</style>
+<text x="80" y="180" class="eng">CAPACITY&#160;·&#160;CASCADE</text>
+<text x="80" y="300" class="ttl">容量级联</text>
+<line x1="84" y1="340" x2="620" y2="340" class="rule"/>
+<text x="84" y="392" class="sub">有限容量下的多尺度自适应</text>
+<text x="84" y="432" class="sub">从大语言模型、智能体到人类记忆</text>
+<text x="80" y="1180" class="au">李毅芃　著</text>
+<text x="80" y="1230" class="eng">Capacity-Cascade: Multi-Scale Adaptation under Finite Capacity</text>
+<text x="80" y="1270" class="eng">理论专著 · 2026</text>
+</svg>

@@ -1,0 +1,100 @@
+<h2 class="chapter">第 15 章　与信息瓶颈、自由能原理和强化学习的对话</h2>
+
+<p class="lead">引用一个理论，和与它对话，是两件事。引用只是在旁边放一个名字；对话要说清：我借了它什么、在哪儿与它分道、以及它不能回答的问题由谁回答。本章与三个最重要的既有框架做这种对话——信息瓶颈、自由能原理、强化学习。它们分别回答“如何压缩”“如何行动”“何为重要”。三者的分工，是本书理论地图最重要的几条连线。</p>
+
+<h3>15.1　导论：引用不是对话</h3>
+
+<p>跨学科写作最容易犯的错误，是把一堆理论名并置，制造“综合”的假象。真正的对话有成本：你必须指出对方的边界，也必须承认自己欠对方什么。本章对每个框架都做三件事：<b>（一）说清本书依赖它的哪一部分；（二）说清本书在哪一点上超出或偏离它；（三）说清它不能回答、而本书试图回答的问题。</b></p>
+
+<h3>15.2　与信息瓶颈理论：依赖与超出</h3>
+
+<p>本书对信息瓶颈的依赖是深的。式(4.1)是全书的形式起点，“压缩—相关性权衡”是理解遗忘的钥匙。但本书在三处<b>超出</b>了标准 IB：</p>
+
+<ol>
+<li><b>时间。</b>标准 IB 是静态的：它给出一个最优编码，不说“为什么需要 <i>τ</i> 秒”。本书把 <i>β</i> 视为随时间和系统状态变化的参数，从而与第 6 章的多尺度结构接轨。</li>
+<li><b>内源计算。</b>标准 IB 要求有输入 <i>X</i>；当 <i>X</i> 被切断（睡眠）时它无定义。本书用内源模拟（第 11 章）填补这个空白。</li>
+<li><b>动力学吸引子。</b>IB 不区分“容易丢”和“难丢”的信息。本书引入吸引子盆（第 8、9 章），说明为什么某些表示更“黏”。</li>
+</ol>
+
+<p>反过来，IB 保留了本书没有的东西：<b>它给出的是一个真正的优化问题，而本书的许多“机制”只是候选解释。</b>这一点必须承认——不能因为 IB 在具体系统的应用中遇到困难，就否认它在框架层的严格性。</p>
+
+<h3>15.3　与自由能原理：重叠与分歧</h3>
+
+<p>自由能原理（FEP）说，系统通过最小化变分自由能 <i>F</i> 来感知与行动：</p>
+
+<div class="eq"><span class="body"><i>F</i> = <i>D</i><sub>KL</sub>[<i>q</i>(<i>s</i>|<i>o</i>) ‖ <i>p</i>(<i>s</i>|<i>o</i>)] − <b>E</b><sub><i>q</i></sub>[ln <i>p</i>(<i>o</i>|<i>s</i>)]</span><span class="num">(15.1)</span></div>
+
+<p>式(15.1)的两项分别是“复杂性代价”与“准确性收益”。它与 IB 的相似是明显的，但二者优化的是不同的量：IB 权衡<b>输入信息</b>与<b>任务相关性</b>；FEP 权衡<b>模型复杂性</b>与<b>数据拟合</b>。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 15.1　信息瓶颈与自由能原理的分工</b></caption>
+<tr><th class="l">维度</th><th class="l">信息瓶颈</th><th class="l">自由能原理</th></tr>
+<tr><td class="l">被优化的量</td><td class="l"><i>I</i>(<i>X</i>;<i>Z</i>) 与 <i>I</i>(<i>Z</i>;<i>Y</i>)</td><td class="l">复杂性代价与准确性收益</td></tr>
+<tr><td class="l">任务从哪来</td><td class="l">外部给定</td><td class="l">由生成模型与先验隐含</td></tr>
+<tr><td class="l">是否含行动</td><td class="l">否</td><td class="l">是（主动推理）</td></tr>
+<tr><td class="l">是否易处理“探索”</td><td class="l">不易</td><td class="l">部分（通过先验与信息增益）</td></tr>
+<tr><td class="l">本书借用的部分</td><td class="l">压缩—相关性形式</td><td class="l">惊异最小化、行动与环境</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>IB 与 FEP 对照表。质量等级 B（两者均为成熟框架）；<b>注释：</b>二者在某些条件下可相互推导，但不是普遍等价。本书不主张它们等价。</div>
+
+<p>本书与 FEP 的分歧点在于<b>探索</b>。FEP 倾向最小化惊异；而“有创造性的探索”似乎故意寻求高惊异。第 11 章的内源模拟给出了一个可能的调和：<b>在离线状态下，系统最小化的不是当下的惊异，而是“关于自身结构的自由能”；这允许它暂时接受高惊异，以换取长期的结构改进。</b>这是一个假说，不是结论。</p>
+
+<h3>15.4　与强化学习：本书曾遗漏的一环</h3>
+
+<p>前几章谈论“任务相关性”和“重要性”，但始终回避了一个问题：<b>“相关性”从哪来？</b>信息瓶颈把 <i>Y</i> 当作给定，但在真实系统中，<i>Y</i> 是环境奖励塑造出来的。这正是强化学习（RL）的领域，也是本书必须与之对话的地方。</p>
+
+<p>把 RL 与 IB 合并，可以得到一个更完整的目标：</p>
+
+<div class="eq"><span class="body">max<sub><i>Z</i></sub> [ <i>I</i>(<i>Z</i>; <i>R</i> | <i>X</i>) − <i>β</i> · <i>I</i>(<i>Z</i>; <i>X</i>) ]</span><span class="num">(15.2)</span></div>
+
+<p>式(15.2)说：表示应当保留“对获得奖励有用”的信息，并压缩其余。它把“什么值得记”从一个外部给定的量，变成了由奖励结构内生决定的量。<b>这一步极大地增强了框架的解释力：不同的智能体因为奖励不同，会有不同的遗忘模式。</b></p>
+
+<p>RL 还给了梦一个新的解释：如果梦是“在想象中的奖励下演练”，那么它同时解释了梦的情感性（奖励的代理）与梦的探索性（新策略的排练）。这个解释仍然属于 C 级，但它比“梦只是巩固”多了一点：<b>它说明了系统为什么愿意在梦中付出“与现实脱节”的代价。</b></p>
+
+<h3>15.5　三者的分工：压缩、惊异与奖励</h3>
+
+<img class="fig" src="assets/svg/fig15-IB-FEP-RL.svg" alt="信息瓶颈、自由能原理与强化学习的分工">
+
+<div class="cap"><b>图 15.1　三个框架的分工</b>。信息瓶颈回答“如何压缩”，自由能原理回答“如何行动”，强化学习回答“何为重要”。三者交汇于同一个母题，但各自守住自己的问题域。箭头表示依赖关系：奖励结构定义了相关性，相关性定义了压缩目标，压缩目标约束了行动的表示基础。</div>
+
+<p>这张图是第 14 章地图中最重要的一组连线。它的意义在于：<b>三个框架不是竞争关系，而是分工关系。</b>说“信息瓶颈解释一切”和说“强化学习解释一切”都不对；正确的说法是：它们分别解释了母题的不同侧面，而一个完整的智能理论需要它们同时在场。</p>
+
+<h3>15.6　一份可操作的对照表</h3>
+
+<table class="nat">
+<caption class="cap"><b>表 15.2　三个框架对本书核心概念的回答</b></caption>
+<tr><th class="l">本书概念</th><th class="l">信息瓶颈</th><th class="l">自由能原理</th><th class="l">强化学习</th></tr>
+<tr><td class="l">容量</td><td class="l"><i>I</i>(<i>X</i>;<i>Z</i>) 的上界</td><td class="l">先验的复杂度</td><td class="l">表示维度（通常不显式）</td></tr>
+<tr><td class="l">遗忘</td><td class="l">压缩的伴生</td><td class="l">先验更新</td><td class="l">价值函数的重估</td></tr>
+<tr><td class="l">重要性</td><td class="l">由 <i>Y</i> 给定</td><td class="l">由先验与精度给定</td><td class="l">由奖励给定</td></tr>
+<tr><td class="l">探索</td><td class="l">不直接处理</td><td class="l">信息增益（部分）</td><td class="l">核心（探索—利用权衡）</td></tr>
+<tr><td class="l">梦</td><td class="l">无定义</td><td class="l">可容纳但未强调</td><td class="l">“想象奖励下的演练”</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>框架对照表。质量等级 B（各框架的表述）；<b>注释：</b>“梦”一行的三种回答都是本书的综合，非各框架的既有主张。</div>
+
+<div class="note"><b>本章的关键产出（强／弱／不确定）</b>
+<ul>
+<li><b>强（可直接使用）：</b>IB、FEP、RL 分别回答压缩、行动、重要性三个不同问题；它们不是竞争关系。［论证，A／甲］</li>
+<li><b>中（综合）：</b>式(15.2)给出“奖励定义相关性”的合并目标，增强了框架的解释力。［论证，B／乙］</li>
+<li><b>不确定：</b>“梦＝想象奖励下的演练”是一个可检验的假说，但当前证据为 C 级。［假说，C／丙］</li>
+</ul></div>
+
+<h3>15.7　本章小结</h3>
+
+<ol>
+<li>对话要求说清依赖、偏离与对方不能回答的问题，而不只是引用。</li>
+<li>本书依赖 IB 的压缩—相关性形式，但在时间、内源计算与吸引子三处超出它。</li>
+<li>本书借用 FEP 的惊异最小化与行动观，但在“探索是否需要高惊异”上与它分歧。</li>
+<li>RL 补上了本书曾经的缺口：相关性由奖励内生决定；合并目标见式(15.2)。</li>
+<li>三框架是分工而非竞争：压缩、惊异、奖励，各守其域。</li>
+</ol>
+
+<h3>本章参考文献</h3>
+<div class="refs">
+<p>Tishby, N., &amp; Zaslavsky, N. (2015). Deep Learning and the Information Bottleneck Principle. <i>IEEE ITW</i>.</p>
+<p>Friston, K. (2010). The Free-Energy Principle: A Rough Guide to the Brain. <i>Trends in Cognitive Sciences</i>, 13(7), 293–301.</p>
+<p>Friston, K., et al. (2017). Active Inference: A Process Theory. <i>Neural Computation</i>, 29(1), 1–49.</p>
+<p>Sutton, R. S., &amp; Barto, A. G. (2018). <i>Reinforcement Learning: An Introduction</i> (2nd ed.). Cambridge: MIT Press.</p>
+<p>Achille, A., &amp; Soatto, S. (2018). Information Dropout: Learning Optimal Representations Through Noisy Computation. <i>IEEE TPAMI</i>, 40(12), 2897–2905.</p>
+<p>Still, S., &amp; Precup, D. (2012). An Information-Theoretic Approach to Curiosity-Driven Reinforcement Learning. <i>Theory in Biosciences</i>, 131, 139–148.</p>
+</div>

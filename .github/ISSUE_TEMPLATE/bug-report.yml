@@ -1,0 +1,38 @@
+name: 勘误 / Bug report
+description: 报告术语、公式、编号、交叉引用、文献或构建脚本错误
+title: "[勘误] "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 类型
+      options:
+        - 术语/定义不一致
+        - 公式/编号
+        - 交叉引用/图表
+        - 文献
+        - 等级标注（A/B/C、甲/乙/丙）
+        - 构建脚本/代码
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: 位置
+      placeholder: 例：ch05.html §5.5 / 表 5.2 / 附录 E · P4
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 问题描述与依据
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: 建议的修正（可选）
+    validations:
+      required: false

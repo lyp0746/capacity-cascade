@@ -1,0 +1,86 @@
+<h2 class="chapter">第 13 章　元认知与容量的自适应管理</h2>
+
+<p class="lead">前三章处理了级联的“另一种模式”。但谁来决定何时切换模式、把多少容量分给哪一层？本章给出答案：<b>元认知——对自身容量使用与学习过程的监控与再分配。</b>它是级联的最高层，也是最容易被忽略的一层。没有它，级联只是一串自动机；有了它，级联才成为一个能调整自己的系统。本章把这层“学习如何学习”写成优化问题，并指出它的三种典型失败。</p>
+
+<h3>13.1　导论：学习如何学习</h3>
+
+<p>一个系统学得好不好，不只取决于它学什么，还取决于它如何分配自己的学习资源：多少给新信息，多少给旧知识；何时该快，何时该慢；哪些信息值得记住，哪些应当放手。这些决定无法从单次经验中学到，它们需要一个更慢、更高层的环路——这就是元认知。它让系统不只是“学习”，还能“调整自己的学习方式”。</p>
+
+<h3>13.2　元认知的信息论定义</h3>
+
+<div class="define"><span class="bt">定义 13.1　元认知（信息论版）</span>
+称系统的控制层为<b>元认知层</b>，若它维护并更新一个关于“自身容量使用”的估计，并据此改变底层的学习参数（如学习率、容量分配、更新频率）。形式地，元认知层估计 <i>I</i>(决策过程; 决策结果)，并据此调节 <i>β</i>、<i>η</i>、各层容量份额。</div>
+
+<p>这个定义把元认知从“自我意识”这个过重的词里解放出来。<b>元认知不等于自我意识；一个没有主观体验的系统也可以有元认知。</b>这既让人工系统有可能实现它，也让人类元认知的研究有了可对比的框架。</p>
+
+<h3>13.3　容量分配的优化问题</h3>
+
+<p>把总容量 <i>C</i> 分配给若干用途（基础能力、短期适应、长期存储），是一个受约束的优化：</p>
+
+<div class="eq"><span class="body">max<sub><i>c</i><sub>1</sub>,…,<i>c</i><sub><i>m</i></sub></sub> Σ<sub><i>k</i></sub> <i>U</i><sub><i>k</i></sub>(<i>c</i><sub><i>k</i></sub>)　s.t.　Σ<sub><i>k</i></sub> <i>c</i><sub><i>k</i></sub> ≤ <i>C</i>，　<i>c</i><sub><i>k</i></sub> ≥ 0</span><span class="num">(13.1)</span></div>
+
+<p>其中 <i>U</i><sub><i>k</i></sub> 是第 <i>k</i> 项用途的边际效用。最优解满足边际效用相等（在内部解处）：</p>
+
+<div class="eq"><span class="body"><i>U</i>′<sub>1</sub>(<i>c</i><sub>1</sub>) = <i>U</i>′<sub>2</sub>(<i>c</i><sub>2</sub>) = … = <i>U</i>′<sub><i>m</i></sub>(<i>c</i><sub><i>m</i></sub>)</span><span class="num">(13.2)</span></div>
+
+<p>这个“边际相等”原则解释了长对话中的目标漂移：<b>当短期适应的边际效用上升（新信息源源不断），最优分配会把容量从“守住初始目标”挪走。</b>这不是系统的缺陷，而是（13.1）在变化的环境下的最优解——问题在于，系统<b>误估了</b>长期目标的边际效用（把“暂时用不上”当成了“永远不重要”）。元认知的任务，就是校正这个误估。</p>
+
+<img class="fig" src="assets/svg/fig13-metacognition-loop.svg" alt="元认知的监控—调节环路">
+
+<div class="cap"><b>图 13.1　元认知的监控—调节环路</b>。底层学习（清醒／睡眠）产生结果；元认知层估计“这次学习的效果与容量使用”；据此调节下一轮的学习率、容量分配与模式切换。这个环路是级联从“自动”变成“自适应”的关键。图中虚线表示估计本身可能有偏——这正是第 13.5 节的失败模式。</div>
+
+<h3>13.4　学习率的跨尺度安排</h3>
+
+<p>学习率 <i>η</i> 是元认知最直接的旋钮。它的选择本身是一个跨尺度的权衡：</p>
+
+<div class="eq"><span class="body"><i>η</i>* = argmin<sub><i>η</i></sub> [ <i>L</i><sub>旧</sub>(<i>η</i>) + <i>λ</i> · <i>L</i><sub>新</sub>(<i>η</i>) ]</span><span class="num">(13.3)</span></div>
+
+<p>其中 <i>L</i><sub>旧</sub> 度量旧能力的损失（遗忘），<i>L</i><sub>新</sub> 度量新任务的误差。式(13.3)的形式说：<b>大学习率学得快，也忘得快；小学习率守得住，也学得慢。</b>最优解依赖于 <i>λ</i>——即“我们多在乎旧知识”。这个 <i>λ</i> 本身由元认知层根据任务语境调整：在稳定的世界里 <i>λ</i> 可以小，在变化剧烈的世界里 <i>λ</i> 必须大。</p>
+
+<h3>13.5　元认知失败的三种模式</h3>
+
+<table class="nat">
+<caption class="cap"><b>表 13.1　元认知失败的三种模式及其对应现象</b></caption>
+<tr><th class="l">失败模式</th><th class="l">机制</th><th class="l">可能对应的现象</th><th class="l">干预方向</th></tr>
+<tr><td class="l">高估容量</td><td class="l">以为能记住全部，拒绝压缩</td><td class="l">信息过载、决策瘫痪</td><td class="l">强制优先级、显式遗忘</td></tr>
+<tr><td class="l">低估旧知识价值</td><td class="l">把长期目标误判为“不重要”</td><td class="l">目标漂移、初心遗忘</td><td class="l">显式重述、长期价值锚定</td></tr>
+<tr><td class="l">错误的显著性</td><td class="l">把新奇当成重要，把重要当成陈旧</td><td class="l">追逐热点、忽略关键约束</td><td class="l">用校准过的显著性替代新近性</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>失败模式分解表。质量等级 C（本书构造）；<b>注释：</b>“可能对应”表示这些现象<b>与</b>该失败模式一致，而非该模式是唯一解释。抑郁症、焦虑与痴呆中的元认知损伤研究可为此提供独立线索，但本书不做临床推断。</div>
+
+<h3>13.6　与元学习、主动推理的关系</h3>
+
+<p>元认知与两个既有的形式框架有亲缘关系，但侧重点不同。</p>
+
+<ul>
+<li><b>元学习（meta-learning）。</b>“学习如何学习”的工程版本：在任务分布上学习一个好的初始化或更新规则。它与元认知共享“慢环路调节快环路”的结构，但通常假定任务分布已知且稳定，而元认知要处理的是<b>分布本身在变</b>的情形。</li>
+<li><b>主动推理（active inference）。</b>把感知与行动统一为自由能最小化。它的“选择最值得观察的信息”与元认知的“决定把容量给谁”高度相关；区别在于主动推理更强调<b>行动</b>与<b>环境交互</b>，而元认知更强调<b>对自身容量的监控</b>。</li>
+</ul>
+
+<p>本书的位置在两者之间：<b>既承认行动与环境的重要性（借主动推理），也承认容量预算是硬约束（借信息论）。</b>第 15 章会把这层关系放进理论地图。</p>
+
+<div class="note"><b>本章的关键产出（强／弱／不确定）</b>
+<ul>
+<li><b>中（形式化）：</b>容量分配与学习率选择可被写成优化问题；边际相等原则解释了漂移的一部分。［论证，B／乙］</li>
+<li><b>中（定义）：</b>元认知可被定义为对容量使用的监控与再分配，不等于自我意识。［论证，B／乙］</li>
+<li><b>不确定：</b>三种失败模式与具体现象的对应关系尚未被独立检验。［待验证］</li>
+</ul></div>
+
+<h3>13.7　本章小结</h3>
+
+<ol>
+<li>元认知是级联的最高层：它监控容量使用并再分配资源，使系统能调整自己的学习方式。</li>
+<li>元认知不等于自我意识；它可以在没有主观体验的系统中被实现。</li>
+<li>容量分配遵循边际相等原则；目标漂移可被理解为对长期价值边际效用的误估。</li>
+<li>学习率的最优值取决于“多在乎旧知识”这一参数 <i>λ</i>，而 <i>λ</i> 本身由元认知调节。</li>
+<li>元认知有三种典型失败：高估容量、低估旧知识、错误的显著性。</li>
+</ol>
+
+<h3>本章参考文献</h3>
+<div class="refs">
+<p>Flavell, J. H. (1979). Metacognition and Cognitive Monitoring. <i>American Psychologist</i>, 34(10), 906–911.</p>
+<p>Finn, C., Abbeel, P., &amp; Levine, S. (2017). Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks. <i>ICML</i>.</p>
+<p>Friston, K., FitzGerald, T., Rigoli, F., Schwartenbeck, P., &amp; Pezzulo, G. (2017). Active Inference: A Process Theory. <i>Neural Computation</i>, 29(1), 1–49.</p>
+<p>Nelson, T. O., &amp; Narens, L. (1990). Metamemory: A Theoretical Framework and New Findings. <i>Psychology of Learning and Motivation</i>, 26, 125–173.</p>
+<p>Fleming, S. M., &amp; Daw, N. D. (2017). Self-Evaluation of Decision-Making: A General Bayesian Framework for Metacognitive Computation. <i>Psychological Review</i>, 124(1), 91–114.</p>
+</div>

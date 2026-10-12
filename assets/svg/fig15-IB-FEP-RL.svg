@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 340" width="700" height="340">
+<rect x="0" y="0" width="700" height="340" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="26" class="t">信息瓶颈、自由能原理与强化学习的分工</text>
+<rect x="60" y="110" width="170" height="90" rx="8" fill="#fafafa" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="145" y="148" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700">信息瓶颈</text>
+<text x="145" y="176" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">如何压缩</text>
+<rect x="270" y="110" width="170" height="90" rx="8" fill="#fafafa" stroke="#b8862f" stroke-width="1.8"/>
+<text x="355" y="148" class="l" text-anchor="middle" fill="#b8862f" font-weight="700">自由能原理</text>
+<text x="355" y="176" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">如何行动</text>
+<rect x="480" y="110" width="170" height="90" rx="8" fill="#fafafa" stroke="#009E73" stroke-width="1.8"/>
+<text x="565" y="148" class="l" text-anchor="middle" fill="#009E73" font-weight="700">强化学习</text>
+<text x="565" y="176" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">何为重要</text>
+<line x1="230" y1="155" x2="270" y2="155" stroke="#666" stroke-width="1.6" marker-end="url(#h1)"/>
+<line x1="440" y1="155" x2="480" y2="155" stroke="#666" stroke-width="1.6" marker-end="url(#h1)"/>
+<defs><marker id="h1" markerWidth="8" markerHeight="8" refX="4" refY="6" orient="auto"><path d="M0,0 L4,6 L8,0" fill="none" stroke="#666"/></marker></defs>
+<text x="250" y="145" class="l" text-anchor="middle" fill="#666" font-weight="normal">定义相关性</text>
+<text x="460" y="145" class="l" text-anchor="middle" fill="#666" font-weight="normal">约束目标</text>
+<text x="350" y="260" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">三者交汇于母题，但各守其问题域：不是竞争关系，而是分工关系</text>
+</svg>

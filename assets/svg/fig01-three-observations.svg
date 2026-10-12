@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" height="300">
+<rect x="0" y="0" width="760" height="300" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="26" class="t">（a）长上下文位置偏差</text>
+<line x1="40" y1="200" x2="220" y2="200" class="ax"/>
+<line x1="40" y1="200" x2="40" y2="50" class="ax"/>
+<text x="130.0" y="234" class="l" text-anchor="middle">相对位置</text>
+<text x="32" y="125.0" class="l" text-anchor="middle" transform="rotate(-90 32 125.0)">正确率</text>
+<polyline points="40.0,80.0 70.0,120.0 100.0,160.0 130.0,175.0 160.0,160.0 190.0,120.0 220.0,80.0" fill="none" stroke="#3a6ea5" stroke-width="2.4"/>
+<text x="280" y="26" class="t">（b）上下文漂移</text>
+<line x1="300" y1="200" x2="480" y2="200" class="ax"/>
+<line x1="300" y1="200" x2="300" y2="50" class="ax"/>
+<text x="390.0" y="234" class="l" text-anchor="middle">轮次</text>
+<text x="292" y="125.0" class="l" text-anchor="middle" transform="rotate(-90 292 125.0)">与初始目标距离</text>
+<polyline points="300.0,190.0 350.0,185.0 400.0,175.0 450.0,158.0 480.0,145.0" fill="none" stroke="#c94f4f" stroke-width="2.4"/>
+<polyline points="300.0,190.0 350.0,183.0 400.0,172.0 450.0,158.0 480.0,140.0" fill="none" stroke="#3a6ea5" stroke-width="1.6" stroke-dasharray="5,4"/>
+<text x="390" y="210" class="l" text-anchor="middle" fill="#c94f4f" font-weight="normal">偏置（线性）</text>
+<text x="390" y="226" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="normal">随机（√n）</text>
+<text x="540" y="26" class="t">（c）自我改写</text>
+<ellipse cx="620" cy="140" rx="70" ry="43.4" fill="none" stroke="#b8862f" stroke-width="2" />
+<ellipse cx="620" cy="140" rx="52" ry="32.2" fill="none" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="620" cy="140" rx="34" ry="21.1" fill="none" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="620" y="230" class="l" text-anchor="middle" fill="#666" font-weight="normal">物质被替换，结构保持</text>
+</svg>
