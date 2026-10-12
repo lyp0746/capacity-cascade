@@ -24,13 +24,13 @@
 
 <table class="nat">
 <caption class="cap"><b>表 8.1　LLM 与智能体的概念对应（映射假设）</b></caption>
-<tr><th class="l">大语言模型</th><th class="l">智能体</th><th class="l">对应强度</th></tr>
-<tr><td class="l">键值缓存</td><td class="l">当前观察 + 历史事件</td><td class="l">强（同一机制的两种用法）</td></tr>
-<tr><td class="l">注意力权重</td><td class="l">优先级 / 检索排序</td><td class="l">强</td></tr>
-<tr><td class="l">微调</td><td class="l">经验回放 / 记忆写入</td><td class="l">中（目标不同：拟合 vs 任务完成）</td></tr>
-<tr><td class="l">位置编码</td><td class="l">轮次索引 / 时间戳</td><td class="l">中（实现差异大）</td></tr>
+<tr><th class="l">概念对（大语言模型 ←→ 智能体）</th><th class="l">方向</th><th class="l">强度</th><th class="l">注释</th></tr>
+<tr><td class="l">键值缓存 ←→ 上下文窗口</td><td class="l">双向</td><td class="l">★★★★☆</td><td class="l">功能类似，时间尺度不同（单次前向 vs 多轮）</td></tr>
+<tr><td class="l">注意力权重 ←→ 优先级 / 检索排序</td><td class="l">双向</td><td class="l">★★★☆☆</td><td class="l">两者都做权重，但机制差异大</td></tr>
+<tr><td class="l">微调 ←→ 经验回放 / 记忆写入</td><td class="l">偏单向</td><td class="l">★★☆☆☆</td><td class="l">弱对应；目标不同（拟合 vs 任务完成），方向待确认</td></tr>
+<tr><td class="l">位置编码 ←→ 轮次索引 / 时间戳</td><td class="l">双向</td><td class="l">★★★☆☆</td><td class="l">实现差异大，但都是“给事件定位”的机制</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>概念对应表。质量等级 C（映射为本书构造）；<b>注释：</b>“对应强度”指机制相似度，不指性能等价。此表是全文“LLM 与智能体融合最强”这一说法的依据；若某行被证明不成立，据第 2.3 节，仅需修正该行而不必推翻整框架。</div>
+<div class="datasrc"><b>性质：</b>概念对应表。质量等级 C（映射为本书构造）；<b>注释：</b>“方向”指信息/机制可迁移的方向（双向／偏单向），“强度”指机制相似度（非性能等价）。此表是“LLM 与智能体融合最强”一说的依据；若某行被证明不成立，仅需修正该行而不必推翻整框架（第 2.3 节）。</div>
 
 <h3>8.3　目标漂移的动力学模型</h3>
 

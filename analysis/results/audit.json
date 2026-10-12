@@ -1,8 +1,12 @@
 {
   "A1_terms": {
     "有效容量": {
-      "total": 14,
+      "total": 15,
       "by_chapter": [
+        [
+          "ch03.html",
+          1
+        ],
         [
           "ch05.html",
           10
@@ -16,7 +20,7 @@
           1
         ]
       ],
-      "first": "ch05.html"
+      "first": "ch03.html"
     },
     "容量级联": {
       "total": 8,
@@ -45,8 +49,12 @@
       "first": "ch06.html"
     },
     "时间尺度分离": {
-      "total": 6,
+      "total": 7,
       "by_chapter": [
+        [
+          "ch03.html",
+          1
+        ],
         [
           "ch06.html",
           5
@@ -56,7 +64,7 @@
           1
         ]
       ],
-      "first": "ch06.html"
+      "first": "ch03.html"
     },
     "表示坍塌": {
       "total": 8,
@@ -121,7 +129,7 @@
       "first": "ch03.html"
     },
     "同约束": {
-      "total": 23,
+      "total": 24,
       "by_chapter": [
         [
           "ch01.html",
@@ -133,7 +141,7 @@
         ],
         [
           "ch03.html",
-          1
+          2
         ],
         [
           "ch07.html",
@@ -147,11 +155,15 @@
       "first": "ch01.html"
     },
     "内源模拟": {
-      "total": 16,
+      "total": 17,
       "by_chapter": [
         [
           "ch02.html",
           2
+        ],
+        [
+          "ch03.html",
+          1
         ],
         [
           "ch04.html",
@@ -173,8 +185,12 @@
       "first": "ch02.html"
     },
     "意识窗口": {
-      "total": 11,
+      "total": 12,
       "by_chapter": [
+        [
+          "ch03.html",
+          1
+        ],
         [
           "ch12.html",
           9
@@ -188,10 +204,10 @@
           1
         ]
       ],
-      "first": "ch12.html"
+      "first": "ch03.html"
     },
     "潜意识": {
-      "total": 22,
+      "total": 24,
       "by_chapter": [
         [
           "ch02.html",
@@ -199,11 +215,11 @@
         ],
         [
           "ch03.html",
-          1
+          2
         ],
         [
           "ch12.html",
-          20
+          21
         ]
       ],
       "first": "ch02.html"
@@ -291,7 +307,7 @@
       "first": "ch08.html"
     },
     "吸引子": {
-      "total": 40,
+      "total": 41,
       "by_chapter": [
         [
           "ch01.html",
@@ -299,7 +315,7 @@
         ],
         [
           "ch03.html",
-          2
+          3
         ],
         [
           "ch07.html",
@@ -329,7 +345,7 @@
       "first": "ch01.html"
     },
     "巩固": {
-      "total": 23,
+      "total": 24,
       "by_chapter": [
         [
           "ch02.html",
@@ -337,7 +353,7 @@
         ],
         [
           "ch03.html",
-          1
+          2
         ],
         [
           "ch06.html",
@@ -375,7 +391,7 @@
       "first": "ch02.html"
     },
     "干扰": {
-      "total": 66,
+      "total": 67,
       "by_chapter": [
         [
           "ch01.html",
@@ -387,7 +403,7 @@
         ],
         [
           "ch03.html",
-          1
+          2
         ],
         [
           "ch04.html",
@@ -429,7 +445,7 @@
       "first": "ch01.html"
     },
     "遗忘": {
-      "total": 62,
+      "total": 65,
       "by_chapter": [
         [
           "ch01.html",
@@ -457,7 +473,7 @@
         ],
         [
           "ch09.html",
-          17
+          20
         ],
         [
           "ch11.html",
@@ -768,6 +784,7 @@
     "4.2",
     "5.1",
     "5.2",
+    "5.3",
     "6.1",
     "7.1",
     "7.2",
@@ -834,6 +851,10 @@
     {
       "chapter": "ch05.html",
       "snippet": "本图为定性示意，参数不代表任何具体系统"
+    },
+    {
+      "chapter": "ch05.html",
+      "snippet": "限定：这是一个上界式的示意，d′ 的实际值依赖编码与失真容忍度（第 5.2 节）"
     },
     {
       "chapter": "ch06.html",
@@ -1042,6 +1063,7 @@
       "ch11.html"
     ],
     "11.5": [
+      "ch03.html",
       "ch11.html"
     ],
     "11.6": [
@@ -1057,6 +1079,7 @@
       "ch12.html"
     ],
     "12.3": [
+      "ch03.html",
       "ch12.html"
     ],
     "12.4": [
@@ -1189,6 +1212,7 @@
       "ch17.html"
     ],
     "17.5": [
+      "ch03.html",
       "ch09.html",
       "ch10.html",
       "ch17.html"
@@ -1316,6 +1340,9 @@
     "3.7": [
       "ch03.html"
     ],
+    "3.8": [
+      "ch03.html"
+    ],
     "4.1": [
       "ch04.html",
       "ch15.html"
@@ -1345,6 +1372,7 @@
       "ch05.html"
     ],
     "5.2": [
+      "ch03.html",
       "ch04.html",
       "ch05.html"
     ],
@@ -1370,6 +1398,7 @@
       "ch05.html"
     ],
     "6.1": [
+      "ch03.html",
       "ch06.html",
       "ch09.html"
     ],
@@ -1401,9 +1430,11 @@
       "ch07.html"
     ],
     "7.4": [
+      "ch03.html",
       "ch07.html"
     ],
     "7.5": [
+      "ch03.html",
       "ch07.html"
     ],
     "7.6": [

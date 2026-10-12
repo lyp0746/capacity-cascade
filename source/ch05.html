@@ -24,14 +24,23 @@
 <div class="define"><span class="bt">定义 5.2　名义容量与有效容量之比</span>
 定义<b>容量效率</b> <i>η</i><sub>C</sub> := <i>C</i><sub>eff</sub> / (<i>d</i> log<sub>2</sub> <i>m</i>)。<i>η</i><sub>C</sub> → 1 表示每个名义自由度都被有效利用；<i>η</i><sub>C</sub> ≪ 1 表示大量自由度被冗余、噪声或干扰占据。</div>
 
-<p><b>怎么测？</b>这三个系统的可测量性差别很大，不能假装它们都能被直接读数。大体上：<b>大语言模型</b>上，可从注意力输出的互信息估计、有效秩、以及探测任务的准确度曲线间接推断；<b>智能体</b>上最难——上下文窗口的“字节容量”易测，但真正能维持多少个独立信息片段几乎无法直接测定；<b>人类</b>上，工作记忆约 4—7 项有大量实验支持，但“项”的定义本身有争议。因此本书只在<b>相对比较</b>（谁比谁更压缩）、<b>方向判断</b>（干扰增加容量会怎样）与<b>半衰点等标量</b>上使用 <i>C</i><sub>eff</sub>，不给出绝对的 bit 数。<b>在三个系统中给出同一把尺子，仍是一个开放问题（附录 F）。</b></p>
+<p><b>怎么测？</b>这三个系统的可测量性差别很大，不能假装它们都能被直接读数。大体如下表（表 5.1）：</p>
+
+<table class="nat">
+<caption class="cap"><b>表 5.1　三个系统中 <i>C</i><sub>eff</sub> 的可测量性（本书评估）</b></caption>
+<tr><th class="l">系统</th><th class="l">可测性</th><th class="l">可用方法</th><th class="l">主要困难</th><th class="l">可用于</th></tr>
+<tr><td class="l">大语言模型</td><td class="l">中</td><td class="l">注意力输出互信息估计、有效秩、探测任务准确度曲线</td><td class="l">高维互信息估计有偏、方差大</td><td class="l">相对比较与方向判断</td></tr>
+<tr><td class="l">智能体</td><td class="l">低</td><td class="l">上下文预算（字节级）</td><td class="l">“能维持多少个独立信息片段”几乎无法直接测定</td><td class="l">仅工程估计</td></tr>
+<tr><td class="l">人类</td><td class="l">中</td><td class="l">工作记忆实验（约 4—7 项）</td><td class="l">“项”的定义与分组机制仍有争议</td><td class="l">现象基准</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>可测量性评估表。质量等级 C（本书评估）；<b>注释：</b>本表说明为什么本书只在<b>相对比较</b>（谁比谁更压缩）、<b>方向判断</b>（干扰增加容量会怎样）与<b>半衰点等标量</b>上使用 <i>C</i><sub>eff</sub>，不给出绝对 bit 数。<b>在三个系统中给出同一把尺子，仍是一个开放问题（附录 F）。</b></div>
 
 <h3>5.3　干扰的三种来源</h3>
 
 <p>干扰不是单一现象。本书区分三种，它们在三个系统中都有对应物。</p>
 
 <table class="nat">
-<caption class="cap"><b>表 5.1　干扰的三种来源及其在各系统中的表现</b></caption>
+<caption class="cap"><b>表 5.2　干扰的三种来源及其在各系统中的表现</b></caption>
 <tr><th class="l">来源</th><th class="l">机制</th><th class="l">LLM</th><th class="l">智能体</th><th class="l">人类</th></tr>
 <tr><td class="l">容量竞争</td><td class="l">竞争同一有限资源</td><td class="l">注意力权重被分摊</td><td class="l">上下文预算被占用</td><td class="l">工作记忆槽位被占</td></tr>
 <tr><td class="l">覆盖改写</td><td class="l">新写入改变旧表示</td><td class="l">键值被新 token “淹没”</td><td class="l">新指令改写旧目标</td><td class="l">突触资源被重分配</td></tr>
@@ -45,6 +54,7 @@
 
 <div class="define"><span class="bt">定义 5.3　表示坍塌（representation collapse）</span>
 当可用容量 <i>C</i><sub>eff</sub> 小于维持全部独立方向所需的容量时，部分方向被永久移除，表示的有效维度从 <i>d</i> 降到 <i>d</i>′ &lt; <i>d</i>。称这一现象为<b>表示坍塌</b>。<br>
+<b>形式地：</b>若 <i>H</i>(<i>X</i>) &gt; <i>C</i><sub>eff</sub>，则存在投影 <i>π</i>: ℝ<sup><i>d</i></sup> → ℝ<sup><i>d</i>′</sup>，其中 <i>d</i>′ = ⌊<i>C</i><sub>eff</sub> / log<sub>2</sub>|<i>𝒳</i>|⌋ &lt; <i>d</i>，且 <i>π</i> 不可逆（丢失的方向无法从 <i>π</i>(<i>x</i>) 恢复）。<b>限定：</b>这是一个上界式的示意，<i>d</i>′ 的实际值依赖编码与失真容忍度（第 5.2 节）。<br>
 <b>与易混概念的区别：</b>[压缩] 可近似可逆的降维，可能不丢任务相关信息；[遗忘] 时间上的可用性下降（消退／干扰／检索失败，第 4.6 节）；[坍塌] 有限容量约束下不可逆的维度归并。<b>三者可以同时发生，但机制不同；把“坍塌”说成“遗忘”会找错干预方向。</b></div>
 
 <div class="define"><span class="bt">定义 5.4　有效秩</span>
@@ -95,7 +105,7 @@ rank<sub>eff</sub>(<i>M</i>) := exp( − Σ<sub><i>i</i></sub> <i>p</i><sub><i>i
 <p>把本章的模型能做的与不能做的分开，是本书方法论的要求。</p>
 
 <table class="nat">
-<caption class="cap"><b>表 5.2　容量—干扰模型的能力边界</b></caption>
+<caption class="cap"><b>表 5.3　容量—干扰模型的能力边界</b></caption>
 <tr><th class="l">能预测（方向性）</th><th class="l">不能预测（或需要额外信息）</th></tr>
 <tr><td class="l">干扰增加时容量单调下降</td><td class="l">具体 <i>k</i>、<i>C</i><sub>max</sub> 的数值</td></tr>
 <tr><td class="l">存在半衰点 <i>ι</i><sub>1/2</sub> = ln2/<i>k</i></td><td class="l">该点在给定模型中的绝对位置</td></tr>

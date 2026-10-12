@@ -120,3 +120,33 @@
 <tr><td class="l">Lost in the Middle</td><td class="l">2023</td><td class="l">稳健观察，机制未定</td><td class="l">位置偏差的起点</td></tr>
 </table>
 <div class="datasrc"><b>性质：</b>生命周期表。质量等级 C（“当前地位”为本书判断）；<b>注释：</b>“当前地位”一列反映的是<b>本书写作时的估计</b>（2026），随着新证据会变化；这也是本节存在的理由——让引用带上时间戳，而不是把旧结论当永久事实。</div>
+
+<h3>C.5　A 级条目的来源强度抽检</h3>
+
+<p>表 0.1 中标注为 A 级的条目，是读者最可能直接引用的部分，因此必须逐一交代“它由什么支撑、支撑到什么程度”。下表是本书对自己 A 级条目的<b>来源强度抽检</b>：它检查的是<b>引用是否真的支撑该断言</b>，而非引用数量的多寡。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 C.2　A 级条目的来源强度抽检</b></caption>
+<tr><th class="l">A 级条目</th><th class="l">主要支撑文献</th><th class="l">验证强度</th><th class="l">备注</th></tr>
+<tr><td class="l">① 压缩—相关性权衡可用信息瓶颈表述</td><td class="l">Shannon (1948)；Tishby et al. (1999)；Tishby &amp; Zaslavsky (2015)</td><td class="l">成熟理论（原始定义）</td><td class="l">IB 本身是标准理论；“用于深度网络”的部分仍有争议（Saxe et al., 2018）</td></tr>
+<tr><td class="l">② 遗忘是压缩的伴生结果（不可逆）</td><td class="l">Cover &amp; Thomas (2006)，数据处理不等式；Shannon (1948)</td><td class="l">标准定理（教科书级）</td><td class="l">“不可逆”仅对同一条通道成立；外部记忆可绕开</td></tr>
+<tr><td class="l">③ 长上下文中存在位置偏差</td><td class="l">Liu et al. (2023)；Bai et al. (2023)</td><td class="l">直接测量（多模型、多任务）</td><td class="l">观察稳健；机制归属见④⑤，不属于 A 级</td></tr>
+<tr><td class="l">⑧ 人类记忆巩固存在多时间尺度结构</td><td class="l">McClelland et al. (1995)；Frankland &amp; Bontempi (2005)；Stickgold (2005)</td><td class="l">多来源一致（理论 + 经验）</td><td class="l">“快／慢双系统”有广泛支持；具体时间常数仍有争议</td></tr>
+<tr><td class="l">（数学工具）子模性、有效秩、率失真</td><td class="l">Cover &amp; Thomas (2006)；Roy &amp; Vetterli (2007)</td><td class="l">标准定理／定义</td><td class="l">这些是工具，不是本书的经验主张</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>来源强度抽检表。质量等级 B（抽检为本书自评）；<b>注释：</b>本表是<b>自我审计</b>，不是外部文献计量。它检查“引用是否直接支撑断言”，不检查“是否有 N 篇论文”。一个 A 级断言只需一个直接测量的来源即可成立，多个间接来源不能替代它。<b>完整的（逐条、外部）文献核验仍是一个登记在案的缺口（附录 F）。</b></div>
+
+<h3>C.6　关于形式化程度的公开承诺</h3>
+
+<p>本书不做“全书统一形式化”的承诺，而是<b>分模块承诺</b>：凡是承诺形式化的地方就必须精确，凡是不形式化的地方就明确说“不形式化”。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 C.3　各章的形式化承诺</b></caption>
+<tr><th class="l">模块</th><th class="l">形式化程度</th><th class="l">承诺内容</th></tr>
+<tr><td class="l">第 4—5 章（信息瓶颈、容量、干扰）</td><td class="l">完全形式化</td><td class="l">给出目标函数、不等式与模型形式（式 4.1—5.3）</td></tr>
+<tr><td class="l">第 6 章（时间尺度）</td><td class="l">半形式化</td><td class="l">给出时间常数与两条动力学方程，但常数数值不外推</td></tr>
+<tr><td class="l">第 7—9 章（三系统分析）</td><td class="l">半形式化</td><td class="l">给出可测指标与标度关系；不给出唯一定量模型</td></tr>
+<tr><td class="l">第 10—13 章（梦、潜意识、元认知）</td><td class="l">不形式化／启发式</td><td class="l">给出状态图与方向性论证；明确标注为假说</td></tr>
+<tr><td class="l">第 14—16 章（地图与对话）</td><td class="l">不形式化</td><td class="l">只做定性安放与边界标注（地图只定性）</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>形式化承诺表。质量等级 B（承诺为可核对的声明）；<b>注释：</b>这张表本身是可被追责的：若某章在承诺“完全形式化”的地方出现无法定义的词，或在不承诺形式化的地方给出貌似精确的方程，都构成本书的自相矛盾。</div>
