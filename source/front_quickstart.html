@@ -23,7 +23,7 @@
 <p>相似之处可以用一句信息论的话概括：<b>在有限的有效容量 <i>C</i><sub>eff</sub> 下，信息会被压缩；而压缩会留下无法回收的损耗——除非系统另开一条通道。</b>三者的差别不在“是否压缩”，而在每一步压缩发生在哪个时间尺度、由什么物理过程实现。</p>
 
 <table class="nat">
-<caption class="cap"><b>表 0.2　三种系统在“容量—压缩—遗忘—时间尺度”上的对照（示意）</b></caption>
+<caption class="cap"><b>表 0.4　三种系统在“容量—压缩—遗忘—时间尺度”上的对照（示意）</b></caption>
 <tr><th class="l">维度</th><th class="l">大语言模型（KV 缓存）</th><th class="l">智能体（上下文窗口）</th><th class="l">人类（记忆系统）</th></tr>
 <tr><td class="l">容量约束</td><td class="l">序列长度 × 维度，显存与注意力复杂度</td><td class="l">上下文 token 预算</td><td class="l">工作记忆约 4—7 项；突触资源有限</td></tr>
 <tr><td class="l">选择机制</td><td class="l">注意力权重（软选择）</td><td class="l">注意力 + 检索启发式</td><td class="l">注意力 + 显著性／情感标记</td></tr>
@@ -59,7 +59,7 @@
 <p>它的价值不在宣布一个大一统理论，而在于三件更朴素的事：<b>（一）</b>把一个模糊的类比改造成一组分级命题，让哪些说法强、哪些说法弱变得可核对；<b>（二）</b>把二十余个既有理论安放在同一母题下并各自标明边界，使它们不再彼此争夺“唯一解释权”；<b>（三）</b>提出若干可被未来工作检验（甚至推翻）的预言，并登记在案。如果多年后有人证明本书错了，那份登记簿至少能说明我们错在哪里、错得是否诚实。</p>
 
 <table class="nat">
-<caption class="cap"><b>表 0.3　十分钟后的最小结论文档</b></caption>
+<caption class="cap"><b>表 0.5　十分钟后的最小结论文档</b></caption>
 <tr><th class="l">如果你关心</th><th class="l">可以带走的一句话</th><th class="l">强度</th></tr>
 <tr><td class="l">LLM 的长上下文</td><td class="l">位置偏差是真实的、稳健的，但它由多个机制共同造成，别急着用单一模型解释。</td><td class="l">中（B／乙）</td></tr>
 <tr><td class="l">智能体为何“忘目标”</td><td class="l">这更像状态在容量压力下的偏移，而不是一个可随手修掉的 bug。</td><td class="l">中（C／乙）</td></tr>
