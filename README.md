@@ -75,7 +75,7 @@ PDF 由**无头 Chrome/Edge** 打印（含分级书签），非 weasyprint。`.e
 # 列出产物清单
 python scripts/create_github_release.py --list
 # 为每个产物创建 release（token 取自 git credential helper，不落盘）
-python scripts/create_github_release.py --date 2026-10-12
+python scripts/create_github_release.py --date 2026-10-14
 ```
 
 工作约定（工具链路径、仓库规则）见 [`AGENTS.md`](AGENTS.md)。
@@ -99,7 +99,7 @@ python scripts/create_github_release.py --date 2026-10-12
 **DOI：** [10.5281/zenodo.23323277](https://doi.org/10.5281/zenodo.23323277)
 
 ```
-李毅芃. 《遗忘的边界：有限容量下的记忆、智能与自我》. 2026-10-12.
+李毅芃. 《遗忘的边界：有限容量下的记忆、智能与自我》. 2026-10-14.
 Zenodo. https://doi.org/10.5281/zenodo.23323277. CC BY 4.0.
 ```
 
