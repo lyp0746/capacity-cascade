@@ -405,7 +405,234 @@ def fig18():
     save("fig18-identity-attractor.svg", svg(w, h, "\n".join(b)))
 
 
+# ---------------------------------------------------------------- fig 0.1 matrix
+# 系统×尺度矩阵全景图（11x7 网格）
+def fig_matrix():
+    w, h = 820, 380
+    b = [f'<text x="20" y="28" class="t">系统×尺度矩阵（本书的组织骨架）</text>']
+    cols = ["大语言模型", "智能体", "人类"]
+    rows = [("快·选择（毫秒—秒）", "注意力权重", "单次推理的注意分配", "工作记忆（约 4—7 项）"),
+            ("中·暂存（秒—小时）", "键值缓存", "上下文窗口", "短期记忆（易受干扰）"),
+            ("慢·结构（小时—终身）", "权重／检索库", "外部记忆与摘要", "长期记忆（系统巩固）"),
+            ("跳尺度·协调", "（基本缺失）", "弱（工程启发式）", "强（睡眠、梦、元认知）")]
+    x0, y0, cw, rh = 230, 60, 185, 72
+    for j, c in enumerate(cols):
+        b.append(f'<rect x="{x0+j*cw}" y="{y0-30}" width="{cw}" height="30" fill="{BLUE}" opacity="0.15"/>')
+        b.append(txt(x0 + j * cw + cw / 2, y0 - 9, c, "middle", "l", BLUE, "700"))
+    for i, (rname, *cells) in enumerate(rows):
+        yy = y0 + i * rh
+        b.append(f'<rect x="20" y="{yy}" width="{x0-30}" height="{rh}" fill="#fafafa"/>')
+        b.append(txt(30, yy + rh / 2 + 4, rname, "start", "l", INK, "700"))
+        for j, cell in enumerate(cells):
+            col = GREEN if (i == 3 and j == 2) else (GREY if (i == 3 and j == 0) else "#f7f7f5")
+            b.append(f'<rect x="{x0+j*cw}" y="{yy}" width="{cw}" height="{rh}" fill="none" stroke="{LIGHT}"/>')
+            b.append(txt(x0 + j * cw + cw / 2, yy + rh / 2 + 4, cell, "middle", "l", INK))
+    b.append(txt(410, 372, "横轴：三类系统；纵轴：时间尺度。格子=该尺度上发生了什么。", "middle", "l", GREY))
+    save("fig00-matrix.svg", svg(w, h, "\n".join(b)))
+
+
+# ---------------------------------------------------------------- fig 5.2 rank decay
+def fig_rank():
+    w, h = 620, 330
+    b = [f'<text x="20" y="26" class="t">表示坍塌：有效秩随序列长度的饱和</text>']
+    b.append(axes(70, 270, 570, 55, "序列长度 n（对数尺度）", "rank_eff / d"))
+    pts = []
+    for i in range(0, 101):
+        t = i / 100
+        x = 70 + t * 500
+        y = 270 - 200 * (1 - math.exp(-3.4 * t))
+        pts.append((x, y))
+    b.append(polyline(pts, BLUE, 2.6))
+    b.append(f'<line x1="70" y1="70" x2="570" y2="70" stroke="{GOLD}" stroke-width="1.4" stroke-dasharray="6,4"/>')
+    b.append(txt(574, 74, "名义满秩", "start", "l", GOLD, "700"))
+    b.append(txt(300, 250, "短序列：接近满秩（高效）", "start", "l", GREY))
+    b.append(txt(300, 110, "长序列：有效秩饱和（效率下降）", "start", "l", GREY))
+    save("fig05b-rank-decay.svg", svg(w, h, "\n".join(b)))
+
+
+# ---------------------------------------------------------------- fig 5.3 submodularity
+def fig_submod():
+    w, h = 560, 320
+    b = [f'<text x="20" y="26" class="t">子模性：能力不能简单相加</text>']
+    bx, by, bw = 110, 240, 70
+    base = 200
+    b.append(f'<rect x="{bx}" y="{by-base}" width="{bw}" height="{base}" fill="{BLUE}" opacity="0.75"/>')
+    b.append(f'<rect x="{bx+110}" y="{by-base}" width="{bw}" height="{base}" fill="{BLUE}" opacity="0.75"/>')
+    total = int(base * 0.78)
+    b.append(f'<rect x="{bx+220}" y="{by-base}" width="{bw+50}" height="{base}" fill="#f0f0ee" stroke="{GREY}"/>')
+    b.append(f'<rect x="{bx+220}" y="{by-total}" width="{bw+50}" height="{total}" fill="{GOLD}" opacity="0.8"/>')
+    b.append(txt(bx + bw / 2, by + 20, "通道 1", "middle", "l"))
+    b.append(txt(bx + 110 + bw / 2, by + 20, "通道 2", "middle", "l"))
+    b.append(txt(bx + 220 + (bw + 50) / 2, by + 20, "联合", "middle", "l"))
+    b.append(f'<line x1="{bx+220+bw/2+25}" y1="{by-base}" x2="{bx+220+bw/2+25}" y2="{by-total}" stroke="{RED}" stroke-width="1.4" stroke-dasharray="4,3"/>')
+    b.append(txt(bx + 220 + bw + 60, by - base + 14, "Δ = 子模性损失", "start", "l", RED, "700"))
+    b.append(txt(bx + 220 + bw + 60, by - base + 34, "（重叠／冗余）", "start", "l", RED))
+    b.append(txt(280, 300, "两通道叠加后的有效容量 < 各自之和（式 5.3）", "middle", "l", INK))
+    save("fig05c-submodularity.svg", svg(w, h, "\n".join(b)))
+
+
+# ---------------------------------------------------------------- fig 6.2 two dynamics
+def fig_two_dyn():
+    w, h = 620, 330
+    b = [f'<text x="20" y="26" class="t">两个相反的动力学：衰减与巩固</text>']
+    b.append(axes(70, 270, 570, 55, "时间", "信息量／强度"))
+    decay = [(70 + i * 5, 70 + 30 + 170 * (1 - math.exp(-i / 18))) for i in range(101)]
+    cons = [(70 + i * 5, 270 - 170 * (1 - math.exp(-i / 45))) for i in range(101)]
+    b.append(polyline(decay, RED, 2.6))
+    b.append(polyline(cons, GREEN, 2.6))
+    b.append(txt(430, 100, "衰减：dI/dt = −I/τ₂ − κ·ι", "start", "l", RED, "700"))
+    b.append(txt(430, 235, "巩固：dW/dt = η·Φ − γW", "start", "l", GREEN, "700"))
+    b.append(txt(320, 315, "两条流方向相反；系统的性格由它们如何协调决定（第 6.4 节）", "middle", "l", INK))
+    save("fig06b-two-dynamics.svg", svg(w, h, "\n".join(b)))
+
+
+# ---------------------------------------------------------------- fig 9.2 forgetting
+def fig_forgetting():
+    w, h = 760, 300
+    b = [f'<text x="20" y="26" class="t">三种遗忘：机制、信息论表述与可干预方式</text>']
+    boxes = [("消退 decay", "表示随时间自然减弱", "I(X;Z;t) ↓", "复习／重放", RED),
+             ("干扰 interference", "新信息竞争同一资源", "I(X_old;Z | X_new) ↓", "隔离通道；选择性重放", GOLD),
+             ("检索失败", "信息尚在，线索取不到", "I(线索;Z) ↓，而 I(X;Z) 未必↓", "改线索；补上下文", BLUE)]
+    for i, (name, mech, info, fix, col) in enumerate(boxes):
+        x = 40 + i * 240
+        b.append(f'<rect x="{x}" y="70" width="220" height="170" rx="8" fill="#fafafa" stroke="{col}" stroke-width="1.8"/>')
+        b.append(txt(x + 110, 100, name, "middle", "l", col, "700"))
+        b.append(txt(x + 110, 130, mech, "middle", "l", INK))
+        b.append(txt(x + 110, 160, info, "middle", "s", GREY))
+        b.append(f'<line x1="{x+20}" y1="178" x2="{x+200}" y2="178" stroke="{LIGHT}"/>')
+        b.append(txt(x + 110, 205, "干预：" + fix, "middle", "l", INK))
+    b.append(txt(380, 280, "把“检索失败”误诊为“容量不足”，会导致错误的扩容投资。", "middle", "l", INK, "700"))
+    save("fig09b-forgetting.svg", svg(w, h, "\n".join(b)))
+
+
+# ---------------------------------------------------------------- fig 13.2 allocation
+def fig_allocation():
+    w, h = 640, 340
+    b = [f'<text x="20" y="26" class="t">容量分配：边际效用相等</text>']
+    b.append(axes(70, 280, 580, 55, "分配给“短期适应”的容量 c", "边际效用 U′(c)"))
+    short = [(70 + i * 5, 280 - 210 * math.exp(-i / 22)) for i in range(102)]
+    long = [(70 + i * 5, 280 - 210 * (1 / (1 + math.exp((i - 55) / 9)))) for i in range(102)]
+    b.append(polyline(short, BLUE, 2.6))
+    b.append(polyline(long, GOLD, 2.6))
+    ix, iy = 70 + 48 * 5, 280 - 210 * math.exp(-48 / 22)
+    b.append(f'<circle cx="{ix}" cy="{iy}" r="6" fill="{RED}"/>')
+    b.append(f'<line x1="{ix}" y1="{iy}" x2="{ix}" y2="280" stroke="{RED}" stroke-width="1.2" stroke-dasharray="4,3"/>')
+    b.append(txt(430, 110, "短期适应 U′", "start", "l", BLUE, "700"))
+    b.append(txt(430, 220, "长期（目标锚定）U′", "start", "l", GOLD, "700"))
+    b.append(txt(ix + 8, iy - 10, "最优：边际效用相等", "start", "l", RED, "700"))
+    b.append(txt(320, 320, "新信息不断到来时，最优解会把容量从长期目标挪走——这就是漂移的数学来源。", "middle", "l", INK))
+    save("fig13b-allocation.svg", svg(w, h, "\n".join(b)))
+
+
+# ---------------------------------------------------------------- fig 16 scope
+def fig_scope():
+    w, h = 760, 340
+    b = [f'<text x="20" y="26" class="t">框架的适用范围：能解释 / 部分解释 / 不能解释</text>']
+    zones = [("能解释（★★★★）", GREEN, 70,
+              ["为什么会遗忘", "为什么出现位置偏差", "为什么存在多个时间尺度"]),
+             ("部分解释（★★★）", GOLD, 175,
+              ["模型“冷漠”或失真", "学习后的身份变化", "梦的创意启发"]),
+             ("不能解释（★）", RED, 280,
+              ["某知识为何对我有意义", "为何忘的是想忘的", "梦的具体内容来源"])]
+    for name, col, y, items in zones:
+        b.append(f'<rect x="40" y="{y}" width="680" height="88" rx="8" fill="#fafafa" stroke="{col}" stroke-width="1.8"/>')
+        b.append(txt(58, y + 26, name, "start", "l", col, "700"))
+        for k, it in enumerate(items):
+            b.append(txt(60 + k * 220, y + 58, it, "start", "l", GREY))
+        b.append(f'<line x1="{60+218}" y1="{y+34}" x2="{60+218}" y2="{y+78}" stroke="{LIGHT}"/>')
+        b.append(f'<line x1="{60+438}" y1="{y+34}" x2="{60+438}" y2="{y+78}" stroke="{LIGHT}"/>')
+    b.append(txt(380, 332, "若你的问题落在最下一行，本框架不适用——把它当成能解释一切的理论，是使用它的最大方式。", "middle", "l", INK, "700"))
+    save("fig16-scope.svg", svg(w, h, "\n".join(b)))
+
+
+# ---------------------------------------------------------------- fig 17 design tree
+def fig_design():
+    w, h = 780, 360
+    b = [f'<text x="20" y="26" class="t">设计决策树：从现象到干预</text>']
+    # 根
+    b.append(f'<rect x="300" y="50" width="180" height="44" rx="8" fill="#f4f8fb" stroke="{BLUE}" stroke-width="1.6"/>')
+    b.append(txt(390, 77, "观察到的现象", "middle", "l", BLUE, "700"))
+    leaves = [("缓慢偏离目标", "偏置型漂移", "D3 显著性重放", GREEN),
+              ("信息找不到", "容量溢出/覆盖", "D2 分层存储", GOLD),
+              ("信息在但取不到", "检索失败", "改线索（非扩容）", BLUE),
+              ("新学会旧垮掉", "灾难性遗忘", "D3+D5 调度", RED)]
+    for i, (sym, diag, act, col) in enumerate(leaves):
+        x = 30 + i * 190
+        b.append(f'<line x1="390" y1="94" x2="{x+80}" y2="150" stroke="{LIGHT}"/>')
+        b.append(f'<rect x="{x}" y="150" width="160" height="40" rx="6" fill="#ffffff" stroke="{GREY}"/>')
+        b.append(txt(x + 80, 175, sym, "middle", "l"))
+        b.append(f'<line x1="{x+80}" y1="190" x2="{x+80}" y2="220" stroke="{col}" stroke-width="1.6"/>')
+        b.append(f'<rect x="{x}" y="220" width="160" height="40" rx="6" fill="#fafafa" stroke="{col}" stroke-width="1.6"/>')
+        b.append(txt(x + 80, 245, diag, "middle", "l", col, "700"))
+        b.append(f'<line x1="{x+80}" y1="260" x2="{x+80}" y2="285" stroke="{col}" stroke-width="1.6"/>')
+        b.append(txt(x + 80, 305, act, "middle", "l", INK))
+    b.append(txt(390, 345, "每一条都必须先写下“失败会是什么样”再动手（附录 G.4）", "middle", "l", GREY))
+    save("fig17-design-tree.svg", svg(w, h, "\n".join(b)))
+
+
+# ---------------------------------------------------------------- fig 19 roadmap
+def fig_roadmap():
+    w, h = 680, 380
+    b = [f'<text x="20" y="26" class="t">研究优先级矩阵：难度 × 预期收益</text>']
+    b.append(axes(90, 320, 630, 55, "难度 →", "预期收益 →"))
+    items = [(2.2, 4.2, "容量—干扰曲线", GREEN), (3.0, 4.4, "位置偏差四机制", GREEN),
+             (2.6, 4.0, "漂移标度", BLUE), (3.8, 4.6, "离线重组", RED),
+             (4.0, 3.8, "显著性可还原性", GOLD), (4.8, 4.5, "时间常数推导", RED)]
+    for d, g, name, col in items:
+        x = 90 + (d / 5) * 540
+        y = 320 - (g / 5) * 265
+        b.append(f'<circle cx="{x:.0f}" cy="{y:.0f}" r="7" fill="{col}"/>')
+        b.append(txt(x + 10, y + 4, name, "start", "l", INK))
+    b.append(txt(360, 360, "右上=高难度高收益（长期）；左上=低难度高收益（先做）。", "middle", "l", GREY))
+    save("fig19-roadmap.svg", svg(w, h, "\n".join(b)))
+
+
+# ---------------------------------------------------------------- fig E timeline
+def fig_timeline():
+    w, h = 780, 300
+    b = [f'<text x="20" y="26" class="t">可证伪登记簿：预言与建议核对窗口</text>']
+    x0, y0, x1 = 60, 160, 740
+    b.append(f'<line x1="{x0}" y1="{y0}" x2="{x1}" y2="{y0}" class="ax"/>')
+    for yr, xx in [("提出", x0), ("2 年", x0 + (x1 - x0) * 0.45), ("3 年", x0 + (x1 - x0) * 0.68), ("5 年", x1)]:
+        b.append(f'<line x1="{xx:.0f}" y1="{y0-6}" x2="{xx:.0f}" y2="{y0+6}" class="ax"/>')
+        b.append(txt(xx, y0 + 24, yr, "middle", "l", GREY))
+    rows = [("P1—P6（位置偏差、漂移标度）", 2, GREEN),
+            ("P7—P10（容量曲线、子模性）", 3, BLUE),
+            ("P8—P9（重放、离线重组）", 3, GOLD),
+            ("P11—P12（探索强度、显著性还原）", 5, RED)]
+    for i, (name, yr, col) in enumerate(rows):
+        yy = 60 + i * 24
+        xx = x0 if yr == 2 else (x0 + (x1 - x0) * (0.45 if yr == 3 else 0.68))
+        bw = x0 + (x1 - x0) * (0.45 if yr == 2 else (0.68 if yr == 3 else 0.9)) - xx
+        b.append(f'<rect x="{xx:.0f}" y="{yy}" width="{max(bw,8):.0f}" height="14" fill="{col}" opacity="0.35"/>')
+        b.append(txt(x0, yy - 3, name, "start", "l", INK))
+    b.append(txt(400, 270, "窗口是建议，不是硬性截止；到点无数据记“不可判定”，绝不删原条目。", "middle", "l", GREY))
+    save("figE-timeline.svg", svg(w, h, "\n".join(b)))
+
+
+# ---------------------------------------------------------------- fig C formalization
+def fig_formalization():
+    w, h = 720, 300
+    b = [f'<text x="20" y="26" class="t">分模块形式化承诺</text>']
+    rows = [("第 4—5 章　信息瓶颈·容量·干扰", 1.0, GREEN),
+            ("第 6 章　时间尺度", 0.65, GOLD),
+            ("第 7—9 章　三系统分析", 0.65, GOLD),
+            ("第 10—13 章　梦·潜意识·元认知", 0.3, RED),
+            ("第 14—16 章　地图与对话", 0.15, RED)]
+    for i, (name, frac, col) in enumerate(rows):
+        yy = 60 + i * 40
+        b.append(txt(40, yy + 18, name, "start", "l", INK))
+        b.append(f'<rect x="360" y="{yy}" width="300" height="20" fill="#f0f0ee"/>')
+        b.append(f'<rect x="360" y="{yy}" width="{300*frac:.0f}" height="20" fill="{col}" opacity="0.75"/>')
+        lab = "完全形式化" if frac == 1.0 else ("半形式化" if frac == 0.65 else "不形式化")
+        b.append(txt(670, yy + 15, lab, "start", "l", col, "700"))
+    b.append(txt(360, 285, "凡承诺形式化处必须精确；凡不承诺处必须明确说“不形式化”。", "middle", "l", INK))
+    save("figC-formalization.svg", svg(w, h, "\n".join(b)))
+
+
 if __name__ == "__main__":
     fig01(); fig02(); fig04(); fig05(); fig06(); fig07(); fig08(); fig09()
     fig10(); fig11(); fig12(); fig13(); fig14(); fig15(); fig18()
+    fig_matrix(); fig_rank(); fig_submod(); fig_two_dyn(); fig_forgetting()
+    fig_allocation(); fig_scope(); fig_design(); fig_roadmap(); fig_timeline(); fig_formalization()
     print("done")

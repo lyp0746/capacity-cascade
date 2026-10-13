@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" width="760" height="340">
+<rect x="0" y="0" width="760" height="340" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="26" class="t">框架的适用范围：能解释 / 部分解释 / 不能解释</text>
+<rect x="40" y="70" width="680" height="88" rx="8" fill="#fafafa" stroke="#009E73" stroke-width="1.8"/>
+<text x="58" y="96" class="l" text-anchor="start" fill="#009E73" font-weight="700">能解释（★★★★）</text>
+<text x="60" y="128" class="l" text-anchor="start" fill="#666" font-weight="normal">为什么会遗忘</text>
+<text x="280" y="128" class="l" text-anchor="start" fill="#666" font-weight="normal">为什么出现位置偏差</text>
+<text x="500" y="128" class="l" text-anchor="start" fill="#666" font-weight="normal">为什么存在多个时间尺度</text>
+<line x1="278" y1="104" x2="278" y2="148" stroke="#cfcfcf"/>
+<line x1="498" y1="104" x2="498" y2="148" stroke="#cfcfcf"/>
+<rect x="40" y="175" width="680" height="88" rx="8" fill="#fafafa" stroke="#b8862f" stroke-width="1.8"/>
+<text x="58" y="201" class="l" text-anchor="start" fill="#b8862f" font-weight="700">部分解释（★★★）</text>
+<text x="60" y="233" class="l" text-anchor="start" fill="#666" font-weight="normal">模型“冷漠”或失真</text>
+<text x="280" y="233" class="l" text-anchor="start" fill="#666" font-weight="normal">学习后的身份变化</text>
+<text x="500" y="233" class="l" text-anchor="start" fill="#666" font-weight="normal">梦的创意启发</text>
+<line x1="278" y1="209" x2="278" y2="253" stroke="#cfcfcf"/>
+<line x1="498" y1="209" x2="498" y2="253" stroke="#cfcfcf"/>
+<rect x="40" y="280" width="680" height="88" rx="8" fill="#fafafa" stroke="#c94f4f" stroke-width="1.8"/>
+<text x="58" y="306" class="l" text-anchor="start" fill="#c94f4f" font-weight="700">不能解释（★）</text>
+<text x="60" y="338" class="l" text-anchor="start" fill="#666" font-weight="normal">某知识为何对我有意义</text>
+<text x="280" y="338" class="l" text-anchor="start" fill="#666" font-weight="normal">为何忘的是想忘的</text>
+<text x="500" y="338" class="l" text-anchor="start" fill="#666" font-weight="normal">梦的具体内容来源</text>
+<line x1="278" y1="314" x2="278" y2="358" stroke="#cfcfcf"/>
+<line x1="498" y1="314" x2="498" y2="358" stroke="#cfcfcf"/>
+<text x="380" y="332" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">若你的问题落在最下一行，本框架不适用——把它当成能解释一切的理论，是使用它的最大方式。</text>
+</svg>

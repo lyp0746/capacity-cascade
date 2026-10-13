@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 380" width="680" height="380">
+<rect x="0" y="0" width="680" height="380" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="26" class="t">研究优先级矩阵：难度 × 预期收益</text>
+<line x1="90" y1="320" x2="630" y2="320" class="ax"/>
+<line x1="90" y1="320" x2="90" y2="55" class="ax"/>
+<text x="360.0" y="354" class="l" text-anchor="middle">难度 →</text>
+<text x="82" y="187.5" class="l" text-anchor="middle" transform="rotate(-90 82 187.5)">预期收益 →</text>
+<circle cx="328" cy="97" r="7" fill="#009E73"/>
+<text x="337.6" y="101.39999999999998" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">容量—干扰曲线</text>
+<circle cx="414" cy="87" r="7" fill="#009E73"/>
+<text x="424.0" y="90.79999999999998" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">位置偏差四机制</text>
+<circle cx="371" cy="108" r="7" fill="#3a6ea5"/>
+<text x="380.8" y="112.0" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">漂移标度</text>
+<circle cx="500" cy="76" r="7" fill="#c94f4f"/>
+<text x="510.4" y="80.20000000000002" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">离线重组</text>
+<circle cx="522" cy="119" r="7" fill="#b8862f"/>
+<text x="532.0" y="122.6" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">显著性可还原性</text>
+<circle cx="608" cy="82" r="7" fill="#c94f4f"/>
+<text x="618.4" y="85.5" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">时间常数推导</text>
+<text x="360" y="360" class="l" text-anchor="middle" fill="#666" font-weight="normal">右上=高难度高收益（长期）；左上=低难度高收益（先做）。</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380">
+<rect x="0" y="0" width="820" height="380" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t">系统×尺度矩阵（本书的组织骨架）</text>
+<rect x="230" y="30" width="185" height="30" fill="#3a6ea5" opacity="0.15"/>
+<text x="322.5" y="51" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700">大语言模型</text>
+<rect x="415" y="30" width="185" height="30" fill="#3a6ea5" opacity="0.15"/>
+<text x="507.5" y="51" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700">智能体</text>
+<rect x="600" y="30" width="185" height="30" fill="#3a6ea5" opacity="0.15"/>
+<text x="692.5" y="51" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700">人类</text>
+<rect x="20" y="60" width="200" height="72" fill="#fafafa"/>
+<text x="30" y="100.0" class="l" text-anchor="start" fill="#1a1a1a" font-weight="700">快·选择（毫秒—秒）</text>
+<rect x="230" y="60" width="185" height="72" fill="none" stroke="#cfcfcf"/>
+<text x="322.5" y="100.0" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">注意力权重</text>
+<rect x="415" y="60" width="185" height="72" fill="none" stroke="#cfcfcf"/>
+<text x="507.5" y="100.0" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">单次推理的注意分配</text>
+<rect x="600" y="60" width="185" height="72" fill="none" stroke="#cfcfcf"/>
+<text x="692.5" y="100.0" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">工作记忆（约 4—7 项）</text>
+<rect x="20" y="132" width="200" height="72" fill="#fafafa"/>
+<text x="30" y="172.0" class="l" text-anchor="start" fill="#1a1a1a" font-weight="700">中·暂存（秒—小时）</text>
+<rect x="230" y="132" width="185" height="72" fill="none" stroke="#cfcfcf"/>
+<text x="322.5" y="172.0" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">键值缓存</text>
+<rect x="415" y="132" width="185" height="72" fill="none" stroke="#cfcfcf"/>
+<text x="507.5" y="172.0" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">上下文窗口</text>
+<rect x="600" y="132" width="185" height="72" fill="none" stroke="#cfcfcf"/>
+<text x="692.5" y="172.0" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">短期记忆（易受干扰）</text>
+<rect x="20" y="204" width="200" height="72" fill="#fafafa"/>
+<text x="30" y="244.0" class="l" text-anchor="start" fill="#1a1a1a" font-weight="700">慢·结构（小时—终身）</text>
+<rect x="230" y="204" width="185" height="72" fill="none" stroke="#cfcfcf"/>
+<text x="322.5" y="244.0" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">权重／检索库</text>
+<rect x="415" y="204" width="185" height="72" fill="none" stroke="#cfcfcf"/>
+<text x="507.5" y="244.0" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">外部记忆与摘要</text>
+<rect x="600" y="204" width="185" height="72" fill="none" stroke="#cfcfcf"/>
+<text x="692.5" y="244.0" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">长期记忆（系统巩固）</text>
+<rect x="20" y="276" width="200" height="72" fill="#fafafa"/>
+<text x="30" y="316.0" class="l" text-anchor="start" fill="#1a1a1a" font-weight="700">跳尺度·协调</text>
+<rect x="230" y="276" width="185" height="72" fill="none" stroke="#cfcfcf"/>
+<text x="322.5" y="316.0" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">（基本缺失）</text>
+<rect x="415" y="276" width="185" height="72" fill="none" stroke="#cfcfcf"/>
+<text x="507.5" y="316.0" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">弱（工程启发式）</text>
+<rect x="600" y="276" width="185" height="72" fill="none" stroke="#cfcfcf"/>
+<text x="692.5" y="316.0" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">强（睡眠、梦、元认知）</text>
+<text x="410" y="372" class="l" text-anchor="middle" fill="#666" font-weight="normal">横轴：三类系统；纵轴：时间尺度。格子=该尺度上发生了什么。</text>
+</svg>

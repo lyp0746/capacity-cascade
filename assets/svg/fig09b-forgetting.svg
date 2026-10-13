@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" height="300">
+<rect x="0" y="0" width="760" height="300" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="26" class="t">三种遗忘：机制、信息论表述与可干预方式</text>
+<rect x="40" y="70" width="220" height="170" rx="8" fill="#fafafa" stroke="#c94f4f" stroke-width="1.8"/>
+<text x="150" y="100" class="l" text-anchor="middle" fill="#c94f4f" font-weight="700">消退 decay</text>
+<text x="150" y="130" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">表示随时间自然减弱</text>
+<text x="150" y="160" class="s" text-anchor="middle" fill="#666" font-weight="normal">I(X;Z;t) ↓</text>
+<line x1="60" y1="178" x2="240" y2="178" stroke="#cfcfcf"/>
+<text x="150" y="205" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">干预：复习／重放</text>
+<rect x="280" y="70" width="220" height="170" rx="8" fill="#fafafa" stroke="#b8862f" stroke-width="1.8"/>
+<text x="390" y="100" class="l" text-anchor="middle" fill="#b8862f" font-weight="700">干扰 interference</text>
+<text x="390" y="130" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">新信息竞争同一资源</text>
+<text x="390" y="160" class="s" text-anchor="middle" fill="#666" font-weight="normal">I(X_old;Z | X_new) ↓</text>
+<line x1="300" y1="178" x2="480" y2="178" stroke="#cfcfcf"/>
+<text x="390" y="205" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">干预：隔离通道；选择性重放</text>
+<rect x="520" y="70" width="220" height="170" rx="8" fill="#fafafa" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="630" y="100" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700">检索失败</text>
+<text x="630" y="130" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">信息尚在，线索取不到</text>
+<text x="630" y="160" class="s" text-anchor="middle" fill="#666" font-weight="normal">I(线索;Z) ↓，而 I(X;Z) 未必↓</text>
+<line x1="540" y1="178" x2="720" y2="178" stroke="#cfcfcf"/>
+<text x="630" y="205" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">干预：改线索；补上下文</text>
+<text x="380" y="280" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">把“检索失败”误诊为“容量不足”，会导致错误的扩容投资。</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 300" width="780" height="300">
+<rect x="0" y="0" width="780" height="300" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="26" class="t">可证伪登记簿：预言与建议核对窗口</text>
+<line x1="60" y1="160" x2="740" y2="160" class="ax"/>
+<line x1="60" y1="154" x2="60" y2="166" class="ax"/>
+<text x="60" y="184" class="l" text-anchor="middle" fill="#666" font-weight="normal">提出</text>
+<line x1="366" y1="154" x2="366" y2="166" class="ax"/>
+<text x="366.0" y="184" class="l" text-anchor="middle" fill="#666" font-weight="normal">2 年</text>
+<line x1="522" y1="154" x2="522" y2="166" class="ax"/>
+<text x="522.4000000000001" y="184" class="l" text-anchor="middle" fill="#666" font-weight="normal">3 年</text>
+<line x1="740" y1="154" x2="740" y2="166" class="ax"/>
+<text x="740" y="184" class="l" text-anchor="middle" fill="#666" font-weight="normal">5 年</text>
+<rect x="60" y="60" width="306" height="14" fill="#009E73" opacity="0.35"/>
+<text x="60" y="57" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">P1—P6（位置偏差、漂移标度）</text>
+<rect x="366" y="84" width="156" height="14" fill="#3a6ea5" opacity="0.35"/>
+<text x="60" y="81" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">P7—P10（容量曲线、子模性）</text>
+<rect x="366" y="108" width="156" height="14" fill="#b8862f" opacity="0.35"/>
+<text x="60" y="105" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">P8—P9（重放、离线重组）</text>
+<rect x="522" y="132" width="150" height="14" fill="#c94f4f" opacity="0.35"/>
+<text x="60" y="129" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">P11—P12（探索强度、显著性还原）</text>
+<text x="400" y="270" class="l" text-anchor="middle" fill="#666" font-weight="normal">窗口是建议，不是硬性截止；到点无数据记“不可判定”，绝不删原条目。</text>
+</svg>

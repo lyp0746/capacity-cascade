@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="720" height="300">
+<rect x="0" y="0" width="720" height="300" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="26" class="t">分模块形式化承诺</text>
+<text x="40" y="78" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">第 4—5 章　信息瓶颈·容量·干扰</text>
+<rect x="360" y="60" width="300" height="20" fill="#f0f0ee"/>
+<rect x="360" y="60" width="300" height="20" fill="#009E73" opacity="0.75"/>
+<text x="670" y="75" class="l" text-anchor="start" fill="#009E73" font-weight="700">完全形式化</text>
+<text x="40" y="118" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">第 6 章　时间尺度</text>
+<rect x="360" y="100" width="300" height="20" fill="#f0f0ee"/>
+<rect x="360" y="100" width="195" height="20" fill="#b8862f" opacity="0.75"/>
+<text x="670" y="115" class="l" text-anchor="start" fill="#b8862f" font-weight="700">半形式化</text>
+<text x="40" y="158" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">第 7—9 章　三系统分析</text>
+<rect x="360" y="140" width="300" height="20" fill="#f0f0ee"/>
+<rect x="360" y="140" width="195" height="20" fill="#b8862f" opacity="0.75"/>
+<text x="670" y="155" class="l" text-anchor="start" fill="#b8862f" font-weight="700">半形式化</text>
+<text x="40" y="198" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">第 10—13 章　梦·潜意识·元认知</text>
+<rect x="360" y="180" width="300" height="20" fill="#f0f0ee"/>
+<rect x="360" y="180" width="90" height="20" fill="#c94f4f" opacity="0.75"/>
+<text x="670" y="195" class="l" text-anchor="start" fill="#c94f4f" font-weight="700">不形式化</text>
+<text x="40" y="238" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">第 14—16 章　地图与对话</text>
+<rect x="360" y="220" width="300" height="20" fill="#f0f0ee"/>
+<rect x="360" y="220" width="45" height="20" fill="#c94f4f" opacity="0.75"/>
+<text x="670" y="235" class="l" text-anchor="start" fill="#c94f4f" font-weight="700">不形式化</text>
+<text x="360" y="285" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">凡承诺形式化处必须精确；凡不承诺处必须明确说“不形式化”。</text>
+</svg>

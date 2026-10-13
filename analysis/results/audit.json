@@ -1,7 +1,7 @@
 {
   "A1_terms": {
     "有效容量": {
-      "total": 15,
+      "total": 19,
       "by_chapter": [
         [
           "ch03.html",
@@ -9,7 +9,7 @@
         ],
         [
           "ch05.html",
-          10
+          13
         ],
         [
           "ch07.html",
@@ -17,6 +17,10 @@
         ],
         [
           "ch09.html",
+          1
+        ],
+        [
+          "ch15.html",
           1
         ]
       ],
@@ -67,17 +71,21 @@
       "first": "ch03.html"
     },
     "表示坍塌": {
-      "total": 8,
+      "total": 11,
       "by_chapter": [
         [
           "ch05.html",
-          8
+          10
+        ],
+        [
+          "ch15.html",
+          1
         ]
       ],
       "first": "ch05.html"
     },
     "信息瓶颈": {
-      "total": 30,
+      "total": 32,
       "by_chapter": [
         [
           "ch02.html",
@@ -101,7 +109,7 @@
         ],
         [
           "ch15.html",
-          10
+          12
         ],
         [
           "ch19.html",
@@ -155,7 +163,7 @@
       "first": "ch01.html"
     },
     "内源模拟": {
-      "total": 17,
+      "total": 18,
       "by_chapter": [
         [
           "ch02.html",
@@ -179,7 +187,7 @@
         ],
         [
           "ch15.html",
-          2
+          3
         ]
       ],
       "first": "ch02.html"
@@ -307,7 +315,7 @@
       "first": "ch08.html"
     },
     "吸引子": {
-      "total": 41,
+      "total": 43,
       "by_chapter": [
         [
           "ch01.html",
@@ -327,7 +335,7 @@
         ],
         [
           "ch09.html",
-          11
+          13
         ],
         [
           "ch11.html",
@@ -345,7 +353,7 @@
       "first": "ch01.html"
     },
     "巩固": {
-      "total": 24,
+      "total": 27,
       "by_chapter": [
         [
           "ch02.html",
@@ -357,11 +365,11 @@
         ],
         [
           "ch06.html",
-          6
+          7
         ],
         [
           "ch09.html",
-          4
+          6
         ],
         [
           "ch10.html",
@@ -391,7 +399,7 @@
       "first": "ch02.html"
     },
     "干扰": {
-      "total": 67,
+      "total": 72,
       "by_chapter": [
         [
           "ch01.html",
@@ -411,7 +419,7 @@
         ],
         [
           "ch05.html",
-          34
+          35
         ],
         [
           "ch06.html",
@@ -422,8 +430,12 @@
           4
         ],
         [
+          "ch08.html",
+          1
+        ],
+        [
           "ch09.html",
-          8
+          9
         ],
         [
           "ch11.html",
@@ -434,18 +446,22 @@
           1
         ],
         [
+          "ch15.html",
+          1
+        ],
+        [
           "ch17.html",
           2
         ],
         [
           "ch19.html",
-          3
+          4
         ]
       ],
       "first": "ch01.html"
     },
     "遗忘": {
-      "total": 69,
+      "total": 72,
       "by_chapter": [
         [
           "ch01.html",
@@ -457,7 +473,7 @@
         ],
         [
           "ch04.html",
-          16
+          17
         ],
         [
           "ch05.html",
@@ -469,11 +485,11 @@
         ],
         [
           "ch08.html",
-          4
+          5
         ],
         [
           "ch09.html",
-          24
+          25
         ],
         [
           "ch11.html",
@@ -503,11 +519,11 @@
       "first": "ch01.html"
     },
     "有效秩": {
-      "total": 9,
+      "total": 10,
       "by_chapter": [
         [
           "ch05.html",
-          7
+          8
         ],
         [
           "ch07.html",
@@ -560,6 +576,7 @@
     "13.3",
     "15.1",
     "15.2",
+    "15.3",
     "18.1",
     "2.1",
     "4.1",
@@ -609,6 +626,9 @@
       "ch15.html",
       "ch15.html"
     ],
+    "15.3": [
+      "ch15.html"
+    ],
     "18.1": [
       "ch18.html",
       "ch18.html",
@@ -622,6 +642,8 @@
       "ch04.html",
       "ch04.html",
       "ch04.html",
+      "ch04.html",
+      "ch15.html",
       "ch15.html"
     ],
     "5.1": [
@@ -640,6 +662,7 @@
       "ch06.html"
     ],
     "6.2": [
+      "ch06.html",
       "ch06.html"
     ],
     "7.3": [
@@ -743,7 +766,8 @@
     "ch15.html": {
       "numbers": [
         1,
-        2
+        2,
+        3
       ],
       "continuous": true
     },
@@ -768,6 +792,9 @@
     "14.4",
     "15.1",
     "15.2",
+    "15.3",
+    "15.4",
+    "15.5",
     "16.1",
     "16.2",
     "17.1",
@@ -800,16 +827,22 @@
     "11.1",
     "12.1",
     "13.1",
+    "13.2",
     "14.1",
     "15.1",
     "18.1",
+    "19.1",
     "2.1",
     "4.1",
     "5.1",
+    "5.2",
+    "5.3",
     "6.1",
+    "6.2",
     "7.1",
     "8.1",
-    "9.1"
+    "9.1",
+    "9.2"
   ],
   "A3_table_refs_missing_def": [],
   "A3_figure_refs_missing_def": [],
@@ -857,8 +890,16 @@
       "snippet": "限定：这是一个上界式的示意，d′ 的实际值依赖编码与失真容忍度（第 5.2 节）"
     },
     {
+      "chapter": "ch05.html",
+      "snippet": "图为定性示意，非实测"
+    },
+    {
       "chapter": "ch06.html",
       "snippet": "图 6.1　容量级联（示意）"
+    },
+    {
+      "chapter": "ch06.html",
+      "snippet": "图为定性示意"
     },
     {
       "chapter": "ch09.html",
@@ -960,13 +1001,15 @@
     "4": [
       "ch03.html",
       "ch04.html",
-      "ch05.html"
+      "ch05.html",
+      "ch15.html"
     ],
     "5": [
       "ch02.html",
       "ch04.html",
       "ch05.html",
       "ch09.html",
+      "ch15.html",
       "ch19.html"
     ],
     "6": [
@@ -984,6 +1027,7 @@
       "ch01.html",
       "ch05.html",
       "ch07.html",
+      "ch15.html",
       "ch19.html"
     ],
     "8": [
@@ -991,6 +1035,7 @@
       "ch04.html",
       "ch05.html",
       "ch08.html",
+      "ch15.html",
       "ch17.html",
       "ch19.html"
     ],
@@ -1006,6 +1051,9 @@
   },
   "A5_chapter_refs_invalid": [],
   "A5_section_refs": {
+    "0.138": [
+      "ch15.html"
+    ],
     "0.5": [
       "ch08.html"
     ],
@@ -1149,6 +1197,9 @@
     "15.1": [
       "ch15.html"
     ],
+    "15.10": [
+      "ch15.html"
+    ],
     "15.2": [
       "ch15.html"
     ],
@@ -1168,6 +1219,13 @@
       "ch15.html"
     ],
     "15.7": [
+      "ch15.html"
+    ],
+    "15.8": [
+      "ch07.html",
+      "ch15.html"
+    ],
+    "15.9": [
       "ch15.html"
     ],
     "16.1": [
@@ -1357,7 +1415,8 @@
       "ch04.html"
     ],
     "4.5": [
-      "ch04.html"
+      "ch04.html",
+      "ch15.html"
     ],
     "4.6": [
       "ch04.html",
@@ -1431,7 +1490,9 @@
     ],
     "7.4": [
       "ch03.html",
-      "ch07.html"
+      "ch05.html",
+      "ch07.html",
+      "ch15.html"
     ],
     "7.5": [
       "ch03.html",
