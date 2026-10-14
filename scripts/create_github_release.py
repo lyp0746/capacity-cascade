@@ -1,57 +1,47 @@
 # -*- coding: utf-8 -*-
-"""create_github_release.py — 为每个发布产物创建一个独立的 GitHub Release（一个产物一个 tag）。
+"""create_github_release.py — 单一 release、单一 tag，承载全部发布产物。
 
-设计原则
---------
-* **一个产物一个 tag**：每个 release 只承载一个资产，使每个产物都能被独立引用、
-  独立归档（例如各获得一个 Zenodo 版本 DOI）。
-* Token 从 git credential helper 读取，**不落盘、不打印**。
-* 幂等：同名 tag / 同名资产已存在时复用，不重复创建。
+模型
+----
+本仓库采用**一个 release、一个 tag**：tag 形如 ``<prefix>-<YYYY-MM-DD>``（日期作后缀），
+一个 release 承载全部读者面产物（印刷版/电子阅读版 PDF、EPUB、HTML、Markdown、封面、文档）。
+若需“一个产物一个 tag”，改用 ``create_github_release_per_artifact.py``。
 
 用法
 ----
-    python scripts/create_github_release.py --date 2026-10-12
-    python scripts/create_github_release.py --date 2026-10-12 --draft
+    python scripts/create_github_release.py --date 2026-10-14
+    python scripts/create_github_release.py --date 2026-10-14 --draft
     python scripts/create_github_release.py --list
-    python scripts/create_github_release.py --date 2026-10-12 --only epub
+    python scripts/create_github_release.py --verify
 """
 import argparse
 import os
 import subprocess
 import sys
+import time
 
 import requests
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GIT = os.environ.get("GIT_BIN", r"D:\Git\cmd\git.exe")
 
-# (kind, 源文件, GitHub 资产名, release 名称, 说明)
-# 顺序即“产物清单”，与 release/MANIFEST.txt 对应。
-ARTIFACTS = [
-    ("print-pdf", "release/capacity-cascade-print.pdf",
-     "capacity-cascade-print.pdf", "印刷版 PDF（A4）",
-     "A4 单栏、宋体＋Times、四级 PDF 书签，适合打印与正式引用。"),
-    ("ereader-pdf", "release/capacity-cascade-ereader.pdf",
-     "capacity-cascade-ereader.pdf", "电子阅读版 PDF（B5）",
-     "B5 重排、12pt／1.8 倍行距、斑马纹表格，适合平板与屏幕阅读。"),
-    ("epub", "release/capacity-cascade.epub",
-     "capacity-cascade.epub", "EPUB 3",
-     "EPUB 3（含 nav + NCX 四级目录），可在 Kindle、Apple Books、多看等阅读。"),
-    ("html", "release/capacity-cascade.html",
-     "capacity-cascade.html", "网页版（自包含）",
-     "单文件自包含 HTML，含内嵌图片，可直接浏览器打开。"),
-    ("ereader-html", "release/capacity-cascade-ereader.html",
-     "capacity-cascade-ereader.html", "电子阅读网页版",
-     "网页版 + 电子阅读样式叠加。"),
-    ("markdown", "release/capacity-cascade.md",
-     "capacity-cascade.md", "合并 Markdown",
-     "全书合一的 GFM Markdown（含表格与公式行）。"),
-    ("markdown-zip", "release/capacity-cascade-markdown.zip",
-     "capacity-cascade-markdown.zip", "分文件 Markdown 打包",
-     "逐文件 Markdown + assets 图片，便于二次编辑与再发布。"),
-    ("cover", "release/cover.svg",
-     "cover.svg", "封面矢量图",
-     "满版封面 SVG（A4 比例），可无损缩放。"),
+REPO_DEFAULT = "lyp0746/capacity-cascade"
+BOOK = "遗忘的边界"
+
+# (源文件, GitHub 资产名) —— 一个 release 的资产清单
+ASSETS = [
+    ("release/capacity-cascade-print.pdf", "capacity-cascade-print.pdf"),
+    ("release/capacity-cascade-ereader.pdf", "capacity-cascade-ereader.pdf"),
+    ("release/capacity-cascade.epub", "capacity-cascade.epub"),
+    ("release/capacity-cascade.html", "capacity-cascade.html"),
+    ("release/capacity-cascade-ereader.html", "capacity-cascade-ereader.html"),
+    ("release/capacity-cascade.md", "capacity-cascade.md"),
+    ("release/capacity-cascade-markdown.zip", "capacity-cascade-markdown.zip"),
+    ("release/cover.svg", "cover.svg"),
+    ("release/README.md", "README.md"),
+    ("release/修订说明.md", "REVISION-NOTES.md"),
+    ("release/数据缺口清单.md", "DATA-GAPS.md"),
+    ("release/欢迎补充数据.md", "CONTRIBUTING-DATA.md"),
 ]
 
 
@@ -77,122 +67,92 @@ def api(tok, method, url, extra_headers=None, **kw):
     return requests.request(method, url, headers=headers, timeout=180, **kw)
 
 
-def ensure_release(tok, repo, tag, name, body, draft, prerelease):
-    base = f"https://api.github.com/repos/{repo}"
-    r = api(tok, "GET", f"{base}/releases/tags/{tag}")
-    if r.status_code == 200:
-        rel = r.json()
-        print(f"[reuse] {tag} id={rel['id']}")
-        return rel
-    r = api(tok, "POST", f"{base}/releases", json={
-        "tag_name": tag, "name": name, "body": body,
-        "draft": draft, "prerelease": prerelease})
-    if r.status_code not in (200, 201):
-        raise SystemExit(f"创建 release 失败（{tag}）：{r.status_code} {r.text[:300]}")
-    rel = r.json()
-    print(f"[new] {tag} id={rel['id']} draft={draft}")
-    return rel
-
-
-def upload(tok, repo, rel, src, dst):
-    p = os.path.join(HERE, src)
-    if not os.path.exists(p):
-        print(f"  [skip] 缺文件 {src}")
-        return
-    have = {a["name"] for a in rel.get("assets", [])}
-    if dst in have:
-        print(f"  [have] {dst}")
-        return
-    with open(p, "rb") as fh:
-        up = api(tok, "POST",
-                 f"https://uploads.github.com/repos/{repo}/releases/{rel['id']}/assets",
-                 params={"name": dst}, data=fh,
-                 extra_headers={"Content-Type": "application/octet-stream"})
-    ok = up.status_code in (200, 201)
-    print(f"  [{'ok' if ok else 'FAIL'}] {dst}"
-          + ("" if ok else f" {up.status_code} {up.text[:200]}"))
-
-
-def verify(tok, repo, do_fix=False):
-    """校验「一个 tag ↔ 一个 release」不变式：
-    - 每个远端 tag 必须有对应的 release；
-    - 每个 release 必须恰好承载一个资产；
-    - 不存在没有 tag 的 release。
-    返回违规数。do_fix=True 时，为缺 release 的 tag 创建单资产 release。"""
-    base = f"https://api.github.com/repos/{repo}"
-    tags = [t["name"] for t in api(tok, "GET", f"{base}/tags").json()]
-    rels = {r["tag_name"]: r for r in api(tok, "GET", f"{base}/releases").json()}
-    kind_src = {kind: (src, dst, name) for kind, src, dst, name, _ in ARTIFACTS}
-    problems = 0
-    print(f"tags={len(tags)}  releases={len(rels)}")
-    for t in sorted(tags):
-        if t not in rels:
-            problems += 1
-            print(f"  [缺 release] {t}")
-            if do_fix:
-                # tag 形如 <prefix>-<date>-<kind>；kind 可能含连字符（print-pdf）
-                matched = next((k for k in kind_src if f"-{k}-" in t or t.endswith("-" + k)), None)
-                if not matched:
-                    print(f"    [skip] 无法从 tag 推断产物种类：{t}")
-                    continue
-                src, dst, name = kind_src[matched]
-                rel = ensure_release(tok, repo, t, f"{name}（{t}）",
-                                     "单产物 release（一个 release 一个 tag）。", False, False)
-                upload(tok, repo, rel, src, dst)
-        else:
-            n = len(rels[t].get("assets", []))
-            if n != 1:
-                problems += 1
-                print(f"  [资产数 {n} ≠ 1] {t}")
-    for t in rels:
-        if t not in tags:
-            problems += 1
-            print(f"  [release 无 tag] {t}")
-    return problems
+def release_body():
+    return ("《遗忘的边界：有限容量下的记忆、智能与自我》发布产物（本 release 承载全部格式）：\n"
+            "- 印刷版 PDF（A4）、电子阅读版 PDF（B5）\n"
+            "- EPUB 3、网页版 HTML、电子阅读 HTML、合并 Markdown、分文件 Markdown（zip）\n"
+            "- 封面 SVG、读者说明、修订说明、数据缺口、开放贡献指南\n\n"
+            "内容许可 CC BY 4.0；代码许可 MIT。")
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--repo", default="lyp0746/capacity-cascade")
-    ap.add_argument("--date", default="", help="版本日期，用于 tag，如 2026-10-12")
+    ap.add_argument("--repo", default=REPO_DEFAULT)
+    ap.add_argument("--date", default="", help="版本日期，如 2026-10-14")
     ap.add_argument("--tag-prefix", default="edition")
     ap.add_argument("--draft", action="store_true")
     ap.add_argument("--prerelease", action="store_true")
-    ap.add_argument("--only", default="", help="只发布某个 kind")
     ap.add_argument("--list", action="store_true")
-    ap.add_argument("--verify", action="store_true",
-                    help="校验“一个 tag 一个 release”不变式；配合 --fix 补建缺失 release")
-    ap.add_argument("--fix", action="store_true", help="配合 --verify：为缺 release 的 tag 补建")
+    ap.add_argument("--verify", action="store_true")
     args = ap.parse_args()
 
-    if args.verify:
-        tok = get_token()
-        bad = verify(tok, args.repo, do_fix=args.fix)
-        print("OK：每个 tag 对应且仅对应一个 release。" if bad == 0 else f"发现 {bad} 处违规。")
-        sys.exit(0 if bad == 0 else 1)
-
-    if args.list or not args.date:
-        print("产物清单（一个产物一个 tag）：")
-        for kind, src, dst, name, desc in ARTIFACTS:
-            tag = f"{args.tag_prefix}-{kind}-<date>"
-            print(f"  {tag:44s} {name}  <- {src}")
+    if args.list or (not args.date and not args.verify):
+        print("单一 release 模型；资产清单：")
+        for src, dst in ASSETS:
+            exists = "√" if os.path.exists(os.path.join(HERE, src)) else "×"
+            print(f"  [{exists}] {dst:34s} <- {src}")
         return
+    if args.verify and not args.date:
+        raise SystemExit("--verify 需要 --date <YYYY-MM-DD>（指定要校验的 tag）")
 
+    tag = f"{args.tag_prefix}-{args.date}"
     tok = get_token()
-    for kind, src, dst, name, desc in ARTIFACTS:
-        if args.only and kind != args.only:
+    base = f"https://api.github.com/repos/{args.repo}"
+    name = f"{BOOK} · {args.date}"
+
+    if args.verify:
+        r = api(tok, "GET", f"{base}/releases/tags/{tag}")
+        if r.status_code != 200:
+            print(f"[缺 release] {tag}")
+            sys.exit(1)
+        rel = r.json()
+        have = {a["name"] for a in rel.get("assets", [])}
+        missing = [d for _, d in ASSETS if d not in have]
+        print(f"release {tag}: {len(have)} 个资产；缺失 {missing or '无'}")
+        sys.exit(0 if not missing else 1)
+
+    r = api(tok, "GET", f"{base}/releases/tags/{tag}")
+    if r.status_code == 200:
+        rel = r.json()
+        print(f"[reuse] release {tag} id={rel['id']}")
+    else:
+        r = api(tok, "POST", f"{base}/releases",
+                json={"tag_name": tag, "name": name, "body": release_body(),
+                      "draft": args.draft, "prerelease": args.prerelease,
+                      "make_latest": "true"})
+        if r.status_code not in (200, 201):
+            raise SystemExit(f"创建 release 失败：{r.status_code} {r.text[:300]}")
+        rel = r.json()
+        print(f"[new] release {tag} id={rel['id']} (Latest)")
+
+    have = {a["name"] for a in rel.get("assets", [])}
+    for src, dst in ASSETS:
+        if dst in have:
+            print(f"  [have] {dst}")
             continue
-        tag = f"{args.tag_prefix}-{kind}-{args.date}"
-        rel_name = f"遗忘的边界 · {name}（{args.date}）"
-        body = (f"{desc}\n\n"
-                f"本书为理论专著《遗忘的边界：有限容量下的记忆、智能与自我》。"
-                f"本 release 仅承载一个产物（一个产物一个 tag）。\n"
-                f"内容许可 CC BY 4.0；代码许可 MIT。")
-        rel = ensure_release(tok, args.repo, tag, rel_name, body,
-                             args.draft, args.prerelease)
-        upload(tok, args.repo, rel, src, dst)
-        print(f"      -> {rel.get('html_url')}")
-    print("完成。")
+        p = os.path.join(HERE, src)
+        if not os.path.exists(p):
+            print(f"  [skip] 缺文件 {src}")
+            continue
+        with open(p, "rb") as fh:
+            data = fh.read()
+        up = None
+        for attempt in range(4):
+            try:
+                up = api(tok, "POST",
+                         f"https://uploads.github.com/repos/{args.repo}/releases/{rel['id']}/assets",
+                         params={"name": dst}, data=data,
+                         extra_headers={"Content-Type": "application/octet-stream"})
+                break
+            except requests.exceptions.RequestException as e:
+                print(f"  [retry {attempt+1}/4] {dst}（{type(e).__name__}）")
+                time.sleep(3 * (attempt + 1))
+        if up is None:
+            print(f"  [FAIL] {dst} 上传失败（网络）")
+            continue
+        print(f"  [{'ok' if up.status_code in (200,201) else 'FAIL'}] {dst}"
+              + ("" if up.status_code in (200, 201) else f" {up.status_code} {up.text[:200]}"))
+    print("release 页面：", rel.get("html_url"))
 
 
 if __name__ == "__main__":

@@ -25,8 +25,8 @@ GIT="/mnt/d/Git/cmd/git.exe"
 bash scripts/build.sh            # audit→印刷PDF→电子阅读PDF→EPUB→Markdown
 bash scripts/validate.sh         # 校对 + EPUB 结构校验
 bash scripts/release.sh          # 组装 release/（刷新发布包）
-"$PY" scripts/create_github_release.py --list                 # 产物清单
-"$PY" scripts/create_github_release.py --date 2026-10-12      # 一个产物一个 tag
+"$PY" scripts/create_github_release.py --list                 # 资产清单
+"$PY" scripts/create_github_release.py --date 2026-10-14      # 单一 release、单一 tag
 ```
 
 ## 仓库约定
@@ -35,12 +35,10 @@ bash scripts/release.sh          # 组装 release/（刷新发布包）
 - 图表：脚本输出 `assets/svg/*.svg`；正文用相对路径 `assets/svg/...` 引用。
 - 改正文后顺序：`analysis/make_figures.py`（如改图）→ `analysis/audit.py`（应无“引用但未定义的表/图”、无“无效章节引用”）→ `bash scripts/build.sh`。
 - 结论标注：证据等级 A/B/C 与概念等级 甲/乙/丙 双重标注；全书数字必须带等级。
-- **一个产物一个 tag**：`scripts/create_github_release.py` 为每个产物（印刷版 PDF、电子阅读版 PDF、EPUB、HTML、Markdown、封面）各建一个 tag 与 release，**每个 release 只承载一个资产**。
-  - tag 命名：**日期作后缀**，形如 `edition-<kind>-YYYY-MM-DD`（例：`edition-print-pdf-2026-10-14`）。
-  - 主产物（印刷版 PDF）标为 GitHub **Latest**（`make_latest=true`），其余 `false`。
-  - 只保留最新一套日期；不另建第二套。
-- **硬不变式——一个 release 一个 tag（1:1）**：`#tag == #release`，每个 tag 有 release，每个 release 恰好一个资产，且无无 tag 的 release。发布后必须校验：`"$PY" scripts/create_github_release.py --verify`（加 `--fix` 为孤立 tag 补建 release）。
-- **同版重发 = 强制执行同一批 tag 到新提交并替换资产**，绝不另建第二套 tag（例如另一个日期）；只改完成日期仍是同一版。
+- **一个 release、一个 tag（本仓库采用）**：`scripts/create_github_release.py` 建**一个** tag（日期作后缀，`edition-YYYY-MM-DD`）与**一个** release，release 内承载**全部**产物（印刷/电子阅读 PDF、EPUB、HTML、Markdown、封面、文档）。该 release 标为 GitHub **Latest**。
+  - 只保留最新一套；不另建多套 tag。旧的多产物 tag（`edition-<kind>-<date>`）已废弃。
+- **硬不变式——一个 tag 对应且仅对应一个 release**：无孤立 tag、无无 tag 的 release。发布后校验：`"$PY" scripts/create_github_release.py --verify`。
+- **同版重发 = 把同一个 tag 移到新提交并替换资产**（删旧资产、传新资产），不另建第二套 tag（含只改完成日期）。
 - **可证伪登记簿**（`source/appendix_e_preregistration.html`）与发布包中的对应条目为 **append-only**：只追加，绝不改写旧行。
 - **正文与元数据不含版本号**；日期使用真实完成日期（`source/book.json` 单一来源）。
 
