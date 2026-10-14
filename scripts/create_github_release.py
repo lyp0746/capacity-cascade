@@ -113,6 +113,44 @@ def upload(tok, repo, rel, src, dst):
           + ("" if ok else f" {up.status_code} {up.text[:200]}"))
 
 
+def verify(tok, repo, do_fix=False):
+    """校验「一个 tag ↔ 一个 release」不变式：
+    - 每个远端 tag 必须有对应的 release；
+    - 每个 release 必须恰好承载一个资产；
+    - 不存在没有 tag 的 release。
+    返回违规数。do_fix=True 时，为缺 release 的 tag 创建单资产 release。"""
+    base = f"https://api.github.com/repos/{repo}"
+    tags = [t["name"] for t in api(tok, "GET", f"{base}/tags").json()]
+    rels = {r["tag_name"]: r for r in api(tok, "GET", f"{base}/releases").json()}
+    kind_src = {kind: (src, dst, name) for kind, src, dst, name, _ in ARTIFACTS}
+    problems = 0
+    print(f"tags={len(tags)}  releases={len(rels)}")
+    for t in sorted(tags):
+        if t not in rels:
+            problems += 1
+            print(f"  [缺 release] {t}")
+            if do_fix:
+                # tag 形如 <prefix>-<date>-<kind>；kind 可能含连字符（print-pdf）
+                matched = next((k for k in kind_src if t.endswith("-" + k)), None)
+                if not matched:
+                    print(f"    [skip] 无法从 tag 推断产物种类：{t}")
+                    continue
+                src, dst, name = kind_src[matched]
+                rel = ensure_release(tok, repo, t, f"{name}（{t}）",
+                                     "单产物 release（一个 release 一个 tag）。", False, False)
+                upload(tok, repo, rel, src, dst)
+        else:
+            n = len(rels[t].get("assets", []))
+            if n != 1:
+                problems += 1
+                print(f"  [资产数 {n} ≠ 1] {t}")
+    for t in rels:
+        if t not in tags:
+            problems += 1
+            print(f"  [release 无 tag] {t}")
+    return problems
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", default="lyp0746/capacity-cascade")
@@ -122,7 +160,16 @@ def main():
     ap.add_argument("--prerelease", action="store_true")
     ap.add_argument("--only", default="", help="只发布某个 kind")
     ap.add_argument("--list", action="store_true")
+    ap.add_argument("--verify", action="store_true",
+                    help="校验“一个 tag 一个 release”不变式；配合 --fix 补建缺失 release")
+    ap.add_argument("--fix", action="store_true", help="配合 --verify：为缺 release 的 tag 补建")
     args = ap.parse_args()
+
+    if args.verify:
+        tok = get_token()
+        bad = verify(tok, args.repo, do_fix=args.fix)
+        print("OK：每个 tag 对应且仅对应一个 release。" if bad == 0 else f"发现 {bad} 处违规。")
+        sys.exit(0 if bad == 0 else 1)
 
     if args.list or not args.date:
         print("产物清单（一个产物一个 tag）：")
