@@ -131,7 +131,7 @@ def verify(tok, repo, do_fix=False):
             print(f"  [缺 release] {t}")
             if do_fix:
                 # tag 形如 <prefix>-<date>-<kind>；kind 可能含连字符（print-pdf）
-                matched = next((k for k in kind_src if t.endswith("-" + k)), None)
+                matched = next((k for k in kind_src if f"-{k}-" in t or t.endswith("-" + k)), None)
                 if not matched:
                     print(f"    [skip] 无法从 tag 推断产物种类：{t}")
                     continue
@@ -174,7 +174,7 @@ def main():
     if args.list or not args.date:
         print("产物清单（一个产物一个 tag）：")
         for kind, src, dst, name, desc in ARTIFACTS:
-            tag = f"{args.tag_prefix}-<date>-{kind}"
+            tag = f"{args.tag_prefix}-{kind}-<date>"
             print(f"  {tag:44s} {name}  <- {src}")
         return
 
@@ -182,7 +182,7 @@ def main():
     for kind, src, dst, name, desc in ARTIFACTS:
         if args.only and kind != args.only:
             continue
-        tag = f"{args.tag_prefix}-{args.date}-{kind}"
+        tag = f"{args.tag_prefix}-{kind}-{args.date}"
         rel_name = f"遗忘的边界 · {name}（{args.date}）"
         body = (f"{desc}\n\n"
                 f"本书为理论专著《遗忘的边界：有限容量下的记忆、智能与自我》。"
