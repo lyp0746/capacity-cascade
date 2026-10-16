@@ -38,6 +38,7 @@ FRONT = [("执行摘要（Executive Summary）", "front_executive_summary.html",
          ("术语、记号与断言分级速查", "front_terms.html", "terms")]
 BACK = [("结语　一份开放的邀请", "back_epilogue.html", "epilogue"),
         ("后记　方法论的自我限定与伦理立场", "back_postscript.html", "postscript"),
+        ("附　通俗读本《只能选两样》导引", "back_popular_guide.html", "popguide"),
         ("附录 A　数学补充", "appendix_a_math.html", "apxA"),
         ("附录 B　理论地图详表", "appendix_b_map.html", "apxB"),
         ("附录 C　参考文献", "appendix_c_references.html", "apxC"),
