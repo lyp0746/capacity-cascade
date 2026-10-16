@@ -98,3 +98,9 @@
 - 正文唯一来源 `source/*.html`；插图与封面确定性生成（`analysis/make_figures.py`、`analysis/make_cover.py`）。
 - 校对脚本 `analysis/audit.py`；构建 `scripts/build.sh`；发布 `scripts/release.sh`。
 - 发布采用**一个产物一个 tag**：`scripts/create_github_release.py` 为每个产物各建一个 tag 与 release。
+
+## 审查补充（2026-10-16）：系列级外部登记接口与杀手实验
+
+- 依据系列审阅意见，新增/更新“系列级外部登记接口”小节（本书可证伪登记簿附录内），链接到外部登记库 `lyp0746/knowledge-tradeoffs`（跨域盲测登记、最小可验证单元、合并术语表、通俗读本）。
+- 同时登记本书的**杀手实验**（能证伪本书核心的最小观测）。
+- 登记为 append-only：不改写任何旧行；`source/book.json` 完成日期更新为 2026-10-16。
