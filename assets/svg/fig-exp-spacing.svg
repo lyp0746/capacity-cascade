@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 460" width="820" height="460" font-family="Microsoft YaHei, PingFang SC, SimHei, sans-serif">
+<rect width="820" height="460" fill="#ffffff"/>
+<text x="410.0" y="38" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a1a1a">一年所需的复习次数：由“每次增益”决定</text>
+<text x="410.0" y="62" text-anchor="middle" font-size="14" fill="#666">玩具模型：R(t)=exp(−t/S)，复习后 S→kS，阈值 0.9</text>
+<line x1="100" y1="370" x2="700" y2="370" stroke="#333" stroke-width="1.8"/>
+<line x1="100" y1="370" x2="100" y2="110" stroke="#333" stroke-width="1.8"/>
+<text x="400.0" y="410" text-anchor="middle" font-size="13" fill="#666">每次复习的增益 k</text>
+<text x="48" y="240.0" text-anchor="middle" font-size="13" fill="#666" transform="rotate(-90 48 240.0)">一年所需复习次数</text>
+<rect x="123.5" y="136.0" width="28" height="234.0" fill="#2f6db0" opacity="0.85"/>
+<text x="137.5" y="128.0" text-anchor="middle" font-size="12" fill="#2f6db0" font-weight="bold">36</text>
+<text x="137.5" y="390" text-anchor="middle" font-size="11" fill="#666">1.2</text>
+<rect x="179.8" y="246.5" width="28" height="123.5" fill="#2f6db0" opacity="0.85"/>
+<text x="193.8" y="238.5" text-anchor="middle" font-size="12" fill="#2f6db0" font-weight="bold">19</text>
+<text x="193.8" y="390" text-anchor="middle" font-size="11" fill="#666">1.5</text>
+<rect x="273.5" y="292.0" width="28" height="78.0" fill="#2f6db0" opacity="0.85"/>
+<text x="287.5" y="284.0" text-anchor="middle" font-size="12" fill="#2f6db0" font-weight="bold">12</text>
+<text x="287.5" y="390" text-anchor="middle" font-size="11" fill="#666">2.0</text>
+<rect x="461.0" y="311.5" width="28" height="58.5" fill="#2f6db0" opacity="0.85"/>
+<text x="475.0" y="303.5" text-anchor="middle" font-size="12" fill="#2f6db0" font-weight="bold">9</text>
+<text x="475.0" y="390" text-anchor="middle" font-size="11" fill="#666">3.0</text>
+<rect x="648.5" y="324.5" width="28" height="45.5" fill="#2f6db0" opacity="0.85"/>
+<text x="662.5" y="316.5" text-anchor="middle" font-size="12" fill="#2f6db0" font-weight="bold">7</text>
+<text x="662.5" y="390" text-anchor="middle" font-size="11" fill="#666">4.0</text>
+<line x1="95" y1="370.0" x2="100" y2="370.0" stroke="#333"/>
+<text x="90" y="374.0" text-anchor="end" font-size="11" fill="#666">0</text>
+<line x1="95" y1="305.0" x2="100" y2="305.0" stroke="#333"/>
+<text x="90" y="309.0" text-anchor="end" font-size="11" fill="#666">10</text>
+<line x1="95" y1="240.0" x2="100" y2="240.0" stroke="#333"/>
+<text x="90" y="244.0" text-anchor="end" font-size="11" fill="#666">20</text>
+<line x1="95" y1="175.0" x2="100" y2="175.0" stroke="#333"/>
+<text x="90" y="179.0" text-anchor="end" font-size="11" fill="#666">30</text>
+<line x1="95" y1="110.0" x2="100" y2="110.0" stroke="#333"/>
+<text x="90" y="114.0" text-anchor="end" font-size="11" fill="#666">40</text>
+<text x="410.0" y="444" text-anchor="middle" font-size="12" fill="#666">k 从 1.2 提到 2.0，复习次数从 36 降到 12——“怎么复习”比“复习多少次”更重要。</text>
+</svg>

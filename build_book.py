@@ -36,17 +36,21 @@ FRONT = [("执行摘要（Executive Summary）", "front_executive_summary.html",
          ("十分钟读懂本书", "front_quickstart.html", "quickstart"),
          ("理论地图　一份给读者的路线图", "front_theorymap.html", "theorymap"),
          ("术语、记号与断言分级速查", "front_terms.html", "terms")]
-BACK = [("结语　一份开放的邀请", "back_epilogue.html", "epilogue"),
+BACK = [
+        ("结语　一份开放的邀请", "back_epilogue.html", "epilogue"),
         ("后记　方法论的自我限定与伦理立场", "back_postscript.html", "postscript"),
-        ("附　通俗读本《只能选两样》导引", "back_popular_guide.html", "popguide"),
+        ("本系列（六本专著 + 两本通俗读本）", "back_popular_guide.html", "popguide"),
         ("附录 A　数学补充", "appendix_a_math.html", "apxA"),
         ("附录 B　理论地图详表", "appendix_b_map.html", "apxB"),
         ("附录 C　参考文献", "appendix_c_references.html", "apxC"),
         ("附录 D　术语表", "appendix_d_glossary.html", "apxD"),
         ("附录 E　可证伪登记簿", "appendix_e_preregistration.html", "apxE"),
         ("附录 F　证据与数据缺口清单", "appendix_f_datagaps.html", "apxF"),
-        ("附录 G　面向设计的检查清单", "appendix_g_toolkit.html", "apxG")]
-
+        ("附录 G　面向设计的检查清单", "appendix_g_toolkit.html", "apxG"),
+        ("附录 H　十个记忆现象：用容量级联诊断", "appendix_h_memory_cases.html", "apxH"),
+        ("附录 I　二十个问题：关于记忆与遗忘", "appendix_i_qa.html", "apxI"),
+        ("附录 J　记忆研究的五种方法", "appendix_j_methods.html", "apxJ"),
+        ("附录 K　记忆与身份：一个专题", "appendix_k_identity.html", "apxK")]
 
 def load_json(p, default=None):
     if not os.path.exists(p):

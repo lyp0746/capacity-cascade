@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500" font-family="Microsoft YaHei, PingFang SC, SimHei, sans-serif">
+<rect width="880" height="500" fill="#ffffff"/>
+<text x="440.0" y="38" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a1a1a">双时间尺度：只在一个窄窗口里更好</text>
+<text x="440.0" y="62" text-anchor="middle" font-size="14" fill="#666666">环境=稳定水平（中期漂移）+ 快变成分 + 噪声；纵轴为末段均方误差（越低越好）</text>
+<line x1="110" y1="390" x2="770" y2="390" stroke="#333" stroke-width="1.8"/>
+<line x1="110" y1="390" x2="110" y2="110" stroke="#333" stroke-width="1.8"/>
+<text x="440.0" y="430.0" text-anchor="middle" font-size="13" fill="#666666" font-weight="normal">切换周期 T（对数轴）</text>
+<text x="62" y="250.0" text-anchor="middle" font-size="13" fill="#666666" transform="rotate(-90 62 250.0)">末段均方误差（MSE）</text>
+<line x1="110.0" y1="390" x2="110.0" y2="395" stroke="#333"/>
+<text x="110.0" y="410.0" text-anchor="middle" font-size="11" fill="#666666" font-weight="normal">200</text>
+<line x1="264.6" y1="390" x2="264.6" y2="395" stroke="#333"/>
+<text x="264.6" y="410.0" text-anchor="middle" font-size="11" fill="#666666" font-weight="normal">500</text>
+<line x1="381.5" y1="390" x2="381.5" y2="395" stroke="#333"/>
+<text x="381.5" y="410.0" text-anchor="middle" font-size="11" fill="#666666" font-weight="normal">1000</text>
+<line x1="498.5" y1="390" x2="498.5" y2="395" stroke="#333"/>
+<text x="498.5" y="410.0" text-anchor="middle" font-size="11" fill="#666666" font-weight="normal">2000</text>
+<line x1="653.1" y1="390" x2="653.1" y2="395" stroke="#333"/>
+<text x="653.1" y="410.0" text-anchor="middle" font-size="11" fill="#666666" font-weight="normal">5000</text>
+<line x1="770.0" y1="390" x2="770.0" y2="395" stroke="#333"/>
+<text x="770.0" y="410.0" text-anchor="middle" font-size="11" fill="#666666" font-weight="normal">10000</text>
+<line x1="105" y1="390.0" x2="110" y2="390.0" stroke="#333"/>
+<text x="100.0" y="394.0" text-anchor="end" font-size="11" fill="#666666" font-weight="normal">0.0</text>
+<line x1="105" y1="305.2" x2="110" y2="305.2" stroke="#333"/>
+<text x="100.0" y="309.2" text-anchor="end" font-size="11" fill="#666666" font-weight="normal">0.1</text>
+<line x1="105" y1="220.3" x2="110" y2="220.3" stroke="#333"/>
+<text x="100.0" y="224.3" text-anchor="end" font-size="11" fill="#666666" font-weight="normal">0.2</text>
+<line x1="105" y1="135.5" x2="110" y2="135.5" stroke="#333"/>
+<text x="100.0" y="139.5" text-anchor="end" font-size="11" fill="#666666" font-weight="normal">0.3</text>
+<path d="M110.0,146.5 L264.6,156.0 L381.5,168.7 L498.5,169.5 L653.1,176.7 L770.0,177.2" fill="none" stroke="#2f6db0" stroke-width="2.4"/>
+<circle cx="110.0" cy="146.5" r="3.2" fill="#2f6db0"/>
+<circle cx="264.6" cy="156.0" r="3.2" fill="#2f6db0"/>
+<circle cx="381.5" cy="168.7" r="3.2" fill="#2f6db0"/>
+<circle cx="498.5" cy="169.5" r="3.2" fill="#2f6db0"/>
+<circle cx="653.1" cy="176.7" r="3.2" fill="#2f6db0"/>
+<circle cx="770.0" cy="177.2" r="3.2" fill="#2f6db0"/>
+<path d="M110.0,155.5 L264.6,164.3 L381.5,165.4 L498.5,167.8 L653.1,177.0 L770.0,172.8" fill="none" stroke="#ef6c00" stroke-width="2.4"/>
+<circle cx="110.0" cy="155.5" r="3.2" fill="#ef6c00"/>
+<circle cx="264.6" cy="164.3" r="3.2" fill="#ef6c00"/>
+<circle cx="381.5" cy="165.4" r="3.2" fill="#ef6c00"/>
+<circle cx="498.5" cy="167.8" r="3.2" fill="#ef6c00"/>
+<circle cx="653.1" cy="177.0" r="3.2" fill="#ef6c00"/>
+<circle cx="770.0" cy="172.8" r="3.2" fill="#ef6c00"/>
+<line x1="120" y1="126" x2="144" y2="126" stroke="#2f6db0" stroke-width="2.4"/>
+<text x="150.0" y="130.0" text-anchor="start" font-size="11" fill="#2f6db0" font-weight="normal">单速率（最优网格）</text>
+<line x1="120" y1="144" x2="144" y2="144" stroke="#ef6c00" stroke-width="2.4"/>
+<text x="150.0" y="148.0" text-anchor="start" font-size="11" fill="#ef6c00" font-weight="normal">快+慢双速率</text>
+<text x="440.0" y="466.0" text-anchor="middle" font-size="12" fill="#666666" font-weight="normal">T=200 时双速率好 3.8%，T=500 时好 3.6%；T≥1000 后两者无差别。</text>
+<text x="440.0" y="486.0" text-anchor="middle" font-size="12" fill="#666666" font-weight="normal">这个窄窗口，是对“多时间尺度是矛盾的数学解”的一次限定：它只在切换快于学习率时成立。</text>
+</svg>

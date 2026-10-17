@@ -5,7 +5,7 @@
 
 > 支撑本书的形式结构称为**容量级联**（capacity cascade）。仓库代号 `capacity-cascade` 即由此而来。
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23323277.svg)](https://doi.org/10.5281/zenodo.23323277)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23323276.svg)](https://doi.org/10.5281/zenodo.23323276)
 [![License: CC BY 4.0](https://img.shields.io/badge/Content-CC%20BY%204.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE-MIT)
 
@@ -96,11 +96,11 @@ python scripts/create_github_release.py --date 2026-10-14
 
 ## 引用
 
-**DOI：** [10.5281/zenodo.23323277](https://doi.org/10.5281/zenodo.23323277)
+**DOI：** [10.5281/zenodo.23323276](https://doi.org/10.5281/zenodo.23323276)
 
 ```
 李毅芃. 《遗忘的边界：有限容量下的记忆、智能与自我》. 2026-10-14.
-Zenodo. https://doi.org/10.5281/zenodo.23323277. CC BY 4.0.
+Zenodo. https://doi.org/10.5281/zenodo.23323276. CC BY 4.0.
 ```
 
 机器可读格式见 [`CITATION.cff`](CITATION.cff)。
@@ -117,7 +117,7 @@ Zenodo. https://doi.org/10.5281/zenodo.23323277. CC BY 4.0.
 
 ## 归档 DOI（最新）
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23323277.svg)](https://doi.org/10.5281/zenodo.23323277)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23323276.svg)](https://doi.org/10.5281/zenodo.23323276)
 
 本书的**最新版本**以该 DOI 为准（Zenodo 自动指向最新版本）；引用格式见 `CITATION.cff`。
 本系列的通俗读本《只能选两样》与外部登记库见 [lyp0746/knowledge-tradeoffs](https://github.com/lyp0746/knowledge-tradeoffs)。

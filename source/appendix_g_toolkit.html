@@ -17,7 +17,7 @@
 <tr><td class="l">部分解释（★★★）</td><td class="l">梦中的荒谬组合为何有时启发创意</td><td class="l">随机性提供创意的<b>必要条件</b>（第 11 章）</td><td class="l">“为什么某个组合恰好有用”，框架不提供充分条件</td></tr>
 <tr><td class="l">不能解释（★）</td><td class="l">为什么某条知识对我有意义、另一条没有</td><td class="l">—</td><td class="l">需要价值论，超出信息论范围</td></tr>
 <tr><td class="l">不能解释（★）</td><td class="l">为什么忘掉的恰是“我想忘的”</td><td class="l">—</td><td class="l">需要目标与动机模型，框架未提供</td></tr>
-<tr><td class="l">不能解释（★）</td><td class="l">梦的具体内容为何包含最近的经历</td><td class="l">—</td><td class="l">需要神经计算细节，框架只说“有重放”</td></tr>
+<tr><td class="l">不能解释（★）</td><td class="l">梦的具体内容为何包含截至 2026 年 10 月的经历</td><td class="l">—</td><td class="l">需要神经计算细节，框架只说“有重放”</td></tr>
 </table>
 <div class="datasrc"><b>性质：</b>适用范围表。证据等级 C（压力测试为本书自评）；<b>注释：</b>本表是<b>实用性边界</b>：如果你的问题落在“部分解释”或“不能解释”行，请把框架当作提问工具，而不是答案来源。把它当成能解释一切的理论，是使用它的最大方式。</div>
 
@@ -116,3 +116,47 @@
 <h3>G.7　使用声明</h3>
 
 <p>使用本附录清单时，请注意：它们来自一个<b>理论框架</b>，不是经过验证的实践标准。它们最合适的用法，是把“我该检查什么”具体化，然后<b>用你自己的实验结果去判断每一条是否真的有用</b>。如果某条在实践中无效，那正是本框架应当被修正的地方。</p>
+<h3>附录 G　数值实验：参数、结果与失败记录</h3>
+<p>本书正文引用了两组模拟。它们的作用不是“证明”，而是“让读者能自己跑一遍”。</p>
+<p><b>实验一：Hopfield 容量。</b> N=300，Hebbian 规则（对角线置零），随机 ±1 模式；每个 α 做 20 次试验，每次对每个模式做 20 次同步更新；测 |m|=|s·ξ|/N。种子 20261016。脚本 <code>analysis/exp_memory.py</code>。</p>
+<table class="nat">
+<tr><th class="l">α</th><th class="l">P</th><th class="l">|m|</th><th class="l">α</th><th class="l">P</th><th class="l">|m|</th></tr>
+<tr><td class="l">0.02</td><td class="l">6</td><td class="l">1.000</td><td class="l">0.16</td><td class="l">48</td><td class="l">0.910</td></tr>
+<tr><td class="l">0.04</td><td class="l">12</td><td class="l">1.000</td><td class="l">0.18</td><td class="l">54</td><td class="l">0.807</td></tr>
+<tr><td class="l">0.06</td><td class="l">18</td><td class="l">1.000</td><td class="l">0.20</td><td class="l">60</td><td class="l">0.679</td></tr>
+<tr><td class="l">0.08</td><td class="l">24</td><td class="l">1.000</td><td class="l">0.22</td><td class="l">66</td><td class="l">0.577</td></tr>
+<tr><td class="l">0.10</td><td class="l">30</td><td class="l">0.997</td><td class="l">0.24</td><td class="l">72</td><td class="l">0.501</td></tr>
+<tr><td class="l">0.12</td><td class="l">36</td><td class="l">0.987</td><td class="l">0.26</td><td class="l">78</td><td class="l">0.464</td></tr>
+<tr><td class="l">0.14</td><td class="l">42</td><td class="l">0.957</td><td class="l">0.28</td><td class="l">84</td><td class="l">0.426</td></tr>
+</table>
+<p><b>实验二：双时间尺度追踪。</b> 环境 = 稳定水平（中期 0.6→0.2）+ 快变成分（每 T 步翻转 ±0.4）+ 噪声 σ=0.5；步数 40000，取末段 1/3 的 MSE；单速率在 η∈{0.002…0.1} 取最优，双速率 η_slow=0.001、η_fast∈{0.02,0.05,0.1} 取最优。</p>
+<table class="nat">
+<tr><th class="l">T</th><th class="l">单速率 MSE</th><th class="l">双速率 MSE</th><th class="l">差值</th></tr>
+<tr><td class="l">200</td><td class="l">0.287</td><td class="l">0.276</td><td class="l">−0.011</td></tr>
+<tr><td class="l">500</td><td class="l">0.276</td><td class="l">0.266</td><td class="l">−0.010</td></tr>
+<tr><td class="l">1000</td><td class="l">0.261</td><td class="l">0.265</td><td class="l">+0.004</td></tr>
+<tr><td class="l">2000</td><td class="l">0.260</td><td class="l">0.262</td><td class="l">+0.002</td></tr>
+<tr><td class="l">5000</td><td class="l">0.251</td><td class="l">0.251</td><td class="l">0.000</td></tr>
+<tr><td class="l">10000</td><td class="l">0.251</td><td class="l">0.256</td><td class="l">+0.005</td></tr>
+</table>
+<p><b>失败记录（三条）：</b></p>
+<ol>
+<li><b>第一版双时间尺度实验设计错了。</b> 最初让慢层追“长期均值”，而目标均值为零，慢层等于在主动把预测拉向 0，结果双速率全面更差（MSE 0.10–0.50）。改用“稳定水平 + 快变成分 + 中期漂移”之后，才出现窄窗口优势。<b>这次修改是事后做的</b>，如实记录在此。</li>
+<li><b>容量曲线的“断崖”是视觉印象，不是结果。</b> 粗看像断崖，实测是斜坡（α=0.20 时仍有 0.68）。正文按“斜坡”写。</li>
+<li><b>没有做噪声扫描。</b> 双速率的优势可能在别的噪声水平下消失或放大；本书只测了 σ=0.5。这是缺口，不是结论。</li>
+</ol>
+<div class="box"><p><b>一句提醒：</b>这两组实验都只支持“在本书设定的模型内”的结论。它们能校准直觉，不能替代人类实验。</p></div>
+
+<h4>双时间尺度实验的完整网格（单速率 MSE）</h4>
+<table class="nat">
+<tr><th class="l">η \ T</th><th class="l">200</th><th class="l">500</th><th class="l">1000</th><th class="l">2000</th><th class="l">5000</th><th class="l">10000</th></tr>
+<tr><td class="l">0.001</td><td class="l">0.407</td><td class="l">0.408</td><td class="l">0.397</td><td class="l">0.366</td><td class="l">0.292</td><td class="l">0.275</td></tr>
+<tr><td class="l">0.005</td><td class="l">0.403</td><td class="l">0.356</td><td class="l">0.313</td><td class="l">0.280</td><td class="l">0.256</td><td class="l">0.256</td></tr>
+<tr><td class="l">0.01</td><td class="l">0.380</td><td class="l">0.309</td><td class="l">0.283</td><td class="l">0.262</td><td class="l">0.253</td><td class="l">0.251</td></tr>
+<tr><td class="l">0.02</td><td class="l">0.330</td><td class="l">0.286</td><td class="l">0.264</td><td class="l">0.260</td><td class="l">0.251</td><td class="l">0.255</td></tr>
+<tr><td class="l">0.05</td><td class="l">0.287</td><td class="l">0.276</td><td class="l">0.261</td><td class="l">0.263</td><td class="l">0.258</td><td class="l">0.258</td></tr>
+</table>
+<h4>G.4　复算清单</h4>
+<p>在引用本书任何一个数字之前，请逐项核对：脚本能否跑通（<code>analysis/exp_memory.py</code>）、参数与种子是否公开（本附录）、原始数据是否列出（上表）、偏差与失败是否写明（本附录末）、以及“算的／引的／画的”是否分开（第 19 章）。<b>五项全中，数字才可以被当作证据；不到三项，请只当作作者的看法。</b></p>
+<p>最后一句：本书的实验都只支持“在设定模型内”的结论。它们能校准直觉，不能替代人类实验——<b>而“不能替代”这四个字，正是这本书最想让人记住的边界。</b></p>
+
