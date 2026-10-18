@@ -31,7 +31,8 @@ CSS_DIR = os.path.join(HERE, "assets", "css")
 OUTPUT = os.path.join(HERE, "output")
 DATA_DIR = os.path.join(HERE, "data")
 
-FRONT = [("执行摘要（Executive Summary）", "front_executive_summary.html", "execsummary"),
+FRONT = [("总纲　现实中不存在无限", "front_finitude.html", "finitude"),
+         ("执行摘要（Executive Summary）", "front_executive_summary.html", "execsummary"),
          ("前言　为什么把“统一”降级为“同约束”", "front_preface.html", "preface"),
          ("十分钟读懂本书", "front_quickstart.html", "quickstart"),
          ("理论地图　一份给读者的路线图", "front_theorymap.html", "theorymap"),
