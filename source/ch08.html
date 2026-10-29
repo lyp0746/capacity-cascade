@@ -1,4 +1,4 @@
-<h2 class="chapter">第 8 章　智能体：上下文漂移与目标稳定性</h2>
+<h2 class="chapter">第8章　智能体：上下文漂移与目标稳定性</h2>
 <p class="lead" data-story="1">一个助理替你订机票，你说了三次“不要红眼航班”。问到第五轮，它给你订了一张凌晨三点的。<b>它不是不听，是前面的话被后来的话挤掉了。</b></p>
 
 
@@ -96,9 +96,9 @@
 <table class="nat">
 <caption class="cap"><b>表 8.3　本章可检验预言及其登记状态</b></caption>
 <tr><th class="l">预言</th><th class="l">判据</th><th class="l">登记</th></tr>
-<tr><td class="l">漂移随轮次呈平方根增长，而非线性增长（无偏置干预下）</td><td class="l">在控制偏置后，偏移—轮次曲线斜率约为 0.5</td><td class="l">附录 E · P4</td></tr>
-<tr><td class="l">扩大容量使 <i>n</i><sub>c</sub> 线性增长，但降低偏置可使 <i>n</i><sub>c</sub> 平方增长</td><td class="l">对比两种干预下 <i>n</i><sub>c</sub> 的标度指数</td><td class="l">附录 E · P5</td></tr>
-<tr><td class="l">“检索失败”与“容量溢出”对线索干预的响应不同</td><td class="l">换线索能恢复表现的情形，不能由扩容替代</td><td class="l">附录 E · P6</td></tr>
+<tr><td class="l">漂移随轮次呈平方根增长，而非线性增长（无偏置干预下）</td><td class="l">在控制偏置后，偏移—轮次曲线斜率约为 0.5</td><td class="l">附录 可证伪登记簿 · P4</td></tr>
+<tr><td class="l">扩大容量使 <i>n</i><sub>c</sub> 线性增长，但降低偏置可使 <i>n</i><sub>c</sub> 平方增长</td><td class="l">对比两种干预下 <i>n</i><sub>c</sub> 的标度指数</td><td class="l">附录 可证伪登记簿 · P5</td></tr>
+<tr><td class="l">“检索失败”与“容量溢出”对线索干预的响应不同</td><td class="l">换线索能恢复表现的情形，不能由扩容替代</td><td class="l">附录 可证伪登记簿 · P6</td></tr>
 </table>
 <div class="datasrc"><b>性质：</b>可检验预言登记表。证据等级 C（登记）；<b>注释：</b>这些预言的检验需要受控的智能体实验，涉及模型选择、任务设计与噪声控制，难度不小；本书把它们登记下来，是为了让它们可以被未来工作直接使用或推翻。</div>
 
@@ -135,6 +135,8 @@
 <b>POMDP／信念漂移</b>把目标遗忘读作“信念状态随观测更新而偏移”，与本书的状态偏移模型同形；差别在本书强调容量预算而非观测似然。<br>
 <b>MemGPT／ReAct／Reflexion</b>是工程解，对应本书的 D1—D4：它们各自缓解一类干扰，但不回答“为什么会漂移”。<br>
 <b>分野：</b>工程方法给“怎么做”，本书给“在哪里做最值”。</div>
+
+<div class="box box-takeaway"><p><b>一句话带走：</b>上下文漂移不是记性差，是目标在长上下文里被反复重估。</p></div>
 
 <h3>本章参考文献</h3>
 <div class="refs">

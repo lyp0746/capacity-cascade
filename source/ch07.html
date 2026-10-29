@@ -1,4 +1,4 @@
-<h2 class="chapter">第 7 章　大语言模型：位置偏差的信息论解剖</h2>
+<h2 class="chapter">第7章　大语言模型：位置偏差的信息论解剖</h2>
 <p class="lead" data-story="1">一段两小时的会议记录，结论在最后一句。模型读完前一半，答得头头是道；问到结论，它说“没有提到”。<b>它不是没读，是没读到。</b></p>
 
 
@@ -80,11 +80,11 @@
 <table class="nat">
 <caption class="cap"><b>表 7.2　本章可检验预言及其登记状态</b></caption>
 <tr><th class="l">预言</th><th class="l">判据</th><th class="l">登记</th></tr>
-<tr><td class="l">控制“覆盖次数”后，位置—准确度曲线塌缩为单一曲线</td><td class="l">不同序列长度下归一化曲线互相重合</td><td class="l">附录 E · P1</td></tr>
-<tr><td class="l">改变位置编码会使 U 形低谷位置移动</td><td class="l">低谷相对位置随编码方案单调变化</td><td class="l">附录 E · P2</td></tr>
-<tr><td class="l">有效秩随长度饱和，且饱和点与偏差出现点相关</td><td class="l">rank<sub>eff</sub> 曲线出现平台，且平台与偏差上升同序</td><td class="l">附录 E · P3</td></tr>
+<tr><td class="l">控制“覆盖次数”后，位置—准确度曲线塌缩为单一曲线</td><td class="l">不同序列长度下归一化曲线互相重合</td><td class="l">附录 可证伪登记簿 · P1</td></tr>
+<tr><td class="l">改变位置编码会使 U 形低谷位置移动</td><td class="l">低谷相对位置随编码方案单调变化</td><td class="l">附录 可证伪登记簿 · P2</td></tr>
+<tr><td class="l">有效秩随长度饱和，且饱和点与偏差出现点相关</td><td class="l">rank<sub>eff</sub> 曲线出现平台，且平台与偏差上升同序</td><td class="l">附录 可证伪登记簿 · P3</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>可检验预言登记表。证据等级 C（本书登记）；<b>注释：</b>“状态”一列指向附录 E 的登记条目；本书不宣称这些预言已被检验。</div>
+<div class="datasrc"><b>性质：</b>可检验预言登记表。证据等级 C（本书登记）；<b>注释：</b>“状态”一列指向附录 可证伪登记簿 的登记条目；本书不宣称这些预言已被检验。</div>
 
 <div class="note"><b>本章的关键产出（保底／有条件／推测）</b>
 <ul>
@@ -119,6 +119,8 @@
 <b>注意力熵／稀疏注意力</b>描述注意力分布的形状，正是本书 H1／H4 的可观测量。<br>
 <b>隐式梯度下降</b>把上下文学习读作梯度下降，为位置偏差提供了“随位置累积的更新误差”这一候选机制（第 15.8 节）。<br>
 <b>分野：</b>它们各自解释一个侧面，本书把它们并列成四个可检验假说（表 7.1）。</div>
+
+<div class="box box-takeaway"><p><b>一句话带走：</b>大模型的位置偏差，可以被读成“随位置累积的更新误差”。</p></div>
 
 <h3>本章参考文献</h3>
 <div class="refs">
