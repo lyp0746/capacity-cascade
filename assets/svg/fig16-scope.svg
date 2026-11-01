@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" width="760" height="340">
-<rect x="0" y="0" width="760" height="340" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+<rect x="0" y="0" width="760" height="380" fill="#ffffff"/>
 <style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
 <text x="20" y="26" class="t">框架的适用范围：能解释 / 部分解释 / 不能解释</text>
 <rect x="40" y="70" width="680" height="88" rx="8" fill="#fafafa" stroke="#009E73" stroke-width="1.8"/>

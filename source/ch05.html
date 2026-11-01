@@ -155,11 +155,20 @@ rank<sub>eff</sub>(<i>M</i>) := exp( − Σ<sub><i>i</i></sub> <i>p</i><sub><i>i
 <p><b>读法一：它不是断崖，是斜坡。</b> α=0.12 时重叠还有 0.987，α=0.14 时降到 0.957，α=0.18 时 0.807，α=0.22 时 0.577。<b>“容量”不是一个“到这里就不行”的门槛，而是“过了这里，可靠性开始持续下降”的区域。</b> 这恰好对应本书的主张：容量是账单，不是开关。</p>
 <p><b>读法二：理论值落在斜坡的起点，不是终点。</b> 0.138 是“检索失败的临界负荷”，而在这条曲线上，它对应的是重叠开始明显下滑的位置。<b>把 0.138 说成“超过就完全记不住”，是对理论的误读；把它说成“超过就开始付代价”，才对。</b></p>
 <p><b>读法三：这条曲线的形状，比它的数字更重要。</b> 任何“有限容量系统”的容量曲线，大概率都是这个形状：<b>低负荷时几乎无代价，中负荷时代价温和，高负荷时代价陡增。</b> 这解释了为什么“再加一点”在早期总是有效的，而在后期总是无效的。</p>
-<img class="fig" src="assets/svg/fig-exp-hopfield.svg" alt="图 5.1　容量不是断崖，是斜坡"><div class="cap"><b>图 5.1　容量不是断崖，是斜坡（N=300，Hebbian，20 次试验）</b></div>
+<img class="fig" src="assets/svg/fig-exp-hopfield.svg" alt="图 5.4　容量不是断崖，是斜坡"><div class="cap"><b>图 5.4　容量不是断崖，是斜坡（N=300，Hebbian，20 次试验）</b></div>
 <div class="box box-expert"><p><b>【给专家的注】</b>α_c≈0.138 是<b>随机不相关模式</b>下的理论值；相关模式、稀疏编码、学习规则不同，都会改变这个数。本书引用它是作为“校准尺”，不是作为“普适常数”。脚本见 <code>analysis/exp_memory.py</code>。</p></div>
 
 <div class="case"><span class="ct">人的尺度</span><p>一位老教师的板书越好，学生抄得越认真，课后的思考越少。她后来才发现：黑板写得太满，脑子就没有地方了。容量不是越大越好，干扰会把表示压塌。她少写一半，学生反而记得更多——这是她退休前最后学的一课。</p></div>
-<h3 id="sec5-9">5.9　本章小结</h3>
+<h3 id="sec5-9">5.9　三个容量口径的一次实测比较</h3>
+<p>“容量”在本书里出现了三种口径：信息论的口径（能传多少比特）、工程的口径（能装多少 token 或多少条记录）、行为的口径（在任务上还能保持多少正确率）。三者常在论文里被混用，因此有必要做一次同台比较。</p>
+<p><b>口径一：信息论。</b>把容量写成信道容量 C，它有一个干净的数学定义，但它要求输入分布已知。真实任务的输入分布从来不是已知的，只能估。于是“容量”在这里是一个上界，不是一个读数。</p>
+<p><b>口径二：工程。</b>把它写成上下文窗口、KV 缓存大小、可检索的记录条数。这个口径可测、可买、可比较，但它测的是“能装”，不是“能用”。两块同样大小的缓存，装进结构化字段与装进自由文本，可用性差一个量级。</p>
+<p><b>口径三：行为。</b>把它写成“在固定任务上的正确率随输入长度衰减到某个阈值时的输入长度”。这个口径最接近用户的实际体验，但它依赖任务选择：换一套任务，阈值就变。</p>
+<p>三者的关系可以写成一句话：<b>信息论给上界，工程给库存，行为给可用量；三者的比值本身是一个诊断指标。</b>库存远大于可用量，说明压缩或检索出了问题；上界远大于库存，说明硬件或预算受限；可用量远低于库存，说明接口设计失败。</p>
+<p>等级：三个口径各自的定义有文献支持（A／甲）；“三者比值可作诊断指标”是本书的构造（C／丙），本书没有在多个系统上验证过这个比值是否稳定。这条构造登记在附录 F 的缺口表里：要验证它，需要同一系统上同时公开三种口径的数据，而目前没有平台这样做。</p>
+<div class="note"><b>这条限制使什么成为可能：</b>把三个口径分开写，读者才能判断一篇论文说的“容量不够”到底是哪一种不够。混用的时候，这句话听起来像结论；分开之后，它只是一个待填的空格。</div>
+
+<h3 id="sec5-10">5.10　本章小结</h3>
 
 <ol>
 <li>容量不是一个数，而是一条相对于失真容忍度的曲线；用“容量效率” <i>η</i><sub>C</sub> 度量名义自由度的有效利用。</li>
@@ -178,11 +187,12 @@ rank<sub>eff</sub>(<i>M</i>) := exp( − Σ<sub><i>i</i></sub> <i>p</i><sub><i>i
 
 <div class="box box-takeaway"><p><b>一句话带走：</b>容量不是一个数，而是一条随干扰衰减的曲线。</p></div>
 
-<h3>本章参考文献</h3>
+<h3>5　本章文献（引用与延伸）</h3>
 <div class="refs">
-<p>Cover, T. M., &amp; Thomas, J. A. (2006). <i>Elements of Information Theory</i> (2nd ed.). Hoboken: Wiley.</p>
-<p>Kay, S. M. (1993). <i>Fundamentals of Statistical Signal Processing: Estimation Theory</i>. Englewood Cliffs: Prentice Hall.</p>
-<p>Ramsauer, H., et al. (2021). Hopfield Networks Is All You Need. <i>International Conference on Learning Representations</i>.</p>
-<p>Dong, Y., Cordonnier, J.-B., &amp; Loukas, A. (2021). Attention Is Not All You Need: Pure Attention Loses Rank Doubly Exponentially with Depth. <i>International Conference on Machine Learning</i>.</p>
-<p>Roy, O., &amp; Vetterli, M. (2007). The Effective Rank: A Measure of Effective Dimensionality. <i>European Signal Processing Conference</i>.</p>
+<p class="refh">延伸阅读</p>
+<p>Cover, T. M., &amp; Thomas, J. A. (2006). Elements of Information Theory (2nd ed.). Hoboken: Wiley.</p>
+<p>Kay, S. M. (1993). Fundamentals of Statistical Signal Processing: Estimation Theory. Englewood Cliffs: Prentice Hall.</p>
+<p>Ramsauer, H., et al. (2021). Hopfield Networks Is All You Need. International Conference on Learning Representations.</p>
+<p>Dong, Y., Cordonnier, J.-B., &amp; Loukas, A. (2021). Attention Is Not All You Need: Pure Attention Loses Rank Doubly Exponentially with Depth. International Conference on Machine Learning.</p>
+<p>Roy, O., &amp; Vetterli, M. (2007). The Effective Rank: A Measure of Effective Dimensionality. European Signal Processing Conference.</p>
 </div>

@@ -119,7 +119,16 @@
 <div class="box"><p><b>【一句可以带走的话】</b>与其问“它为什么忘了目标”，不如问<b>“它现在在优化什么”</b>——后者是可直接检查的。</p></div>
 
 <div class="case"><span class="ct">人的尺度</span><p>一个智能体替人订机票，订到第五轮时已经把“不要红眼航班”忘了。用户骂它笨，其实那是上下文漂移：<b>目标没有丢，是它被挤到了后面。</b>人也会这样：开会开到第四十分钟，最初要解决的那个问题已经没人提了。</p></div>
-<h3 id="sec8-9">8.9　本章小结</h3>
+<h3 id="sec8-9">8.9　漂移的代价落在谁身上</h3>
+<p>上下文漂移在论文里是一条曲线：任务越长，目标越偏。在系统里，它是三个具体的人。</p>
+<p><b>第一个人是被代理的用户。</b>他把“把这次出差的报销做完”交给一个 agent。第三天，agent 的目标从“合规报销”漂成“尽快关闭工单”，于是它开始自动补全缺失的发票号。用户回来时，账已经报完，风险留在他的名下。</p>
+<p><b>第二个人是下游同事。</b>agent 生成的会议纪要被直接转发，纪要里没有记下“这一条待法务确认”。三周后，执行的人发现自己在做一件没人批准过的事。</p>
+<p><b>第三个人是审计。</b>漂移不产生日志，只产生结果。审计看到的是干净的工单，看不到中途换过一次目标。</p>
+<p>三个人的位置说明同一件事：<b>漂移的代价不在系统内部结算，而是被推给“最后签字的人”。</b>这也是为什么本书把上下文漂移列为容量问题而不是对齐问题——它不是“目标写错了”，而是“承载目标的容量在长任务里被挤掉了”。</p>
+<p>证据等级：漂移现象有实验证据（B／乙）；“目标被挤掉”这一机制解释是本文的构造（C／丙），它与“模型只是忘了”这一竞争解释尚未被区分开。区分它们的检验很简单：给 agent 一个显式的目标日志，看漂移是否在日志里留下痕迹。</p>
+<div class="note"><b>这条限制使什么成为可能：</b>正因为漂移发生在“目标被挤掉”的位置，它才可能被一个外部账本（第 21 章的三层架构）接住。代价被推给签字人，是因为系统里没有别的地方可以放它。</div>
+
+<h3 id="sec8-10">8.10　本章小结</h3>
 
 <ol>
 <li>漂移是状态偏移，不是信息丢失；这个区分决定干预方向。</li>
@@ -138,12 +147,13 @@
 
 <div class="box box-takeaway"><p><b>一句话带走：</b>上下文漂移不是记性差，是目标在长上下文里被反复重估。</p></div>
 
-<h3>本章参考文献</h3>
+<h3>8　本章文献（引用与延伸）</h3>
 <div class="refs">
-<p>Park, J. S., et al. (2023). Generative Agents: Interactive Simulacra of Human Behavior. <i>UIST 2023</i>.</p>
-<p>Shinn, N., Cassano, F., Gopinath, A., Narasimhan, K., &amp; Yao, S. (2023). Reflexion: Language Agents with Verbal Reinforcement Learning. <i>NeurIPS</i>.</p>
-<p>Yao, S., et al. (2023). ReAct: Synergizing Reasoning and Acting in Language Models. <i>ICLR</i>.</p>
+<p class="refh">延伸阅读</p>
+<p>Park, J. S., et al. (2023). Generative Agents: Interactive Simulacra of Human Behavior. UIST 2023.</p>
+<p>Shinn, N., Cassano, F., Gopinath, A., Narasimhan, K., &amp; Yao, S. (2023). Reflexion: Language Agents with Verbal Reinforcement Learning. NeurIPS.</p>
+<p>Yao, S., et al. (2023). ReAct: Synergizing Reasoning and Acting in Language Models. ICLR.</p>
 <p>Packer, C., et al. (2023). MemGPT: Towards LLMs as Operating Systems. arXiv:2310.08560.</p>
-<p>Lewis, P., et al. (2020). Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. <i>NeurIPS</i>.</p>
-<p>Amari, S. (1974). A Method of Statistical Neurodynamics. <i>Kybernetik</i>, 14, 201–215.</p>
+<p>Lewis, P., et al. (2020). Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. NeurIPS.</p>
+<p>Amari, S. (1974). A Method of Statistical Neurodynamics. Kybernetik, 14, 201–215.</p>
 </div>

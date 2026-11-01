@@ -68,7 +68,7 @@
 
 <h3 id="sec6-6">6.6　时间常数能否从第一原理推出</h3>
 
-<p>这是本章最诚实、也最引人入胜的缺口。我们能写出式(6.1)—(6.2)，却<b>推不出为什么 <i>τ</i><sub>1</sub> 约以秒计、<i>τ</i><sub>3</sub> 约以年计</b>。这些数字来自具体的生物物理参数：神经递质扩散率、蛋白质合成速率、突触受体周转时间、乃至发育与演化的历史。它们不是纯信息论的产物。</p>
+<p>这是本章最保守、也最引人入胜的缺口。我们能写出式(6.1)—(6.2)，却<b>推不出为什么 <i>τ</i><sub>1</sub> 约以秒计、<i>τ</i><sub>3</sub> 约以年计</b>。这些数字来自具体的生物物理参数：神经递质扩散率、蛋白质合成速率、突触受体周转时间、乃至发育与演化的历史。它们不是纯信息论的产物。</p>
 
 <p>这不是本书的失败，而是分工的提示：<b>信息论告诉我们“必须有分离”，生物物理告诉我们“分离在哪”。</b>如果有人从第一原理推出了这些常数，那将是比本书宏大得多的成就；本书把这件事登记为开放问题（附录 可证伪登记簿），因为“做不到”和“不知道为什么做不到”是两码事——而后者本身值得被写下。</p>
 
@@ -101,11 +101,20 @@
 <p><b>第一，双时间尺度的优势真实存在，但很小（≤4%），而且只在 T 小的时候出现。</b> 当环境切换得比学习率快时，快层能追上、慢层能稳住基线；当环境切换得很慢时，单速率的最优值已经足够，双速率反而多了一份噪声。</p>
 <p><b>第二，这个结果限定了第 6 章的说法。</b> “多时间尺度是矛盾的数学解”成立的前提是：<b>系统同时面对“快扰动”与“慢结构”，并且单一学习率被稳定性约束卡住。</b> 缺了任何一个，双时间尺度就不再是解，而只是多余的零件。</p>
 <p><b>第三，这也是一次“负面结果”的示范。</b> 作者原本期待双速率在所有周期上都更好，结果是“一半更好、一半更差”。<b>把它写出来，比把它藏起来有用</b>——因为它让读者知道，这条机制不是万能的。</p>
-<img class="fig" src="assets/svg/fig-exp-timescale.svg" alt="图 6.1　双时间尺度只在窄窗口更好"><div class="cap"><b>图 6.1　双时间尺度只在窄窗口更好（MSE 越低越好）</b></div>
+<img class="fig" src="assets/svg/fig-exp-timescale.svg" alt="图 6.3　双时间尺度只在窄窗口更好"><div class="cap"><b>图 6.3　双时间尺度只在窄窗口更好（MSE 越低越好）</b></div>
 <div class="box box-more2"><p><b>【再想一层】</b>把这条结论用到人身上：<b>“快慢两套系统”不是天然更好，它只在“环境变得比你的反应更快、而你又不能把反应调得太快（会抖）”时才划算。</b> 如果你面对的环境本来就慢，多一套系统只是多一份内耗。</p></div>
 
 <div class="case"><span class="ct">人的尺度</span><p>学自行车的孩子，第一天扶、第二天晃、第三天自己骑。没人能说清哪一天“学会”了。多时间尺度说的就是这件事：快的层在试探，慢的层在沉淀。父母的耐心，就花在“两个层不同步”的那几天里。</p></div>
-<h3 id="sec6-8">6.8　本章小结</h3>
+<h3 id="sec6-8">6.8　多时间尺度分离的三个反例</h3>
+<p>“快的负责选、慢的负责固”是本书第 6 章的核心条件。它在三个系统里都有反例，写出来是为了让这条条件可被证伪，而不是为了让框架好看。</p>
+<p><b>反例一：只有单一尺度的系统。</b>某些无状态服务没有“慢”的那一层：每个请求独立处理，不 consolidation。它照样能工作，因为它不需要跨请求的一致性。<b>反例说明：分离是“需要长期一致性”的系统的必要条件，不是所有系统的必要条件。</b></p>
+<p><b>反例二：快层被慢层锁死。</b>在某些组织里，慢层的审批流程反过来决定了快层能做什么：一线不能自行决定，必须先报批。结果是快层失去“选”的能力，只剩“等”。这不是分离失效，而是分离被制度取消了。</p>
+<p><b>反例三：两个尺度耦合过强。</b>当快变量的波动直接改写慢变量（例如一次事故永久改变安全规程），两个尺度就不再分离，级联退化为单一时间常数。此时“多尺度”只是说法，不是机制。</p>
+<p>三个反例给出一条更精确的条件：<b>分离成立，当且仅当快层能在慢层不变的时间窗内完成足够多次试错。</b>这个条件可以算：试错次数 ≈ 慢层时间窗 ÷ 快层单次周期；小于 3，分离就没有意义。</p>
+<p>等级：三个反例分别来自工程观察（B）、组织案例（C）、事故研究（B）；条件本身是本书的构造（C／丙），登记在附录 F。</p>
+<div class="note"><b>这条限制使什么成为可能：</b>把分离写成可算的条件，才可能在设计时判断“这套系统到底需不需要多层记忆”，而不是一律堆叠。</div>
+
+<h3 id="sec6-9">6.9　本章小结</h3>
 
 <ol>
 <li>单一时间常数无法同时获得适应与稳定；多时间尺度分离是数学上的会选择，而非工程偏好。</li>
@@ -124,11 +133,12 @@
 
 <div class="box box-takeaway"><p><b>一句话带走：</b>多时间尺度不是设计选择，而是有限容量下的必要结构。</p></div>
 
-<h3>本章参考文献</h3>
+<h3>6　本章文献（引用与延伸）</h3>
 <div class="refs">
-<p>Simon, H. A. (1962). The Architecture of Complexity. <i>Proceedings of the American Philosophical Society</i>, 106(6), 467–482.</p>
-<p>Kording, K. P., Tenenbaum, J. B., &amp; Shadmehr, R. (2007). The Dynamics of Memory as a Consequence of Optimal Adaptation to a Changing Body. <i>Nature Neuroscience</i>, 10, 779–786.</p>
-<p>Benna, M. K., &amp; Fusi, S. (2016). Computational Principles of Synaptic Memory Consolidation. <i>Nature Neuroscience</i>, 19, 1697–1706.</p>
-<p>Fusi, S., Drew, P. J., &amp; Abbott, L. F. (2005). Cascade Models of Synaptically Stored Memories. <i>Neuron</i>, 45(4), 599–611.</p>
-<p>McClelland, J. L., McNaughton, B. L., &amp; O'Reilly, R. C. (1995). Why There Are Complementary Learning Systems in the Hippocampus and Neocortex. <i>Psychological Review</i>, 102(3), 419–457.</p>
+<p class="refh">延伸阅读</p>
+<p>Simon, H. A. (1962). The Architecture of Complexity. Proceedings of the American Philosophical Society, 106(6), 467–482.</p>
+<p>Kording, K. P., Tenenbaum, J. B., &amp; Shadmehr, R. (2007). The Dynamics of Memory as a Consequence of Optimal Adaptation to a Changing Body. Nature Neuroscience, 10, 779–786.</p>
+<p>Benna, M. K., &amp; Fusi, S. (2016). Computational Principles of Synaptic Memory Consolidation. Nature Neuroscience, 19, 1697–1706.</p>
+<p>Fusi, S., Drew, P. J., &amp; Abbott, L. F. (2005). Cascade Models of Synaptically Stored Memories. Neuron, 45(4), 599–611.</p>
+<p>McClelland, J. L., McNaughton, B. L., &amp; O'Reilly, R. C. (1995). Why There Are Complementary Learning Systems in the Hippocampus and Neocortex. Psychological Review, 102(3), 419–457.</p>
 </div>

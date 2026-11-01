@@ -121,10 +121,19 @@
 <p><b>第一，精度是要付指数代价的。</b> 把失真从 0.01 降到 0.001（十倍精度），需要多付约 1.66 比特——不是十倍，但也不是免费的。<b>“记得更准”从来不是线性的。</b></p>
 <p><b>第二，曲线的拐点在中等失真处。</b> D 从 0.5 到 0.25，只要 0.5 比特；从 0.05 到 0.01，要 1.16 比特。<b>这解释了为什么“先记个大概”极其便宜，而“记得分毫不差”极其昂贵。</b> 一个系统如果非要在所有细节上都精确，它一定在别处欠账。</p>
 <p><b>第三，它给出了“容量级联”的数学理由。</b> 如果每一层都要把 D 压到极小，总比特需求会指数上升；所以真实的记忆系统一定是<b>分层</b>的：外层允许大 D，内层才允许小 D。<b>分层不是设计者的偏好，是率失真曲线的逼迫。</b></p>
-<img class="fig" src="assets/svg/fig-exp-ratedistortion.svg" alt="图 4.1　率失真曲线：精度是要付指数代价的"><div class="cap"><b>图 4.1　率失真曲线：精度是要付指数代价的（σ²=1）</b></div>
+<img class="fig" src="assets/svg/fig-exp-ratedistortion.svg" alt="图 4.2　率失真曲线：精度是要付指数代价的"><div class="cap"><b>图 4.2　率失真曲线：精度是要付指数代价的（σ²=1）</b></div>
 <div class="box box-more2"><p><b>【再想一步】</b>这条曲线还有一个副作用：它让“我记性不好”变成一个可以量化的说法——<b>不是“你记不住”，而是“你的系统把 D 定在了哪里”。</b> 定得松，记得多而粗；定得紧，记得少而精。两者都要付账，只是科目不同。</p></div>
 
 <div class="case"><span class="ct">人的尺度</span><p>急诊医生一个上午看三十个病人。她记不住每个人的名字，但记得“三号床昨晚发烧、七号床家属情绪不稳”。这不是粗心，这是有损压缩：<b>她保住的是能救命的结构，丢掉的是细节。</b>压缩的代价不是她付，是那个“没有被记住”的病人付。</p></div>
+<h3 id="sec4-9">4.9　谁在为这一次压缩付账</h3>
+<p>率失真曲线是一条干净的线：横轴精度，纵轴代价。线下面没有任何人。但每一次压缩都发生在某个具体的岗位上，而那个岗位上坐着一个人。</p>
+<p><b>第一个岗位是复核。</b>一份四十页的并购合同，模型给出的摘要把第十九页中间那段“控制权变更后的补偿顺延”压成了“无重大不利条款”。签字的人看到的是摘要，责任却仍在他身上。<b>压缩把信息变短，把责任变长。</b>这类复核者的处境是本书最典型的承担者：他们拿到的不是原文，也不是完整的警告，而是一句被压过的结论，外加一句“请确认”。</p>
+<p><b>第二个岗位是标注。</b>让模型学会“什么该被保留”，需要人一条条标出相关性。这项工作大多外包给低薪标注员：他们要读的是最脏、最重复、最需要判断的文本，而他们的判断最终被压成一个可微的损失函数。<b>他们的判断力被使用，却不被署名。</b></p>
+<p><b>第三个岗位是方言。</b>语音识别按普通话的音素表做压缩，没有对应音素的方言片段被当成噪声丢掉。使用者学会了一件事：<b>要说给机器听得懂的话。</b>这不是技术失败，是压缩在边缘处的正常代价——只是写代价的那一栏，从来不署他们的名字。</p>
+<p>三个人对应三种证据等级：复核者的处境有制度文本可查（B）；标注劳动的规模有公开调查（B）；方言的音素损失有语言学研究（B），但“因此不再说方言”这一因果只有零星访谈（C）。本书不把第三种升格为结论，只把它登记为待核。</p>
+<div class="note"><b>这条限制使什么成为可能：</b>没有这次压缩，合同不会被任何人读完，标注不会发生，方言也不会被写成文字。压缩使“可用”成为可能，代价由具体的三个人承担——两者必须一起写。</div>
+<p>如果要用一句话概括本节：<b>容量约束从不平均分摊，它总是落在最靠近复核岗位、最没有议价权、最不被写进日志的那一端。</b>这句话可以被检验：把一次压缩的日志补齐，看“谁被要求确认”与“谁有权限修改”是不是同一批人。多数系统里，不是。</p>
+
 <h3>本章小结</h3>
 
 <ol>
@@ -143,12 +152,14 @@
 
 <div class="box box-takeaway"><p><b>一句话带走：</b>信息瓶颈把“压缩—相关”写成可算的权衡：留下什么，取决于你打算用它做什么。</p></div>
 
-<h3>本章参考文献</h3>
+<h3>4　本章文献（引用与延伸）</h3>
 <div class="refs">
-<p>Tishby, N., Pereira, F. C., &amp; Bialek, W. (1999). The Information Bottleneck Method. <i>Proceedings of the 37th Annual Allerton Conference on Communication, Control and Computing</i>.</p>
-<p>Tishby, N., &amp; Zaslavsky, N. (2015). Deep Learning and the Information Bottleneck Principle. <i>IEEE Information Theory Workshop</i>.</p>
-<p>Shwartz-Ziv, R., &amp; Tishby, N. (2017). Opening the Black Box of Deep Neural Networks via Information. arXiv:1703.00810.</p>
-<p>Saxe, A. M., Bansal, Y., Dapello, J., Advani, M., Kolchinsky, A., Tracey, B. D., &amp; Cox, D. D. (2018). On the Information Bottleneck Theory of Deep Learning. <i>International Conference on Learning Representations</i>.</p>
-<p>Cover, T. M., &amp; Thomas, J. A. (2006). <i>Elements of Information Theory</i> (2nd ed.). Hoboken: Wiley.</p>
-<p>Shannon, C. E. (1948). A Mathematical Theory of Communication. <i>Bell System Technical Journal</i>, 27, 379–423, 623–656.</p>
+<p class="refh">本章引用</p>
+<p>★ Shwartz-Ziv, R., &amp; Tishby, N. (2017). Opening the Black Box of Deep Neural Networks via Information. arXiv:1703.00810.</p>
+<p>★ Saxe, A. M., Bansal, Y., Dapello, J., Advani, M., Kolchinsky, A., Tracey, B. D., &amp; Cox, D. D. (2018). On the Information Bottleneck Theory of Deep Learning. International Conference on Learning Representations.</p>
+<p class="refh">延伸阅读</p>
+<p>Tishby, N., Pereira, F. C., &amp; Bialek, W. (1999). The Information Bottleneck Method. Proceedings of the 37th Annual Allerton Conference on Communication, Control and Computing.</p>
+<p>Tishby, N., &amp; Zaslavsky, N. (2015). Deep Learning and the Information Bottleneck Principle. IEEE Information Theory Workshop.</p>
+<p>Cover, T. M., &amp; Thomas, J. A. (2006). Elements of Information Theory (2nd ed.). Hoboken: Wiley.</p>
+<p>Shannon, C. E. (1948). A Mathematical Theory of Communication. Bell System Technical Journal, 27, 379–423, 623–656.</p>
 </div>

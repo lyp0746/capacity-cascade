@@ -52,7 +52,7 @@
 | 书 | 仓库 |
 |---|---|
 | 只能选两样 | [knowledge-tradeoffs](https://github.com/lyp0746/knowledge-tradeoffs) |
-| 区分的语法 | [distinction-evolution](https://github.com/lyp0746/distinction-evolution) |
+| 区分的语言 | [distinction-evolution](https://github.com/lyp0746/distinction-evolution) |
 | 错位的时间 | [entropy-spiral](https://github.com/lyp0746/entropy-spiral) |
 | 选择的代价 | [impossibility-triangle](https://github.com/lyp0746/impossibility-triangle) |
 | 诠释的权衡 | [interpretation-tradeoff](https://github.com/lyp0746/interpretation-tradeoff) |
