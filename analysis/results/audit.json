@@ -569,7 +569,7 @@
       "first": "ch01.html"
     },
     "遗忘": {
-      "total": 157,
+      "total": 158,
       "by_chapter": [
         [
           "ch01.html",
@@ -606,6 +606,10 @@
         [
           "ch11.html",
           4
+        ],
+        [
+          "ch12.html",
+          1
         ],
         [
           "ch13.html",
