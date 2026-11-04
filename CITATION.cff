@@ -14,10 +14,10 @@ authors:
 date-released: 2026-11-04
 version: "2026-11-04"
 license: CC-BY-4.0
-doi: 10.5281/zenodo.23934850
+doi: 10.5281/zenodo.23936852
 concept-doi: 10.5281/zenodo.23323276
 repository-code: "https://github.com/lyp0746/capacity-cascade"
-url: "https://doi.org/10.5281/zenodo.23934850"
+url: "https://doi.org/10.5281/zenodo.23936852"
 keywords:
   - "容量级联"
   - "信息瓶颈"
