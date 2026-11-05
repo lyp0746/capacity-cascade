@@ -23,5 +23,5 @@
 <text x="500" y="338" class="l" text-anchor="start" fill="#666" font-weight="normal">梦的具体内容来源</text>
 <line x1="278" y1="314" x2="278" y2="358" stroke="#cfcfcf"/>
 <line x1="498" y1="314" x2="498" y2="358" stroke="#cfcfcf"/>
-<text x="380" y="332" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">若你的问题落在最下一行，本框架不适用——把它当成能解释一切的理论，是使用它的最大方式。</text>
+<text x="380" y="356" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">若你的问题落在最下一行，本框架不适用——把它当成能解释一切的理论，是使用它的最大方式。</text>
 </svg>

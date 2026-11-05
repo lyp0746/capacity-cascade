@@ -13,5 +13,5 @@
 <text x="430" y="110" class="l" text-anchor="start" fill="#3a6ea5" font-weight="700">短期适应 U′</text>
 <text x="430" y="220" class="l" text-anchor="start" fill="#b8862f" font-weight="700">长期（目标锚定）U′</text>
 <text x="318" y="246.30440066341805" class="l" text-anchor="start" fill="#c94f4f" font-weight="700">最优：边际效用相等</text>
-<text x="320" y="320" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">新信息不断到来时，最优解会把容量从长期目标挪走——这就是漂移的数学来源。</text>
+<text x="320" y="332" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">新信息不断到来时，最优解会把容量从长期目标挪走——这就是漂移的数学来源。</text>
 </svg>

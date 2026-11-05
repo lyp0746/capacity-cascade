@@ -10,7 +10,7 @@
 <text x="280" y="26" class="t">（b）上下文漂移</text>
 <line x1="300" y1="200" x2="480" y2="200" class="ax"/>
 <line x1="300" y1="200" x2="300" y2="50" class="ax"/>
-<text x="390.0" y="234" class="l" text-anchor="middle">轮次</text>
+<text x="390.0" y="248" class="l" text-anchor="middle">轮次</text>
 <text x="292" y="125.0" class="l" text-anchor="middle" transform="rotate(-90 292 125.0)">与初始目标距离</text>
 <polyline points="300.0,190.0 350.0,185.0 400.0,175.0 450.0,158.0 480.0,145.0" fill="none" stroke="#c94f4f" stroke-width="2.4"/>
 <polyline points="300.0,190.0 350.0,183.0 400.0,172.0 450.0,158.0 480.0,140.0" fill="none" stroke="#3a6ea5" stroke-width="1.6" stroke-dasharray="5,4"/>

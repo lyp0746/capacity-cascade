@@ -12,5 +12,5 @@
 <circle cx="452" cy="256" r="7" fill="#009E73"/>
 <text x="230" y="300" class="l" text-anchor="middle" fill="#c94f4f" font-weight="700">局部最优（清醒学习后）</text>
 <text x="470" y="300" class="l" text-anchor="middle" fill="#009E73" font-weight="700">更深的解（内源重组后）</text>
-<text x="330" y="325" class="l" text-anchor="middle" fill="#666" font-weight="normal">虚线：原始曲面；实线：加噪退火后</text>
+<text x="330" y="338" class="l" text-anchor="middle" fill="#666" font-weight="normal">虚线：原始曲面；实线：加噪退火后</text>
 </svg>
