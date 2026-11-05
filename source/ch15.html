@@ -72,7 +72,7 @@
 <p>主动推理把它升级为<b>期望自由能</b>最小化：<i>G</i> = 复杂性 + 期望惊异 − 信息增益。把式(15.3)与式(4.1)并置，可以看到二者共享同一个“压缩——保真”的骨架：</p>
 
 <table class="nat">
-<caption class="cap"><b>表 15.3　信息瓶颈与预测加工的形式对照</b></caption>
+<caption class="cap"><b>表 15.2　信息瓶颈与预测加工的形式对照</b></caption>
 <tr><th class="l">角色</th><th class="l">信息瓶颈</th><th class="l">预测加工</th></tr>
 <tr><td class="l">保真项</td><td class="l"><i>I</i>(<i>Z</i>;<i>Y</i>)</td><td class="l">−<b>E</b>[‖<i>o</i>−<i>g</i>(<i>ŝ</i>)‖²]</td></tr>
 <tr><td class="l">压缩项</td><td class="l"><i>I</i>(<i>X</i>;<i>Z</i>)</td><td class="l">复杂度(<i>ŝ</i>)</td></tr>
@@ -88,7 +88,7 @@
 <p>三个“容量”同时出现时，必须把它们的标度摆在一起，否则“容量”这个词会骗人：</p>
 
 <table class="nat">
-<caption class="cap"><b>表 15.4　三种记忆容量模型的标度对照</b></caption>
+<caption class="cap"><b>表 15.3　三种记忆容量模型的标度对照</b></caption>
 <tr><th class="l">模型</th><th class="l">容量标度</th><th class="l">机制</th><th class="l">本书中的位置</th></tr>
 <tr><td class="l">经典 Hopfield 网络</td><td class="l">≈ 0.138 <i>N</i>（模式数）</td><td class="l">自关联网络，能量下降检索</td><td class="l">“快速层”容量的下界参照</td></tr>
 <tr><td class="l">现代 Hopfield 网络（Ramsauer 等，2021）</td><td class="l">指数级（约 exp(<i>c</i><i>d</i>)）</td><td class="l">连续状态、单步检索 = softmax 注意力</td><td class="l">关联记忆与注意力是同一算子的两个视角</td></tr>
@@ -103,7 +103,7 @@
 <p>本书前三轮修订中被批评“对话不够”，主要就缺下面三条。它们都直接指向本书的核心机制，因此不补上，地图就有洞。</p>
 
 <table class="nat">
-<caption class="cap"><b>表 15.5　三条缺席线索与本书的接口</b></caption>
+<caption class="cap"><b>表 15.4　三条缺席线索与本书的接口</b></caption>
 <tr><th class="l">线索</th><th class="l">核心主张</th><th class="l">与本书的接口</th></tr>
 <tr><td class="l">隐式梯度下降（in-context learning）</td><td class="l">上下文学习可等价于一步或多步梯度下降</td><td class="l">若成立，第 8 章的“漂移”就是梯度下降在非平稳损失上的累积误差——漂移获得一个更具体的机制</td></tr>
 <tr><td class="l">grokking／相变</td><td class="l">训练中会出现“突然泛化”的相变</td><td class="l">与第 4 章的 IB 三相位、第 5 章的表示坍塌是同一类现象的两种描述</td></tr>
@@ -114,7 +114,7 @@
 <h3 id="sec15-9">15.9　一份可操作的对照表</h3>
 
 <table class="nat">
-<caption class="cap"><b>表 15.2　三个框架对本书核心概念的回答</b></caption>
+<caption class="cap"><b>表 15.5　三个框架对本书核心概念的回答</b></caption>
 <tr><th class="l">本书概念</th><th class="l">信息瓶颈</th><th class="l">自由能原理</th><th class="l">强化学习</th></tr>
 <tr><td class="l">容量</td><td class="l"><i>I</i>(<i>X</i>;<i>Z</i>) 的上界</td><td class="l">先验的复杂度</td><td class="l">表示维度（通常不显式）</td></tr>
 <tr><td class="l">遗忘</td><td class="l">压缩的伴生</td><td class="l">先验更新</td><td class="l">价值函数的重估</td></tr>
