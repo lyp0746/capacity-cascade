@@ -1,38 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1414" width="1000" height="1414">
-<defs>
-<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0" stop-color="#0e1117"/><stop offset="0.55" stop-color="#151a23"/>
-<stop offset="1" stop-color="#0b0e14"/>
-</linearGradient>
-</defs>
-<rect x="0" y="0" width="1000" height="1414" fill="url(#bg)"/>
-<rect x="0" y="0" width="1000" height="8" fill="#b8862f" opacity="0.85"/>
-<circle cx="500" cy="560" r="300" fill="none" stroke="#3a6ea5" stroke-width="2" opacity="0.16"/>
-<circle cx="500" cy="560" r="270" fill="none" stroke="#3a6ea5" stroke-width="1" opacity="0.112" stroke-dasharray="6,7"/>
-<circle cx="500" cy="570" r="230" fill="none" stroke="#b8862f" stroke-width="2" opacity="0.24"/>
-<circle cx="500" cy="570" r="200" fill="none" stroke="#b8862f" stroke-width="1" opacity="0.168" stroke-dasharray="6,7"/>
-<circle cx="500" cy="580" r="160" fill="none" stroke="#009E73" stroke-width="2" opacity="0.34"/>
-<circle cx="500" cy="580" r="130" fill="none" stroke="#009E73" stroke-width="1" opacity="0.238" stroke-dasharray="6,7"/>
-<line x1="290" y1="900" x2="710" y2="900" stroke="#9aa0a6" stroke-width="1" opacity="0.50"/>
-<line x1="318" y1="934" x2="682" y2="934" stroke="#9aa0a6" stroke-width="1" opacity="0.44"/>
-<line x1="346" y1="968" x2="654" y2="968" stroke="#9aa0a6" stroke-width="1" opacity="0.38"/>
-<line x1="374" y1="1002" x2="626" y2="1002" stroke="#9aa0a6" stroke-width="1" opacity="0.32"/>
-<line x1="402" y1="1036" x2="598" y2="1036" stroke="#9aa0a6" stroke-width="1" opacity="0.26"/>
-<line x1="430" y1="1070" x2="570" y2="1070" stroke="#9aa0a6" stroke-width="1" opacity="0.20"/>
-<style>
-text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;}
-.ttl{font-size:108px;font-weight:700;letter-spacing:12px;fill:#e8e6df;}
-.sub{font-size:29px;fill:#9aa0a6;letter-spacing:2px;}
-.eng{font-size:21px;fill:#9aa0a6;letter-spacing:1px;}
-.au{font-size:30px;fill:#e8e6df;letter-spacing:2px;}
-.rule{stroke:#9aa0a6;stroke-width:1;opacity:0.6;}
-</style>
-<text x="80" y="176" class="eng">THE&#160;BOUNDARY&#160;OF&#160;FORGETTING</text>
-<text x="80" y="300" class="ttl">遗忘的边界</text>
-<line x1="84" y1="344" x2="660" y2="344" class="rule"/>
-<text x="84" y="396" class="sub">有限容量下的记忆、智能与自我</text>
-<text x="84" y="440" class="sub">从大语言模型、智能体到人类记忆</text>
-<text x="80" y="1180" class="au">李毅芃　著</text>
-<text x="80" y="1232" class="eng">Memory, Intelligence, and the Self under Finite Capacity</text>
-<text x="80" y="1274" class="eng">理论专著 · 2026</text>
+<rect width="1000" height="1414" fill="#f7f4ec"/><rect x="0" y="0" width="1000" height="10" fill="#b8862f"/>
+<circle cx="810" cy="520" r="60" fill="none" stroke="#d8cfbc" stroke-width="1" opacity="0.45"/>
+<circle cx="810" cy="520" r="98" fill="none" stroke="#d8cfbc" stroke-width="1" opacity="0.45"/>
+<circle cx="810" cy="520" r="136" fill="none" stroke="#d8cfbc" stroke-width="1" opacity="0.45"/>
+<circle cx="810" cy="520" r="174" fill="none" stroke="#d8cfbc" stroke-width="1" opacity="0.45"/>
+<circle cx="810" cy="520" r="212" fill="none" stroke="#d8cfbc" stroke-width="1" opacity="0.45"/>
+<circle cx="810" cy="520" r="250" fill="none" stroke="#d8cfbc" stroke-width="1" opacity="0.45"/>
+<line x1="72" y1="760" x2="880" y2="760" stroke="#e2dac9" stroke-width="1"/>
+<line x1="72" y1="784" x2="820" y2="784" stroke="#e2dac9" stroke-width="1"/>
+<line x1="72" y1="808" x2="760" y2="808" stroke="#e2dac9" stroke-width="1"/>
+<line x1="72" y1="832" x2="700" y2="832" stroke="#e2dac9" stroke-width="1"/>
+<line x1="72" y1="856" x2="640" y2="856" stroke="#e2dac9" stroke-width="1"/>
+<style>text{font-family:"Times New Roman","SimSun",serif}</style>
+<text x="72" y="120" font-size="19" fill="#8a6d2f" letter-spacing="3">有限系统的取舍　THE TRADEOFFS OF FINITE SYSTEMS</text>
+<text x="72" y="330" font-size="94" font-weight="700" fill="#1c1c1c">遗忘的边界</text>
+<line x1="76" y1="610" x2="620" y2="610" stroke="#b8862f" stroke-width="2"/>
+<text x="76" y="665" font-size="26" fill="#3a3a3a">有限容量下的记忆、智能与自我</text>
+<text x="72" y="1150" font-size="30" fill="#1c1c1c">李毅芃　著</text>
+<text x="72" y="1370" font-size="16" fill="#8a6d2f">2026 · CC BY 4.0</text>
 </svg>
