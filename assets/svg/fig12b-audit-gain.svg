@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+<rect x="0" y="0" width="800" height="400" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="26" class="t">对账的收益：门槛很浅，天花板由可验证性决定</text>
+<line x1="80" y1="300" x2="380" y2="300" class="ax"/>
+<line x1="80" y1="300" x2="80" y2="90" class="ax"/>
+<text transform="rotate(-90 46 195)" x="46" y="195.0" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">作答正确率</text>
+<line x1="76" y1="300" x2="80" y2="300" class="ax"/>
+<text x="72" y="304" class="l" text-anchor="end" fill="#666" font-weight="normal">0.0</text>
+<line x1="76" y1="195" x2="80" y2="195" class="ax"/>
+<text x="72" y="199.0" class="l" text-anchor="end" fill="#666" font-weight="normal">0.5</text>
+<line x1="76" y1="90" x2="80" y2="90" class="ax"/>
+<text x="72" y="94.0" class="l" text-anchor="end" fill="#666" font-weight="normal">1.0</text>
+<line x1="80" y1="300" x2="80" y2="304" class="ax"/>
+<text x="80" y="317" class="l" text-anchor="middle" fill="#666" font-weight="normal">0</text>
+<line x1="140" y1="300" x2="140" y2="304" class="ax"/>
+<text x="140.0" y="317" class="l" text-anchor="middle" fill="#666" font-weight="normal">0.2</text>
+<line x1="200" y1="300" x2="200" y2="304" class="ax"/>
+<text x="200.0" y="317" class="l" text-anchor="middle" fill="#666" font-weight="normal">0.4</text>
+<line x1="260" y1="300" x2="260" y2="304" class="ax"/>
+<text x="260.0" y="317" class="l" text-anchor="middle" fill="#666" font-weight="normal">0.6</text>
+<line x1="320" y1="300" x2="320" y2="304" class="ax"/>
+<text x="320.0" y="317" class="l" text-anchor="middle" fill="#666" font-weight="normal">0.8</text>
+<line x1="380" y1="300" x2="380" y2="304" class="ax"/>
+<text x="380.0" y="317" class="l" text-anchor="middle" fill="#666" font-weight="normal">1.0</text>
+<text x="230.0" y="336" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">审计率 q</text>
+<line x1="80" y1="165" x2="380" y2="165" stroke="#666" stroke-width="1.2" stroke-dasharray="5,3"/>
+<text x="382" y="178.907" class="l" text-anchor="end" fill="#666" font-weight="normal">A：完全不整合</text>
+<polyline points="80.0,166.0 110.0,165.5 140.0,164.5 170.0,163.9 200.0,163.0 230.0,162.2 260.0,161.7 290.0,161.0 320.0,160.4 350.0,159.6 380.0,158.9" fill="none" stroke="#b8862f" stroke-width="2.2"/>
+<line x1="114" y1="102" x2="136" y2="102" stroke="#b8862f" stroke-width="2.4"/>
+<text x="142" y="106" class="l" text-anchor="start" fill="#b8862f" font-weight="700">可验证性 ρ=0.2</text>
+<polyline points="80.0,164.9 110.0,162.9 140.0,161.6 170.0,159.8 200.0,158.2 230.0,156.4 260.0,154.8 290.0,153.4 320.0,151.8 350.0,149.8 380.0,148.3" fill="none" stroke="#3a6ea5" stroke-width="2.2"/>
+<line x1="114" y1="117" x2="136" y2="117" stroke="#3a6ea5" stroke-width="2.4"/>
+<text x="142" y="121" class="l" text-anchor="start" fill="#3a6ea5" font-weight="700">可验证性 ρ=0.5</text>
+<polyline points="80.0,167.8 110.0,163.8 140.0,159.6 170.0,156.0 200.0,151.7 230.0,148.0 260.0,144.8 290.0,141.8 320.0,138.7 350.0,135.7 380.0,132.9" fill="none" stroke="#009E73" stroke-width="2.2"/>
+<line x1="114" y1="132" x2="136" y2="132" stroke="#009E73" stroke-width="2.4"/>
+<text x="142" y="136" class="l" text-anchor="start" fill="#009E73" font-weight="700">可验证性 ρ=1.0</text>
+<line x1="110" y1="300" x2="110" y2="90" stroke="#c94f4f" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="114.0" y="94" class="l" text-anchor="start" fill="#c94f4f" font-weight="700">q*≈0.1</text>
+<line x1="500" y1="300" x2="740" y2="300" class="ax"/>
+<line x1="500" y1="300" x2="500" y2="90" class="ax"/>
+<text transform="rotate(-90 466 195)" x="466" y="195.0" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">比例</text>
+<line x1="496" y1="300" x2="500" y2="300" class="ax"/>
+<text x="492" y="304" class="l" text-anchor="end" fill="#666" font-weight="normal">0.0</text>
+<line x1="496" y1="195" x2="500" y2="195" class="ax"/>
+<text x="492" y="199.0" class="l" text-anchor="end" fill="#666" font-weight="normal">0.5</text>
+<line x1="496" y1="90" x2="500" y2="90" class="ax"/>
+<text x="492" y="94.0" class="l" text-anchor="end" fill="#666" font-weight="normal">1.0</text>
+<line x1="500" y1="300" x2="500" y2="304" class="ax"/>
+<text x="500.0" y="317" class="l" text-anchor="middle" fill="#666" font-weight="normal">1</text>
+<line x1="548" y1="300" x2="548" y2="304" class="ax"/>
+<text x="548.0" y="317" class="l" text-anchor="middle" fill="#666" font-weight="normal">2</text>
+<line x1="596" y1="300" x2="596" y2="304" class="ax"/>
+<text x="596.0" y="317" class="l" text-anchor="middle" fill="#666" font-weight="normal">4</text>
+<line x1="644" y1="300" x2="644" y2="304" class="ax"/>
+<text x="644.0" y="317" class="l" text-anchor="middle" fill="#666" font-weight="normal">8</text>
+<line x1="692" y1="300" x2="692" y2="304" class="ax"/>
+<text x="692.0" y="317" class="l" text-anchor="middle" fill="#666" font-weight="normal">16</text>
+<line x1="740" y1="300" x2="740" y2="304" class="ax"/>
+<text x="740.0" y="317" class="l" text-anchor="middle" fill="#666" font-weight="normal">32</text>
+<text x="620.0" y="336" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">整合周期 k（会话，对数）</text>
+<polyline points="500.0,104.0 548.0,117.3 596.0,132.9 644.0,147.0 692.0,158.4 740.0,162.3" fill="none" stroke="#3a6ea5" stroke-width="2.4"/>
+<polyline points="500.0,300.0 548.0,286.8 596.0,268.9 644.0,253.8 692.0,241.5 740.0,237.3" fill="none" stroke="#c94f4f" stroke-width="2.4" stroke-dasharray="6,3"/>
+<line x1="644" y1="300" x2="644" y2="90" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="640.0" y="84" class="l" text-anchor="end" fill="#666" font-weight="normal">变化时间常数 L≈8</text>
+<line x1="508" y1="222" x2="530" y2="222" stroke="#3a6ea5" stroke-width="2.4"/>
+<text x="536" y="226" class="l" text-anchor="start" fill="#3a6ea5" font-weight="700">正确率</text>
+<line x1="508" y1="240" x2="530" y2="240" stroke="#c94f4f" stroke-width="2.4" stroke-dasharray="6,3"/>
+<text x="536" y="244" class="l" text-anchor="start" fill="#c94f4f" font-weight="700">有把握的答案里错的比例</text>
+<text x="410" y="378" class="l" text-anchor="middle" fill="#666" font-weight="normal">左：每 4 会话整合一次，横轴为审计率；右：每 k 会话对账一次（ρ=1, q=1）。</text>
+</svg>

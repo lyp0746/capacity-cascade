@@ -617,7 +617,7 @@ def fig_formalization():
     rows = [("第 4—5 章　信息瓶颈·容量·干扰", 1.0, GREEN),
             ("第 6 章　时间尺度", 0.65, GOLD),
             ("第 7—9 章　三系统分析", 0.65, GOLD),
-            ("第 10—13 章　梦·潜意识·元认知", 0.3, RED),
+            ("第 10—14 章　睡眠·梦·对账·潜意识·元认知", 0.3, RED),
             ("第 14—16 章　地图与对话", 0.15, RED)]
     for i, (name, frac, col) in enumerate(rows):
         yy = 60 + i * 40
@@ -627,7 +627,110 @@ def fig_formalization():
         lab = "完全形式化" if frac == 1.0 else ("半形式化" if frac == 0.65 else "不形式化")
         b.append(txt(670, yy + 15, lab, "start", "l", col, "700"))
     b.append(txt(360, 285, "凡承诺形式化处必须精确；凡不承诺处必须明确说“不形式化”。", "middle", "l", INK))
-    save("figC-formalization.svg", svg(w, h, "\n".join(b)))
+    # 出版用的这一张画布略向外扩（防右侧标签被裁），重生成时保持同一几何，
+    # 否则每次跑 make_figures.py 都会静默改掉已发布图的画布尺寸。
+    c = svg(w, h, "\n".join(b)).replace(
+        'viewBox="0 0 720 300" width="720" height="300"',
+        'viewBox="-4 -4 733 308" width="733" height="308"', 1)
+    save("figC-formalization.svg", c)
+
+
+# ---------------------------------------------------------------- fig 12.1
+# 两种离线计算：x 轴为外部真值的可用性，y 轴为表示熵的变化方向。
+def fig_dream_two_ways():
+    w, h = 680, 430
+    x0, y0, x1, y1 = 110, 360, 620, 80          # 左下、右上（y 向下）
+    b = [f'<text x="20" y="26" class="t">两种离线计算：真值与熵的四个象限</text>']
+    b.append(f'<line x1="{x0}" y1="{(y0+y1)/2}" x2="{x1}" y2="{(y0+y1)/2}" class="ax"/>')
+    b.append(f'<line x1="{(x0+x1)/2}" y1="{y0}" x2="{(x0+x1)/2}" y2="{y1}" class="ax"/>')
+    b.append(txt(x0, y0 + 26, "切断", "start", "l", GREY, "700"))
+    b.append(txt(x1, y0 + 26, "可对账", "end", "l", GREY, "700"))
+    b.append(txt((x0 + x1) / 2, y0 + 46, "外部真值的可用性", "middle", "l", INK))
+    b.append(txt((x0 + x1) / 2 + 9, y1 + 6, "表示熵上升", "start", "l", INK))
+    b.append(txt((x0 + x1) / 2 + 9, y0 - 6, "表示熵下降", "start", "l", INK))
+    cells = [
+        ("内源模拟（梦）", "断输入 · 升熵", "第 11 章", (x0 + x1) / 4, y1 + 110, BLUE, "start"),
+        ("整理", "断输入 · 降熵", "第 12 章", (x0 + x1) / 4, y0 - 80, GREY, "start"),
+        ("对账", "有真值 · 降熵", "第 12 章", 3 * (x0 + x1) / 4, y0 - 80, GREEN, "end"),
+        ("膨胀", "有真值 · 升熵", "本章反例", 3 * (x0 + x1) / 4, y1 + 110, RED, "end"),
+    ]
+    for name, sub, ref, cx, cy, col, anch in cells:
+        dx = 14 if anch == "start" else -14
+        b.append(f'<circle cx="{cx:.0f}" cy="{cy:.0f}" r="7" fill="{col}"/>')
+        b.append(txt(cx + dx, cy - 2, name, anch, "l", col, "700"))
+        b.append(txt(cx + dx, cy + 14, sub, anch, "l", INK))
+        b.append(txt(cx + dx, cy + 29, ref, anch, "l", GREY))
+    b.append(txt(365, 424, "左半“切断”＝真值不可得；右半“可对账”＝真值可复查。", "middle", "l", GREY))
+    save("fig12a-two-offline-ways.svg", svg(w, h, "\n".join(b)))
+
+
+# ---------------------------------------------------------------- fig 12.2
+def fig_dream_audit():
+    import json as _json
+    d = _json.load(open(os.path.join(HERE, "data", "exp_dream.json"), encoding="utf-8"))
+    w, h = 800, 400
+    b = [f'<text x="20" y="26" class="t">对账的收益：门槛很浅，天花板由可验证性决定</text>']
+    A = d["main"]["A_none"]["accuracy"]["mean"]
+
+    def panel(x0, y0, x1, y1, xlabel, ylabel, xticks, xtlabels, yticks=(0, 0.5, 1.0)):
+        b.append(axes(x0, y0, x1, y1, "", ""))
+        b.append(txt(x0 - 34, (y0 + y1) / 2, ylabel, "middle", "l", INK).replace(
+            "<text ", '<text transform="rotate(-90 %d %d)" ' % (x0 - 34, (y0 + y1) / 2), 1))
+        for v in yticks:
+            yy = y0 - v * (y0 - y1)
+            b.append(f'<line x1="{x0-4}" y1="{yy:.0f}" x2="{x0}" y2="{yy:.0f}" class="ax"/>')
+            b.append(txt(x0 - 8, yy + 4, "%.1f" % v, "end", "l", GREY))
+        for xv, lb in zip(xticks, xtlabels):
+            xx = x0 + xv * (x1 - x0)
+            b.append(f'<line x1="{xx:.0f}" y1="{y0}" x2="{xx:.0f}" y2="{y0+4}" class="ax"/>')
+            b.append(txt(xx, y0 + 17, lb, "middle", "l", GREY))
+        b.append(txt((x0 + x1) / 2, y0 + 36, xlabel, "middle", "l", INK))
+
+    # ---- 左：审计率扫描
+    lx0, ly0, lx1, ly1 = 80, 300, 380, 90
+    panel(lx0, ly0, lx1, ly1, "审计率 q", "作答正确率",
+          [0, 0.2, 0.4, 0.6, 0.8, 1.0], ["0", "0.2", "0.4", "0.6", "0.8", "1.0"])
+    ay = ly0 - A * (ly0 - ly1)
+    b.append(f'<line x1="{lx0}" y1="{ay:.0f}" x2="{lx1}" y2="{ay:.0f}" stroke="{GREY}" '
+             f'stroke-width="1.2" stroke-dasharray="5,3"/>')
+    b.append(txt(lx1 + 2, ay + 14, "A：完全不整合", "end", "l", GREY))
+    leg = []
+    for i, (rho, col) in enumerate((("0.2", GOLD), ("0.5", BLUE), ("1.0", GREEN))):
+        ser = d["q_sweep"][rho]
+        pts = [(lx0 + float(q) * (lx1 - lx0), ly0 - ser[q]["accuracy"]["mean"] * (ly0 - ly1))
+               for q in sorted(ser)]
+        b.append(polyline(pts, col, 2.2))
+        ly = ly1 + 16 + i * 15
+        b.append(f'<line x1="{lx0+34}" y1="{ly-4}" x2="{lx0+56}" y2="{ly-4}" stroke="{col}" stroke-width="2.4"/>')
+        b.append(txt(lx0 + 62, ly, "可验证性 ρ=%s" % rho, "start", "l", col, "700"))
+    qs = d["adjudication"]["F2_threshold"]["q_star"]
+    if qs:
+        qx = lx0 + qs * (lx1 - lx0)
+        b.append(f'<line x1="{qx:.0f}" y1="{ly0}" x2="{qx:.0f}" y2="{ly1}" stroke="{RED}" '
+                 f'stroke-width="1" stroke-dasharray="4,3"/>')
+        b.append(txt(qx + 4, ly1 + 4, "q*≈%.1f" % qs, "start", "l", RED, "700"))
+
+    # ---- 右：整合周期
+    rx0, ry0, rx1, ry1 = 500, 300, 740, 90
+    ks = [1, 2, 4, 8, 16, 32]
+    lk = lambda k: math.log2(k) / 5.0
+    panel(rx0, ry0, rx1, ry1, "整合周期 k（会话，对数）", "比例",
+          [lk(k) for k in ks], [str(k) for k in ks])
+    acc = [(rx0 + lk(k) * (rx1 - rx0), ry0 - d["k_sweep"][str(k)]["accuracy"]["mean"] * (ry0 - ry1)) for k in ks]
+    cw = [(rx0 + lk(k) * (rx1 - rx0), ry0 - d["k_sweep"][str(k)]["confident_wrong"]["mean"] * (ry0 - ry1)) for k in ks]
+    b.append(polyline(acc, BLUE, 2.4))
+    b.append(polyline(cw, RED, 2.4, "6,3"))
+    b.append(f'<line x1="{rx0+lk(8)*(rx1-rx0):.0f}" y1="{ry0}" x2="{rx0+lk(8)*(rx1-rx0):.0f}" y2="{ry1}" '
+             f'stroke="{GREY}" stroke-width="1" stroke-dasharray="4,3"/>')
+    b.append(txt(rx0 + lk(8) * (rx1 - rx0) - 4, ry1 - 6, "变化时间常数 L≈8", "end", "l", GREY))
+    b.append(f'<line x1="{rx0+8}" y1="{ry0-78}" x2="{rx0+30}" y2="{ry0-78}" stroke="{BLUE}" stroke-width="2.4"/>')
+    b.append(txt(rx0 + 36, ry0 - 74, "正确率", "start", "l", BLUE, "700"))
+    b.append(f'<line x1="{rx0+8}" y1="{ry0-60}" x2="{rx0+30}" y2="{ry0-60}" stroke="{RED}" stroke-width="2.4" stroke-dasharray="6,3"/>')
+    b.append(txt(rx0 + 36, ry0 - 56, "有把握的答案里错的比例", "start", "l", RED, "700"))
+
+    b.append(txt(410, 378, "左：每 4 会话整合一次，横轴为审计率；右：每 k 会话对账一次（ρ=1, q=1）。",
+                 "middle", "l", GREY))
+    save("fig12b-audit-gain.svg", svg(w, h, "\n".join(b)))
 
 
 if __name__ == "__main__":
@@ -635,4 +738,5 @@ if __name__ == "__main__":
     fig10(); fig11(); fig12(); fig13(); fig14(); fig15(); fig18()
     fig_matrix(); fig_rank(); fig_submod(); fig_two_dyn(); fig_forgetting()
     fig_allocation(); fig_scope(); fig_design(); fig_roadmap(); fig_timeline(); fig_formalization()
+    fig_dream_two_ways(); fig_dream_audit()
     print("done")

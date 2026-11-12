@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4.0 -4.0 733.0 308.0" width="733" height="308">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 733 308" width="733" height="308">
 <rect x="0" y="0" width="720" height="300" fill="#ffffff"/>
 <style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
 <text x="20" y="26" class="t">分模块形式化承诺</text>
@@ -14,7 +14,7 @@
 <rect x="360" y="140" width="300" height="20" fill="#f0f0ee"/>
 <rect x="360" y="140" width="195" height="20" fill="#b8862f" opacity="0.75"/>
 <text x="670" y="155" class="l" text-anchor="start" fill="#b8862f" font-weight="700">半形式化</text>
-<text x="40" y="198" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">第 10—13 章　梦·潜意识·元认知</text>
+<text x="40" y="198" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">第 10—14 章　睡眠·梦·对账·潜意识·元认知</text>
 <rect x="360" y="180" width="300" height="20" fill="#f0f0ee"/>
 <rect x="360" y="180" width="90" height="20" fill="#c94f4f" opacity="0.75"/>
 <text x="670" y="195" class="l" text-anchor="start" fill="#c94f4f" font-weight="700">不形式化</text>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 430" width="680" height="430">
+<rect x="0" y="0" width="680" height="430" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="26" class="t">两种离线计算：真值与熵的四个象限</text>
+<line x1="110" y1="220.0" x2="620" y2="220.0" class="ax"/>
+<line x1="365.0" y1="360" x2="365.0" y2="80" class="ax"/>
+<text x="110" y="386" class="l" text-anchor="start" fill="#666" font-weight="700">切断</text>
+<text x="620" y="386" class="l" text-anchor="end" fill="#666" font-weight="700">可对账</text>
+<text x="365.0" y="406" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">外部真值的可用性</text>
+<text x="374.0" y="86" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">表示熵上升</text>
+<text x="374.0" y="354" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">表示熵下降</text>
+<circle cx="182" cy="190" r="7" fill="#3a6ea5"/>
+<text x="196.5" y="188" class="l" text-anchor="start" fill="#3a6ea5" font-weight="700">内源模拟（梦）</text>
+<text x="196.5" y="204" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">断输入 · 升熵</text>
+<text x="196.5" y="219" class="l" text-anchor="start" fill="#666" font-weight="normal">第 11 章</text>
+<circle cx="182" cy="280" r="7" fill="#666"/>
+<text x="196.5" y="278" class="l" text-anchor="start" fill="#666" font-weight="700">整理</text>
+<text x="196.5" y="294" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">断输入 · 降熵</text>
+<text x="196.5" y="309" class="l" text-anchor="start" fill="#666" font-weight="normal">第 12 章</text>
+<circle cx="548" cy="280" r="7" fill="#009E73"/>
+<text x="533.5" y="278" class="l" text-anchor="end" fill="#009E73" font-weight="700">对账</text>
+<text x="533.5" y="294" class="l" text-anchor="end" fill="#1a1a1a" font-weight="normal">有真值 · 降熵</text>
+<text x="533.5" y="309" class="l" text-anchor="end" fill="#666" font-weight="normal">第 12 章</text>
+<circle cx="548" cy="190" r="7" fill="#c94f4f"/>
+<text x="533.5" y="188" class="l" text-anchor="end" fill="#c94f4f" font-weight="700">膨胀</text>
+<text x="533.5" y="204" class="l" text-anchor="end" fill="#1a1a1a" font-weight="normal">有真值 · 升熵</text>
+<text x="533.5" y="219" class="l" text-anchor="end" fill="#666" font-weight="normal">本章反例</text>
+<text x="365" y="424" class="l" text-anchor="middle" fill="#666" font-weight="normal">左半“切断”＝真值不可得；右半“可对账”＝真值可复查。</text>
+</svg>
