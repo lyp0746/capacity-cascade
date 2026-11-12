@@ -20,15 +20,15 @@
 
 <p>标准注意力机制是：</p>
 
-<div class="eq"><span class="body">Attention(<i>Q</i>,<i>K</i>,<i>V</i>) = softmax(<i>Q</i><i>K</i><sup>T</sup> / √<i>d</i>) · <i>V</i></span><span class="num">(7.1)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi mathvariant="normal">Attention</mi><mo>(</mo><mi>Q</mi><mo>,</mo><mi>K</mi><mo>,</mo><mi>V</mi><mo>)</mo><mo>=</mo><mi mathvariant="normal">softmax</mi><mo>(</mo><mi>Q</mi><msup><mi>K</mi><mi>T</mi></msup><mo>/</mo><mi>√</mi><mi>d</mi><mo>)</mo><mo>·</mo><mi>V</mi></math></span><span class="num">(7.1)</span></div>
 
 <p>把它读成概率分布会更有启发。令 <i>p</i>(<i>i</i>|<i>j</i>) 为位置 <i>j</i> 的查询选择历史位置 <i>i</i> 的权重，则注意力输出是：</p>
 
-<div class="eq"><span class="body">输出<sub><i>j</i></sub> = Σ<sub><i>i</i></sub> <i>p</i>(<i>i</i>|<i>j</i>) <i>v</i><sub><i>i</i></sub> = <b>E</b>[<i>V</i> | 查询 <i>j</i>]</span><span class="num">(7.2)</span></div>
+<div class="eq"><span class="body"><math display="block"><msub><mtext>输出</mtext><mi>j</mi></msub><mo>=</mo><msub><mo>Σ</mo><mi>i</mi></msub><mi>p</mi><mo>(</mo><mi>i</mi><mo>|</mo><mi>j</mi><mo>)</mo><msub><mi>v</mi><mi>i</mi></msub><mo>=</mo><mi mathvariant="bold">E</mi><mo>[</mo><mi>V</mi><mo>|</mo><mtext>查询</mtext><mi>j</mi><mo>]</mo></math></span><span class="num">(7.2)</span></div>
 
 <p><b>注意力是一次条件期望，也就是一次“软选择”。</b>这句话立刻带来一个信息论问题：这次选择保留了多少关于位置 <i>i</i> 的信息？答案由下式度量：</p>
 
-<div class="eq"><span class="body"><i>I</i>(token<sub><i>i</i></sub> ; 输出<sub><i>j</i></sub> | 其余 token)</span><span class="num">(7.3)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi>I</mi><mo>(</mo><msub><mi mathvariant="normal">token</mi><mi>i</mi></msub><mo>;</mo><msub><mtext>输出</mtext><mi>j</mi></msub><mo>|</mo><mtext>其余</mtext><mi mathvariant="normal">token</mi><mo>)</mo></math></span><span class="num">(7.3)</span></div>
 
 <p>式(7.3)可以理解为“位置 <i>i</i> 的信息有多少被送到了位置 <i>j</i> 的输出”。位置偏差，就是式(7.3)随 <i>i</i> 与 <i>j</i> 的相对位置发生系统性变化的现象。</p>
 
@@ -44,7 +44,7 @@
 
 <p>合并起来，可以得到一个比名义容量小得多的有效容量表达：</p>
 
-<div class="eq"><span class="body"><i>C</i><sub>eff</sub> ≈ <i>d</i> · log(<i>n</i>)　≪　<i>d</i> · <i>n</i>（名义上界）</span><span class="num">(7.4)</span></div>
+<div class="eq"><span class="body"><math display="block"><msub><mi>C</mi><mi mathvariant="normal">eff</mi></msub><mo>≈</mo><mi>d</mi><mo>·</mo><mi mathvariant="normal">log</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>≪</mo><mi>d</mi><mo>·</mo><mi>n</mi><mtext>（名义上界）</mtext></math></span><span class="num">(7.4)</span></div>
 
 <p>式(7.4)是<b>量级关系</b>而非精确等式（等级 C）。它想说的是：<b>长度带来的是容量的对数增长，而计算成本是线性增长——这笔账迟早要还。</b>这解释了为什么“把上下文窗口开得更大”会继续有效，却越来越不划算。</p>
 

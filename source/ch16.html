@@ -32,7 +32,7 @@
 
 <p>自由能原理（FEP）说，系统通过最小化变分自由能 <i>F</i> 来感知与行动：</p>
 
-<div class="eq"><span class="body"><i>F</i> = <i>D</i><sub>KL</sub>[<i>q</i>(<i>s</i>|<i>o</i>) ‖ <i>p</i>(<i>s</i>|<i>o</i>)] − <b>E</b><sub><i>q</i></sub>[ln <i>p</i>(<i>o</i>|<i>s</i>)]</span><span class="num">(16.1)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi>F</mi><mo>=</mo><msub><mi>D</mi><mi mathvariant="normal">KL</mi></msub><mo>[</mo><mi>q</mi><mo>(</mo><mi>s</mi><mo>|</mo><mi>o</mi><mo>)</mo><mi>‖</mi><mi>p</mi><mo>(</mo><mi>s</mi><mo>|</mo><mi>o</mi><mo>)</mo><mo>]</mo><mo>−</mo><msub><mi mathvariant="bold">E</mi><mi>q</mi></msub><mo>[</mo><mi mathvariant="normal">ln</mi><mi>p</mi><mo>(</mo><mi>o</mi><mo>|</mo><mi>s</mi><mo>)</mo><mo>]</mo></math></span><span class="num">(16.1)</span></div>
 
 <p>式(16.1)的两项分别是“复杂性代价”与“准确性收益”。它与 IB 的相似是明显的，但二者优化的是不同的量：IB 权衡<b>输入信息</b>与<b>任务相关性</b>；FEP 权衡<b>模型复杂性</b>与<b>数据拟合</b>。</p>
 
@@ -55,7 +55,7 @@
 
 <p>把 RL 与 IB 合并，可以得到一个更完整的目标：</p>
 
-<div class="eq"><span class="body">max<sub><i>Z</i></sub> [ <i>I</i>(<i>Z</i>; <i>R</i> | <i>X</i>) − <i>β</i> · <i>I</i>(<i>Z</i>; <i>X</i>) ]</span><span class="num">(16.2)</span></div>
+<div class="eq"><span class="body"><math display="block"><msub><mi mathvariant="normal">max</mi><mi>Z</mi></msub><mo>[</mo><mi>I</mi><mo>(</mo><mi>Z</mi><mo>;</mo><mi>R</mi><mo>|</mo><mi>X</mi><mo>)</mo><mo>−</mo><mi>β</mi><mo>·</mo><mi>I</mi><mo>(</mo><mi>Z</mi><mo>;</mo><mi>X</mi><mo>)</mo><mo>]</mo></math></span><span class="num">(16.2)</span></div>
 
 <p>式(16.2)说：表示应当保留“对获得奖励有用”的信息，并压缩其余。它把“什么值得记”从一个外部给定的量，变成了由奖励结构内生决定的量。<b>这一步极大地增强了框架的解释力：不同的智能体因为奖励不同，会有不同的遗忘模式。</b></p>
 
@@ -75,7 +75,7 @@
 
 <p>预测加工的核心是<b>最小化预测误差</b>：</p>
 
-<div class="eq"><span class="body">min<sub>ŝ</sub>　<b>E</b>[ ‖<i>o</i> − <i>g</i>(<i>ŝ</i>)‖² ] + <i>λ</i> · 复杂度(<i>ŝ</i>)</span><span class="num">(16.3)</span></div>
+<div class="eq"><span class="body"><math display="block"><msub><mi mathvariant="normal">min</mi><mi>ŝ</mi></msub><mi mathvariant="bold">E</mi><mo>[</mo><mi>‖</mi><mi>o</mi><mo>−</mo><mi>g</mi><mo>(</mo><mi>ŝ</mi><mo>)</mo><mi>‖</mi><mi>²</mi><mo>]</mo><mo>+</mo><mi>λ</mi><mo>·</mo><mtext>复杂度</mtext><mo>(</mo><mi>ŝ</mi><mo>)</mo></math></span><span class="num">(16.3)</span></div>
 
 <p>主动推理把它升级为<b>期望自由能</b>最小化：<i>G</i> = 复杂性 + 期望惊异 − 信息增益。把式(16.3)与式(4.1)并置，可以看到二者共享同一个“压缩——保真”的骨架：</p>
 

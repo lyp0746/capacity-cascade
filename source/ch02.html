@@ -69,7 +69,7 @@
 <p>注意 (C1)—(C3) 是可分别检验的：第 5 章检验 (C1)，第 6 章检验 (C2)，第 9 章讨论 (C3)。而 (C4) 是<b>假说</b>，第 10—14 章给出候选机制（清醒—睡眠、内源模拟、元认知），并明确标注其证据等级为 C。</p>
 <p><b>怎么检验这三条（而不是怎么相信它们）。</b> C1 可以用率失真实验逼近：给同一输入分布，测“表示—输入”的互信息上界，看它是否在某个 <i>C</i><sub>eff</sub> 处饱和；C2 可以用双时间尺度拟合：给一个阶跃扰动，看恢复曲线是否需要两个显著不同的时间常数才能拟合；C3 可以用干预实验：改变局部可塑性（学习率、噪声、资源），看表示是否只能沿某一受限方向移动。<b>三条里任何一条测不出，这个系统就不在本书的“同约束”范围内</b>——这是本书的证伪条件，而不是它的修辞。</p>
 
-<div class="eq"><span class="body">min<sub>p(z|x)</sub> [ <i>I</i>(<i>X</i>;<i>Z</i>) + <i>β</i> <i>I</i>(<i>Z</i>;<i>Y</i>) ]，　<i>β</i> ≥ 0</span><span class="num">(2.1)</span></div>
+<div class="eq"><span class="body"><math display="block"><msub><mi mathvariant="normal">min</mi><mi>p</mi><mo>(</mo><mi>z</mi><mo>|</mo><mi>x</mi><mo>)</mo></msub><mo>[</mo><mi>I</mi><mo>(</mo><mi>X</mi><mo>;</mo><mi>Z</mi><mo>)</mo><mo>+</mo><mi>β</mi><mi>I</mi><mo>(</mo><mi>Z</mi><mo>;</mo><mi>Y</mi><mo>)</mo><mo>]</mo><mtext>，　</mtext><mi>β</mi><mo>≥</mo><mn>0</mn></math></span><span class="num">(2.1)</span></div>
 <p>式(2.1)是信息瓶颈的目标函数，本书把它当作 (C1) 的形式表达。它的直觉是：在“尽量少记”（<i>I</i>(<i>X</i>;<i>Z</i>) 小）与“尽量有用”（<i>I</i>(<i>Z</i>;<i>Y</i>) 大）之间取舍。<i>β</i> 不是常数，而是随任务与系统状态变化的参数——这一点在标准信息瓶颈中常被忽略，却是本书第 6 章“多尺度”的来源。</p>
 
 <div class="note"><b>如果你反对这一点</b>　<b>批评者：</b>“都受容量限制”这么弱的主张，单独拿出来有什么价值？<br>

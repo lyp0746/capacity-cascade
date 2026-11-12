@@ -81,7 +81,7 @@ rank<sub>eff</sub>(<i>M</i>) := exp( − Σ<sub><i>i</i></sub> <i>p</i><sub><i>i
 
 <p>把上述观察合并，可以得到本章的核心模型：</p>
 
-<div class="eq"><span class="body"><i>C</i><sub>eff</sub>(<i>ι</i>) = <i>C</i><sub>∞</sub> + (<i>C</i><sub>max</sub> − <i>C</i><sub>∞</sub>) · exp(−<i>k</i> · <i>ι</i>)</span><span class="num">(5.1)</span></div>
+<div class="eq"><span class="body"><math display="block"><msub><mi>C</mi><mi mathvariant="normal">eff</mi></msub><mo>(</mo><mi>ι</mi><mo>)</mo><mo>=</mo><msub><mi>C</mi><mo>∞</mo></msub><mo>+</mo><mo>(</mo><msub><mi>C</mi><mi mathvariant="normal">max</mi></msub><mo>−</mo><msub><mi>C</mi><mo>∞</mo></msub><mo>)</mo><mo>·</mo><mi mathvariant="normal">exp</mi><mo>(</mo><mo>−</mo><mi mathvariant="normal">k</mi><mo>·</mo><mi>ι</mi><mo>)</mo></math></span><span class="num">(5.1)</span></div>
 
 <p>其中 <i>ι</i> 是归一化干扰强度，<i>C</i><sub>max</sub> 是无干扰容量，<i>C</i><sub>∞</sub> 是干扰极大时残留的容量（通常接近 0，但不为零：结构本身仍携带任务先验），<i>k</i> 是灵敏度。这个模型给出三条可检验的方向性预言：</p>
 
@@ -93,7 +93,7 @@ rank<sub>eff</sub>(<i>M</i>) := exp( − Σ<sub><i>i</i></sub> <i>p</i><sub><i>i
 
 <p>把干扰与位置／时间联系起来的经验形式，常被写成指数衰减的准确度曲线：</p>
 
-<div class="eq"><span class="body">acc(<i>s</i>) ≈ <i>A</i><sub>∞</sub> + (1 − <i>A</i><sub>∞</sub>) · exp(−<i>α</i> · <i>φ</i>(<i>s</i>))</span><span class="num">(5.2)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi mathvariant="normal">acc</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>≈</mo><msub><mi>A</mi><mo>∞</mo></msub><mo>+</mo><mo>(</mo><mn>1</mn><mo>−</mo><msub><mi>A</mi><mo>∞</mo></msub><mo>)</mo><mo>·</mo><mi mathvariant="normal">exp</mi><mo>(</mo><mo>−</mo><mi>α</mi><mo>·</mo><mi>φ</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>)</mo></math></span><span class="num">(5.2)</span></div>
 
 <p>其中 <i>s</i> 是信息在输入中的相对位置（或时间间隔），<i>φ</i> 是单调递增的“有效干扰”函数，<i>α</i> 是速率常数。第 7 章会说明：式(5.2)是一个<b>家族</b>，而非单一模型；位置偏差的“U 形”意味着 <i>φ</i> 不是简单的线性距离。</p>
 
@@ -104,7 +104,7 @@ rank<sub>eff</sub>(<i>M</i>) := exp( − Σ<sub><i>i</i></sub> <i>p</i><sub><i>i
 
 <p>互信息具有子模性（submodularity）：</p>
 
-<div class="eq"><span class="body"><i>I</i>(<i>Z</i>; <i>X</i><sub>1</sub> ∪ <i>X</i><sub>2</sub>) ≤ <i>I</i>(<i>Z</i>;<i>X</i><sub>1</sub>) + <i>I</i>(<i>Z</i>;<i>X</i><sub>2</sub>)</span><span class="num">(5.3)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi>I</mi><mo>(</mo><mi>Z</mi><mo>;</mo><msub><mi>X</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>X</mi><mn>2</mn></msub><mo>)</mo><mo>≤</mo><mi>I</mi><mo>(</mo><mi>Z</mi><mo>;</mo><msub><mi>X</mi><mn>1</mn></msub><mo>)</mo><mo>+</mo><mi>I</mi><mo>(</mo><mi>Z</mi><mo>;</mo><msub><mi>X</mi><mn>2</mn></msub><mo>)</mo></math></span><span class="num">(5.3)</span></div>
 
 <p>其含义是：<b>两个信息源的联合贡献不超过各自贡献之和</b>；当二者相关时，存在“重叠”造成的冗余损失。由此可以推出一个对“多头注意力容量加性”的限定：若多头之间存在相关（它们经常相关），则总有效容量小于单头容量之和。</p>
 

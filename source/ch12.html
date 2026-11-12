@@ -44,13 +44,13 @@
 
 <p>再定义一个量，本章后面全靠它：</p>
 
-<div class="eq"><span class="body"><i>ρ</i> = 日志中留有可核对记录的事实数 / 事实总数</span><span class="num">(12.1)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi>ρ</mi><mo>=</mo><mtext>日志中留有可核对记录的事实数</mtext><mo>/</mo><mtext>事实总数</mtext></math></span><span class="num">(12.1)</span></div>
 
 <p><i>ρ</i> 是<b>可验证性</b>。它不是算力，不是模型能力，是<b>“这件事有没有留下可以被复查的痕迹”</b>。测试跑过了、客户的回复到了、评分器给了分、动作的后果被观察到了——这些都算；一句“我觉得是这样”不算。</p>
 
 <p>有了 <i>ρ</i>，对账的收益就有了一个上界。设整合本身把正确率从 <i>a</i><sub>0</sub> 拉到 <i>a</i><sub>merge</sub>，则对账最多只能把 <i>ρ</i> 覆盖内的错误全部改对：</p>
 
-<div class="eq"><span class="body">Δ<i>a</i> ≤ <i>ρ</i> · (1 − <i>a</i><sub>merge</sub>)</span><span class="num">(12.2)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi>Δ</mi><mi>a</mi><mo>≤</mo><mi>ρ</mi><mo>·</mo><mo>(</mo><mn>1</mn><mo>−</mo><msub><mi>a</mi><mi mathvariant="normal">merge</mi></msub><mo>)</mo></math></span><span class="num">(12.2)</span></div>
 
 <p>式(12.2)看起来平常，却解释了一个反直觉的现象。<b>对账并不增加信息</b>——按数据处理不等式（第 4.5 节），任何对账本的后处理都不会让它关于真值的互信息变多。那它凭什么提高准确率？因为错误的来源不是数据，是<b>改写</b>：整合这个动作本身引入了损失（合并、去重、概括、覆盖），对账把这个损失压回去。<b>所以对账的收益上限是“整合损失”，不是“新信息”。</b>［论证，B／乙］</p>
 
@@ -83,7 +83,7 @@
 
 <p>本书能给出原因，而且这个原因不需要新理论。按数据处理不等式，任何从知识页到答案的映射都满足 <i>I</i>(知识页; 答案) ≤ <i>I</i>(原文; 答案)：<b>后处理不可能增加答案里的信息。</b>知识页变大，增加的是它自己的熵，不是它关于任务的互信息。于是有一个立刻可用的判据：</p>
 
-<div class="eq"><span class="body">价值密度 = <i>I</i>(表示; 任务) / |表示|　，　整合理应让它上升，而不是让 |表示| 上升</span><span class="num">(12.3)</span></div>
+<div class="eq"><span class="body"><math display="block"><mtext>价值密度</mtext><mo>=</mo><mi>I</mi><mo>(</mo><mtext>表示</mtext><mo>;</mo><mtext>任务</mtext><mo>)</mo><mo>/</mo><mo>|</mo><mtext>表示</mtext><mo>|</mo><mtext>，　整合理应让它上升，而不是让</mtext><mo>|</mo><mtext>表示</mtext><mo>|</mo><mtext>上升</mtext></math></span><span class="num">(12.3)</span></div>
 
 <p>把这条判据套回去，那次实测里两个数字就变得可读了：只用知识页作答时得分 48%，同时给检索工具时从 54% 升到 61%——<b>索引没有替代检索，它只是降低了检索的成本</b>；一旦索引自己长成正文，它就既没降成本，也没增信息。<b>“整理”缺少的正是这一步检查：它优化的是条目数，不是价值密度。</b>［论证，B／乙］</p>
 

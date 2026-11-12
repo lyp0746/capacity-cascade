@@ -18,7 +18,7 @@
 
 <p>清醒计算可写成一个受外部数据约束的优化：</p>
 
-<div class="eq"><span class="body">清醒：　min<sub><i>W</i></sub> <i>L</i>(<i>数据</i>; <i>W</i>) = min<sub><i>W</i></sub> <i>E</i><sub><i>x</i>~<i>p</i>(<i>data</i>)</sub>[ ℓ(<i>f</i><sub><i>W</i></sub>(<i>x</i>), <i>y</i>) ]</span><span class="num">(10.1)</span></div>
+<div class="eq"><span class="body"><math display="block"><mtext>清醒：　</mtext><msub><mi mathvariant="normal">min</mi><mi>W</mi></msub><mi>L</mi><mo>(</mo><mtext>数据</mtext><mo>;</mo><mi>W</mi><mo>)</mo><mo>=</mo><msub><mi mathvariant="normal">min</mi><mi>W</mi></msub><msub><mi mathvariant="normal">E</mi><mi>x</mi><mo>~</mo><mi>p</mi><mo>(</mo><mi mathvariant="normal">data</mi><mo>)</mo></msub><mo>[</mo><mi>ℓ</mi><mo>(</mo><msub><mi>f</mi><mi>W</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo>,</mo><mi>y</mi><mo>)</mo><mo>]</mo></math></span><span class="num">(10.1)</span></div>
 
 <p>它的三个特征决定了它的局限：<b>（a）数据驱动</b>——只向当前输入分布负责；<b>（b）局部</b>——沿误差曲面下降，容易停在截至 2026 年 10 月的局部最优；<b>（c）实时</b>——必须在给定延迟内响应，没有反复推演的自由。这三个特征合起来，正好解释了过拟合：<b>一个只对截至 2026 年 10 月数据负责、又只能局部移动的系统，会被截至 2026 年 10 月的样本越拉越偏。</b></p>
 
@@ -26,7 +26,7 @@
 
 <p>睡眠计算不是“在噪声下继续做清醒的事”。它是一个不同的目标：</p>
 
-<div class="eq"><span class="body">睡眠：　min<sub><i>W</i></sub> <i>D</i><sub>KL</sub>( <i>p</i><sub>内源</sub>(模式) ‖ <i>p</i><sub><i>W</i></sub>(模式) )　（无外部数据约束）</span><span class="num">(10.2)</span></div>
+<div class="eq"><span class="body"><math display="block"><mtext>睡眠：　</mtext><msub><mi mathvariant="normal">min</mi><mi>W</mi></msub><msub><mi>D</mi><mi mathvariant="normal">KL</mi></msub><mo>(</mo><msub><mi>p</mi><mtext>内源</mtext></msub><mo>(</mo><mtext>模式</mtext><mo>)</mo><mi>‖</mi><msub><mi>p</mi><mi>W</mi></msub><mo>(</mo><mtext>模式</mtext><mo>)</mo><mo>)</mo><mtext>（无外部数据约束）</mtext></math></span><span class="num">(10.2)</span></div>
 
 <p>式(10.2)的直觉是：系统用自己生成的活动去匹配自己已有的结构，从而迫使表示自洽，而不是对截至 2026 年 10 月的样本过度敏感。它的三个特征与清醒恰恰相反：<b>（a）内源驱动</b>——激活来自自身而非环境；<b>（b）全局</b>——不受单一样本的即时梯度牵引，可以重整远距离的表示关系；<b>（c）离线</b>——不需要实时响应，允许反复的、随机化的重排。</p>
 

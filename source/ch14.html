@@ -25,11 +25,11 @@
 
 <p>把总容量 <i>C</i> 分配给若干用途（基础能力、短期适应、长期存储），是一个受约束的优化：</p>
 
-<div class="eq"><span class="body">max<sub><i>c</i><sub>1</sub>,…,<i>c</i><sub><i>m</i></sub></sub> Σ<sub><i>k</i></sub> <i>U</i><sub><i>k</i></sub>(<i>c</i><sub><i>k</i></sub>)　s.t.　Σ<sub><i>k</i></sub> <i>c</i><sub><i>k</i></sub> ≤ <i>C</i>，　<i>c</i><sub><i>k</i></sub> ≥ 0</span><span class="num">(14.1)</span></div>
+<div class="eq"><span class="body"><math display="block"><msub><mi mathvariant="normal">max</mi><msub><mi>c</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>c</mi><mi>m</mi></msub></msub><msub><mo>Σ</mo><mi mathvariant="normal">k</mi></msub><msub><mi>U</mi><mi mathvariant="normal">k</mi></msub><mo>(</mo><msub><mi>c</mi><mi mathvariant="normal">k</mi></msub><mo>)</mo><mi>s</mi><mi>.</mi><mi>t</mi><mi>.</mi><msub><mo>Σ</mo><mi mathvariant="normal">k</mi></msub><msub><mi>c</mi><mi mathvariant="normal">k</mi></msub><mo>≤</mo><mi>C</mi><mtext>，　</mtext><msub><mi>c</mi><mi mathvariant="normal">k</mi></msub><mo>≥</mo><mn>0</mn></math></span><span class="num">(14.1)</span></div>
 
 <p>其中 <i>U</i><sub><i>k</i></sub> 是第 <i>k</i> 项用途的边际效用。最优解满足边际效用相等（在内部解处）：</p>
 
-<div class="eq"><span class="body"><i>U</i>′<sub>1</sub>(<i>c</i><sub>1</sub>) = <i>U</i>′<sub>2</sub>(<i>c</i><sub>2</sub>) = … = <i>U</i>′<sub><i>m</i></sub>(<i>c</i><sub><i>m</i></sub>)</span><span class="num">(14.2)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi>U</mi><msub><mi>′</mi><mn>1</mn></msub><mo>(</mo><msub><mi>c</mi><mn>1</mn></msub><mo>)</mo><mo>=</mo><mi>U</mi><msub><mi>′</mi><mn>2</mn></msub><mo>(</mo><msub><mi>c</mi><mn>2</mn></msub><mo>)</mo><mo>=</mo><mi>…</mi><mo>=</mo><mi>U</mi><msub><mi>′</mi><mi>m</mi></msub><mo>(</mo><msub><mi>c</mi><mi>m</mi></msub><mo>)</mo></math></span><span class="num">(14.2)</span></div>
 
 <p>这个“边际相等”原则解释了长对话中的目标漂移：<b>当短期适应的边际效用上升（新信息源源不断），最优分配会把容量从“守住初始目标”挪走。</b>这不是系统的缺陷，而是（14.1）在变化的环境下的最优解——问题在于，系统<b>误估了</b>长期目标的边际效用（把“暂时用不上”当成了“永远不重要”）。元认知的任务，就是校正这个误估。</p>
 
@@ -45,7 +45,7 @@
 
 <p>学习率 <i>η</i> 是元认知最直接的旋钮。它的选择本身是一个跨尺度的权衡：</p>
 
-<div class="eq"><span class="body"><i>η</i>* = argmin<sub><i>η</i></sub> [ <i>L</i><sub>旧</sub>(<i>η</i>) + <i>λ</i> · <i>L</i><sub>新</sub>(<i>η</i>) ]</span><span class="num">(14.3)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi>η</mi><mo>*</mo><mo>=</mo><msub><mi mathvariant="normal">argmin</mi><mi>η</mi></msub><mo>[</mo><msub><mi>L</mi><mtext>旧</mtext></msub><mo>(</mo><mi>η</mi><mo>)</mo><mo>+</mo><mi>λ</mi><mo>·</mo><msub><mi>L</mi><mtext>新</mtext></msub><mo>(</mo><mi>η</mi><mo>)</mo><mo>]</mo></math></span><span class="num">(14.3)</span></div>
 
 <p>其中 <i>L</i><sub>旧</sub> 度量旧能力的损失（遗忘），<i>L</i><sub>新</sub> 度量新任务的误差。式(14.3)的形式说：<b>大学习率学得快，也忘得快；小学习率守得住，也学得慢。</b>最优解依赖于 <i>λ</i>——即“我们多在乎旧知识”。这个 <i>λ</i> 本身由元认知层根据任务语境调整：在稳定的世界里 <i>λ</i> 可以小，在变化剧烈的世界里 <i>λ</i> 必须大。</p>
 

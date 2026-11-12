@@ -20,7 +20,7 @@
 
 <p>设系统的表示空间为 <i>S</i>，清醒学习得到的分布为 <i>p</i><sub>wake</sub>(<i>s</i>)（集中在截至 2026 年 10 月数据附近），先验为 <i>p</i><sub>prior</sub>(<i>s</i>)（更宽、更结构化）。内源模拟可写成一个采样过程：</p>
 
-<div class="eq"><span class="body"><i>s</i><sub>dream</sub> ~ <i>q</i>(<i>s</i>)，　<i>q</i> = argmax<sub><i>q</i></sub> [ <i>H</i>(<i>q</i>) ]　s.t.　<i>D</i><sub>KL</sub>(<i>q</i> ‖ <i>p</i><sub>prior</sub>) ≤ <i>δ</i></span><span class="num">(11.1)</span></div>
+<div class="eq"><span class="body"><math display="block"><msub><mi>s</mi><mi mathvariant="normal">dream</mi></msub><mo>~</mo><mi>q</mi><mo>(</mo><mi>s</mi><mo>)</mo><mtext>，　</mtext><mi>q</mi><mo>=</mo><msub><mi mathvariant="normal">argmax</mi><mi>q</mi></msub><mo>[</mo><mi>H</mi><mo>(</mo><mi>q</mi><mo>)</mo><mo>]</mo><mi>s</mi><mi>.</mi><mi>t</mi><mi>.</mi><msub><mi>D</mi><mi mathvariant="normal">KL</mi></msub><mo>(</mo><mi>q</mi><mi>‖</mi><msub><mi>p</mi><mi mathvariant="normal">prior</mi></msub><mo>)</mo><mo>≤</mo><mi>δ</mi></math></span><span class="num">(11.1)</span></div>
 
 <p>式(11.1)说：在“不偏离已知结构太远”的约束下，<b>尽量提高采样的熵</b>。这是一个最大熵采样问题。它的解会在已知模式之间进行高熵的插值与组合，从而生成清醒时不会出现的新配置。用一句话概括：<b>梦在“已知的边界以内”做最大胆的探索。</b>［假说，C／乙］</p>
 
@@ -31,7 +31,7 @@
 
 <p>把清醒学习想象成在能量曲面上滚球，球会停在截至 2026 年 10 月的谷底——这是局部最优。内源模拟的作用是给这个曲面“加噪”：</p>
 
-<div class="eq"><span class="body"><i>W</i> ← <i>W</i> − <i>η</i> ∇<i>L</i>(<i>s</i><sub>dream</sub>; <i>W</i>) + <i>ξ</i>，　<i>ξ</i> ~ 内源噪声</span><span class="num">(11.2)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi>W</mi><mo>←</mo><mi>W</mi><mo>−</mo><mi>η</mi><mo>∇</mo><mi>L</mi><mo>(</mo><msub><mi>s</mi><mi mathvariant="normal">dream</mi></msub><mo>;</mo><mi>W</mi><mo>)</mo><mo>+</mo><mi>ξ</mi><mtext>，　</mtext><mi>ξ</mi><mo>~</mo><mtext>内源噪声</mtext></math></span><span class="num">(11.2)</span></div>
 
 <p>式(11.2)是“梦作为退火”的直观版本：噪声让球有机会越过不高的势垒，到达更深、更全局的谷底。这里的噪声不是干扰，而是<b>探索的资源</b>——这是本章最关键的反直觉之处：<b>在清醒时有害的噪声，在离线时是必要的。</b></p>
 

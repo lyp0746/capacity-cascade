@@ -20,11 +20,11 @@
 
 <p>智能体的上下文不是随机串，而是有结构的：</p>
 
-<div class="eq"><span class="body">context = [系统提示, 事件<sub>1</sub>, 事件<sub>2</sub>, …, 事件<sub><i>n</i></sub>, 当前查询]</span><span class="num">(8.1)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi mathvariant="normal">context</mi><mo>=</mo><mo>[</mo><mtext>系统提示</mtext><mo>,</mo><msub><mtext>事件</mtext><mn>1</mn></msub><mo>,</mo><msub><mtext>事件</mtext><mn>2</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mtext>事件</mtext><mi>n</mi></msub><mo>,</mo><mtext>当前查询</mtext><mo>]</mo></math></span><span class="num">(8.1)</span></div>
 
 <p>每一项都占用容量预算。若把总预算记作 <i>C</i>，则：</p>
 
-<div class="eq"><span class="body"><i>C</i><sub>sys</sub> + Σ<sub><i>i</i></sub> <i>C</i><sub><i>i</i></sub> + <i>C</i><sub>q</sub> ≤ <i>C</i></span><span class="num">(8.2)</span></div>
+<div class="eq"><span class="body"><math display="block"><msub><mi>C</mi><mi mathvariant="normal">sys</mi></msub><mo>+</mo><msub><mo>Σ</mo><mi>i</mi></msub><msub><mi>C</mi><mi>i</mi></msub><mo>+</mo><msub><mi>C</mi><mi>q</mi></msub><mo>≤</mo><mi>C</mi></math></span><span class="num">(8.2)</span></div>
 
 <p>当事件增加，<i>C</i><sub>q</sub> 与 <i>C</i><sub>sys</sub> 被迫压缩。关键的不对称在于：<b>系统提示通常固定，而新事件不断到来；于是被牺牲的，往往不是最新的，而是最旧的、却可能最重要的那部分。</b>这不是系统的“恶意”，而是（8.2）在预算压力下的自然分配。</p>
 
@@ -44,15 +44,15 @@
 
 <p>设智能体的内部状态为 <i>s</i> ∈ ℝ<sup><i>d</i></sup>，初始状态 <i>s</i><sub>0</sub> 编码了系统提示与初始目标。每一轮，状态被事件 <i>e</i><sub><i>i</i></sub> 更新：</p>
 
-<div class="eq"><span class="body"><i>s</i><sub><i>i</i>+1</sub> = <i>s</i><sub><i>i</i></sub> + <i>ε</i><sub><i>i</i></sub>，　‖<i>ε</i><sub><i>i</i></sub>‖ ≈ <i>ε̄</i></span><span class="num">(8.3)</span></div>
+<div class="eq"><span class="body"><math display="block"><msub><mi>s</mi><mi>i</mi><mo>+</mo><mn>1</mn></msub><mo>=</mo><msub><mi>s</mi><mi>i</mi></msub><mo>+</mo><msub><mi>ε</mi><mi>i</mi></msub><mtext>，　</mtext><mi>‖</mi><msub><mi>ε</mi><mi>i</mi></msub><mi>‖</mi><mo>≈</mo><mi mathvariant="normal">ε̄</mi></math></span><span class="num">(8.3)</span></div>
 
 <p>若每步偏移近似独立且同分布，则 <i>n</i> 轮之后的期望偏移为：</p>
 
-<div class="eq"><span class="body">E[‖<i>s</i><sub><i>n</i></sub> − <i>s</i><sub>0</sub>‖] ≈ √<i>n</i> · <i>ε̄</i>　（随机游走）　或　<i>n</i> · <i>ε̄</i>　（有偏漂移）</span><span class="num">(8.4)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi mathvariant="normal">E</mi><mo>[</mo><mi>‖</mi><msub><mi>s</mi><mi>n</mi></msub><mo>−</mo><msub><mi>s</mi><mn>0</mn></msub><mi>‖</mi><mo>]</mo><mo>≈</mo><mi>√</mi><mi>n</mi><mo>·</mo><mi mathvariant="normal">ε̄</mi><mtext>（随机游走）　或　</mtext><mi>n</mi><mo>·</mo><mi mathvariant="normal">ε̄</mi><mtext>（有偏漂移）</mtext></math></span><span class="num">(8.4)</span></div>
 
 <p>这两个尺度差别巨大：随机游走下，偏移随 √<i>n</i> 增长；有偏漂移下，随 <i>n</i> 线性增长。因此“临界轮次” <i>n</i><sub>c</sub>——状态离开目标吸引子盆的轮次——在两种情形下分别是：</p>
 
-<div class="eq"><span class="body"><i>n</i><sub>c</sub> ≈ (<i>r</i>/<i>ε̄</i>)<sup>2</sup>（随机游走）　或　<i>n</i><sub>c</sub> ≈ <i>r</i>/<i>ε̄</i>（有偏），<i>r</i> 为吸引子盆半径</span><span class="num">(8.5)</span></div>
+<div class="eq"><span class="body"><math display="block"><msub><mi>n</mi><mi>c</mi></msub><mo>≈</mo><mo>(</mo><mi>r</mi><mo>/</mo><mi mathvariant="normal">ε̄</mi><msup><mo>)</mo><mn>2</mn></msup><mtext>（随机游走）　或　</mtext><msub><mi>n</mi><mi>c</mi></msub><mo>≈</mo><mi>r</mi><mo>/</mo><mi mathvariant="normal">ε̄</mi><mtext>（有偏），</mtext><mi>r</mi><mtext>为吸引子盆半径</mtext></math></span><span class="num">(8.5)</span></div>
 
 <p><b>这个平方项是关键。</b>它意味着：只要能把每轮的有偏成分压掉一点，让漂移更接近随机游走，临界轮次就能从线性翻成平方——收益不是百分之几，而是数量级。这也解释了为什么“每轮都轻微地重述目标”这类朴素做法，有时比“换一个更大的模型”更有效。</p>
 

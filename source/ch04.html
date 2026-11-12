@@ -22,7 +22,7 @@
 
 <p>给定输入 <i>X</i>、任务目标 <i>Y</i>，以及由 <i>X</i> 产生的内部表示 <i>Z</i>（由条件分布 <i>p</i>(<i>z</i>|<i>x</i>) 决定），信息瓶颈求解：</p>
 
-<div class="eq"><span class="body">min<sub><i>p</i>(<i>z</i>|<i>x</i>)</sub>　<i>L</i><sub>IB</sub> = <i>I</i>(<i>X</i>;<i>Z</i>) + <i>β</i> · <i>I</i>(<i>Z</i>;<i>Y</i>)</span><span class="num">(4.1)</span></div>
+<div class="eq"><span class="body"><math display="block"><msub><mi mathvariant="normal">min</mi><mi>p</mi><mo>(</mo><mi>z</mi><mo>|</mo><mi>x</mi><mo>)</mo></msub><msub><mi>L</mi><mi mathvariant="normal">IB</mi></msub><mo>=</mo><mi>I</mi><mo>(</mo><mi>X</mi><mo>;</mo><mi>Z</mi><mo>)</mo><mo>+</mo><mi>β</mi><mo>·</mo><mi>I</mi><mo>(</mo><mi>Z</mi><mo>;</mo><mi>Y</mi><mo>)</mo></math></span><span class="num">(4.1)</span></div>
 
 <p>这里 <i>β</i> ≥ 0 是压缩强度参数。围绕式(4.1)有三个必须说清的要点。</p>
 
@@ -50,7 +50,7 @@
 
 <p>信息瓶颈处理“任务相关”的压缩；率失真处理“在给定失真度量下”的压缩。给定信源 <i>X</i>、失真函数 <i>d</i>(<i>x</i>,<i>x</i>̂) 与允许的失真 <i>D</i>，率失真函数 <i>R</i>(<i>D</i>) 定义为：</p>
 
-<div class="eq"><span class="body"><i>R</i>(<i>D</i>) = min<sub><i>p</i>(<i>x̂</i>|<i>x</i>) : E[<i>d</i>(<i>x</i>,<i>x̂</i>)] ≤ <i>D</i></sub>　<i>I</i>(<i>X</i>;<i>X</i>̂)</span><span class="num">(4.2)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi>R</mi><mo>(</mo><mi>D</mi><mo>)</mo><mo>=</mo><msub><mi mathvariant="normal">min</mi><mi>p</mi><mo>(</mo><mi mathvariant="normal">x̂</mi><mo>|</mo><mi>x</mi><mo>)</mo><mo>:</mo><mi mathvariant="normal">E</mi><mo>[</mo><mi>d</mi><mo>(</mo><mi>x</mi><mo>,</mo><mi mathvariant="normal">x̂</mi><mo>)</mo><mo>]</mo><mo>≤</mo><mi>D</mi></msub><mi>I</mi><mo>(</mo><mi>X</mi><mo>;</mo><mi>X</mi><mi>̂</mi><mo>)</mo></math></span><span class="num">(4.2)</span></div>
 
 <p><i>R</i>(<i>D</i>) 是<b>在给定失真约束下，重建信源所需的最少信息量</b>。它的对偶形式（容量—失真）说：若通道容量为 <i>C</i>，则可达到的最小失真是 <i>D</i>(<i>C</i>)。这条对偶是本书区分“容量不足”与“选择不当”的工具。</p>
 
@@ -69,7 +69,7 @@
 
 <p>信息论约束之所以“硬”，核心是数据处理不等式（data processing inequality, DPI）：</p>
 
-<div class="eq"><span class="body"><i>X</i> → <i>Z</i> → <i>Y</i>　⟹　<i>I</i>(<i>X</i>;<i>Y</i>) ≤ <i>I</i>(<i>X</i>;<i>Z</i>)</span><span class="num">(4.3)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi>X</mi><mo>→</mo><mi>Z</mi><mo>→</mo><mi>Y</mi><mo>⟹</mo><mi>I</mi><mo>(</mo><mi>X</mi><mo>;</mo><mi>Y</mi><mo>)</mo><mo>≤</mo><mi>I</mi><mo>(</mo><mi>X</mi><mo>;</mo><mi>Z</mi><mo>)</mo></math></span><span class="num">(4.3)</span></div>
 
 <p>它的含义是：<b>对数据做任何（可能是随机的）处理后，关于原始量的信息不会增加。</b>这是本书“遗忘不可逆”的数学来源，也是整本书最硬的一块砖：</p>
 
