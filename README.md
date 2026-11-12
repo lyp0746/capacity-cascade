@@ -60,7 +60,7 @@
 | 心灵的分岔 | [mind-forks](https://github.com/lyp0746/mind-forks) |
 | 热点的账单 | [hotspot-bills](https://github.com/lyp0746/hotspot-bills) |
 
-十四篇工作论文与全部条目的 DOI 见 [series-workspace](https://github.com/lyp0746/series-workspace)。
+十五篇工作论文与全部条目的 DOI 见 [series-workspace](https://github.com/lyp0746/series-workspace)。
 
 ## 许可
 
