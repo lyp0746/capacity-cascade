@@ -618,7 +618,7 @@ def fig_formalization():
             ("第 6 章　时间尺度", 0.65, GOLD),
             ("第 7—9 章　三系统分析", 0.65, GOLD),
             ("第 10—14 章　睡眠·梦·对账·潜意识·元认知", 0.3, RED),
-            ("第 14—16 章　地图与对话", 0.15, RED)]
+            ("第 15—17 章　地图与对话", 0.15, RED)]
     for i, (name, frac, col) in enumerate(rows):
         yy = 60 + i * 40
         b.append(txt(40, yy + 18, name, "start", "l", INK))
