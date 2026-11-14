@@ -146,5 +146,14 @@
    ]
   },
   "params": "level 0.6→0.2, amp=0.4, noise=0.5, eta_slow=0.001, eta_fast∈{0.02,0.05,0.1}"
+ },
+ "fit": {
+  "Ainf": 0.0,
+  "k": 6.31,
+  "onset": 0.139,
+  "halflife_above_onset": 0.11,
+  "alpha_half": 0.249,
+  "rmse": 0.02,
+  "model": "Ainf+(1-Ainf)exp(-k*max(0,alpha-onset))"
  }
 }

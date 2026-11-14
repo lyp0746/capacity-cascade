@@ -1,139 +1,185 @@
-<h2 class="chapter">第15章　理论地图：母题下的各得其所</h2>
-<p class="lead" data-story="1">一张桌上摊着五张地图，比例从一条街到一个大陆。每张都对，每张都不够。<b>地图之间的争吵，往往是比例之争。</b></p>
+<h2 class="chapter">第15章　与信息瓶颈、自由能原理和强化学习的对话</h2>
+<p class="lead" data-story="1">三个工匠修同一把椅子：一个用榫，一个用钉，一个用胶。椅子都能坐，可三个人互相看不上。<b>他们争的不是手艺，是“什么算修好”。</b></p>
 
 
-<p class="lead">到这里，本书已经给出了约束（第 4—5 章）、时间轴（第 6 章）、三个系统的分析（第 7—9 章）以及跨尺度机制（第 10—14 章）。但还缺一件事：<b>把二十余个既有理论安放进同一个母题，让它们不再彼此争夺“唯一解释权”。</b>本章构建这张地图，并为它规定证伪方式。地图的价值不在于好看，而在于：<b>当一个理论无法被安放时，理论本身就该被修订。</b></p>
+<p class="lead">引用一个理论，和与它对话，是两件事。引用只是在旁边放一个名字；对话要说清：我借了它什么、在哪儿与它分道、以及它不能回答的问题由谁回答。本章与三个最重要的既有框架做这种对话——信息瓶颈、自由能原理、强化学习。它们分别回答“如何压缩”“如何行动”“何为重要”。三者的分工，是本书理论地图最重要的几条连线。</p>
 
-<h3 id="sec15-1">15.1　导论：地图不是装饰，而是论证工具</h3>
+<h3 id="sec15-1">15.1　导论：引用不是对话</h3>
 <div data-bg="1">
-<p>理论地图不是装饰，而是论证工具。一张好的地图要回答三个问题：有哪些位置、位置之间怎么走、哪些位置是空的。坏的地图则相反：它把所有理论排成一排，看起来整齐，却看不出依赖关系；或者画成一棵树，看起来有层次，却把并行传统强行塞进父子关系。
-本书的地图有三个轴：结构（系统由什么组成）、动力学（系统如何变化）、协调（系统如何在不同尺度间交接）。三个轴不是并列的分类，而是三种提问方式：结构问“它是什么”，动力学问“它怎么变”，协调问“它怎么保持”。任何一个理论都可以在这三个轴上找到位置，但很少有一个理论同时在三个轴上都强。
-本章会把心理学、神经科学、人工智能的主要理论放上地图，目的不是给它们打分，而是看它们各自让出了什么。一个理论的位置，往往由它“不处理什么”决定；地图的价值，是让这些“不处理”可见。读的时候请把地图当成一张“缺口图”，而不是一张“排名图”；它不告诉你谁更好，只告诉你谁和谁不能互相替代。</p>
+<p>引用不是对话。引用是“我说过某人”，对话是“我和某人就同一问题交换了判据”。多数理论著作的“文献综述”停在引用：把别人的结论排一排，说“我也同意”或“我不同意”。这种写法对读者没有帮助，因为它没有说明：如果对方的判据成立，本书的哪一条会被削弱？
+本章要做的是对话。它与信息瓶颈对话：两者都关心压缩，但信息瓶颈关心“保多少相关”，本书关心“压缩之后还能不能恢复”。它与自由能原理对话：两者都关心“系统如何最小化惊异”，但自由能原理把目标写成一个变分界，本书把目标写成容量—干扰—时间的约束。它与强化学习对话：三者都关心“如何在反馈中改进”，但强化学习关心奖励，本书关心记忆与协调。
+三场对话有一个共同结论：没有哪一个框架能吞并另一个。它们的分工是：信息瓶颈管“表示”，自由能原理管“行动”，强化学习管“策略”，本书管“容量与时间”。本章不是“理论综述”，而是“接口说明”；它告诉你哪些概念可以借，哪些不能借，借了要付什么代价。</p>
 </div>
 
 
-<p>“把理论整合成一张网”听起来像学术上的一种整理癖。但在跨学科领域，它承担一项实质功能：<b>它迫使每个理论亮出自己的边界。</b>如果你声称信息瓶颈解释了一切，地图会立刻显示它的上空（不含时间常数、不解释内源计算）是空的。一个把所有理论都安置得妥妥当当的地图是可疑的；好的地图应该显示<b>哪里有张力、哪里有空洞、哪里安放不稳</b>。</p>
+<p>跨学科写作最容易犯的错误，是把一堆理论名并置，制造“综合”的假象。真正的对话有成本：你必须指出对方的边界，也必须承认自己欠对方什么。本章对每个框架都做三件事：<b>（一）说清本书依赖它的哪一部分；（二）说清本书在哪一点上超出或偏离它；（三）说清它不能回答、而本书试图回答的问题。</b></p>
 
-<h3 id="sec15-2">15.2　母题的定义与四个约束</h3>
 
-<p>地图的中心是母题：<b>信息约束下的多尺度自适应</b>。它由第 2 章的 (C1)—(C4) 定义，这里重述为地图的四个坐标。</p>
 
-<table class="nat">
-<caption class="cap"><b>表 15.1　母题的四个约束与它们约束的对象</b></caption>
-<tr><th class="l">约束</th><th class="l">内容</th><th class="l">约束的是</th><th class="l">主要章节</th></tr>
-<tr><td class="l">(C1) 信息</td><td class="l"><i>I</i>(<i>X</i>;<i>Z</i>) ≤ <i>C</i><sub>eff</sub>，压缩不可免</td><td class="l">表示能装多少</td><td class="l">第 4—5 章</td></tr>
-<tr><td class="l">(C2) 时间</td><td class="l"><i>τ</i><sub>fast</sub> ≪ <i>τ</i><sub>slow</sub>，至少两层</td><td class="l">表示能变多快</td><td class="l">第 6 章</td></tr>
-<tr><td class="l">(C3) 结构</td><td class="l">可塑性受局部资源与噪声限制</td><td class="l">表示能怎么变</td><td class="l">第 9 章</td></tr>
-<tr><td class="l">(C4) 协调</td><td class="l">存在跨尺度容量再分配机制（假说）</td><td class="l">资源流向哪一层</td><td class="l">第 10—14 章</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>约束定义表。证据等级 (C1)—(C3) 为 A/B，(C4) 为 C；<b>注释：</b>(C1)—(C3) 约束的对象分别是容量、速率、形状；(C4) 是本书的假说性贡献，其证据等级最低，但正是它让地图有了“动力学”而非只是“静态结构”。</div>
+<p><b>〔技术〕完整路径</b>　以下小节起为技术／形式化内容。只走快速路径的读者可跳过带此标记的段落，直接看每节开头的加粗结论与章末“关键产出”框；本章其余带 〔技术〕 标记处同此。</p>
 
-<h3 id="sec15-3">15.3　地图的三个轴：结构、动力学、协调</h3>
+<h3 id="sec15-2">15.2　与信息瓶颈理论：依赖与超出</h3>
 
-<p>把理论放上地图，需要坐标。本书使用三个轴，它们对应三种问题：<b>表示如何被组织（结构）、表示如何随时间演化（动力学）、不同尺度或目标如何被安排（协调）。</b>一个理论可以只落在一个轴上，也可以跨轴；跨轴的理论边界更复杂。</p>
-
-<img class="fig" src="assets/svg/fig14-theory-map.svg" alt="母题下的理论地图">
-
-<div class="cap"><b>图 15.1　母题下的理论地图</b>。中心为母题；三轴为结构、动力学、协调。理论按其主要归属放置；跨轴者用箭头连接。虚线表示“安放位置仍有争议”。<b>地图刻意留出空洞：</b>例如“情感显著性”尚未被安放（第 17.6 节），这一空洞是地图可核对性的标志，而不是缺陷被隐藏的地方。</div>
-
-<h3 id="sec15-4">15.4　心理学理论的位置</h3>
-
-<table class="nat">
-<caption class="cap"><b>表 15.2　心理学理论在母题下的位置与边界</b></caption>
-<tr><th class="l">理论</th><th class="l">轴</th><th class="l">角色</th><th class="l">边界</th></tr>
-<tr><td class="l">工作记忆模型（Baddeley &amp; Hitch）</td><td class="l">结构</td><td class="l">最快尺度的容量与结构</td><td class="l">“4—7 项”的普适性与分组机制仍有争议</td></tr>
-<tr><td class="l">遗忘曲线（Ebbinghaus）</td><td class="l">动力学</td><td class="l">快—中尺度的衰退现象学</td><td class="l">现象规律，不含机制；个体差异大</td></tr>
-<tr><td class="l">干扰论（Underwood）</td><td class="l">动力学</td><td class="l">“遗忘由新学习造成”</td><td class="l">与消退难以分离</td></tr>
-<tr><td class="l">检索诱发遗忘（Anderson）</td><td class="l">协调</td><td class="l">选择有代价</td><td class="l">效应量依赖材料与线索</td></tr>
-<tr><td class="l">认知负荷理论（Sweller）</td><td class="l">结构</td><td class="l">容量约束的后果</td><td class="l">“负荷”的度量不唯一</td></tr>
-<tr><td class="l">主动推理（Friston）</td><td class="l">动力学／协调</td><td class="l">惊异最小化与行动</td><td class="l">不易处理“故意提高预测误差”的探索</td></tr>
-<tr><td class="l">双过程论（Kahneman）</td><td class="l">协调</td><td class="l">快／慢加工原型</td><td class="l">隐喻而非机制（见第 13.5 节）</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>心理学理论定位表。证据等级 C（安放为本书判断）；<b>注释：</b>每一条“边界”都是本书的判断，非原作者自述。</div>
-
-<h3 id="sec15-5">15.5　神经科学理论的位置</h3>
-
-<table class="nat">
-<caption class="cap"><b>表 15.3　神经科学理论在母题下的位置与边界</b></caption>
-<tr><th class="l">理论</th><th class="l">轴</th><th class="l">角色</th><th class="l">边界</th></tr>
-<tr><td class="l">长期增强／抑制（LTP/LTD）</td><td class="l">结构</td><td class="l">参数更新的物理基础</td><td class="l">分子细节远超本书分辨率</td></tr>
-<tr><td class="l">突触标签假说（Frey &amp; Morris）</td><td class="l">动力学</td><td class="l">时间尺度分离的分子线索</td><td class="l">与行为层面的对应仍间接</td></tr>
-<tr><td class="l">系统巩固（Frankland &amp; Bontempi）</td><td class="l">协调</td><td class="l">短期→长期的时间跨越</td><td class="l">重放的精确功能仍有争议</td></tr>
-<tr><td class="l">互补学习系统（McClelland 等）</td><td class="l">协调</td><td class="l">快／慢双系统的计算理由</td><td class="l">解剖实现被简化</td></tr>
-<tr><td class="l">全脑工作空间（Baars／Dehaene）</td><td class="l">协调</td><td class="l">意识作为广播瓶颈</td><td class="l">不给出信息论度量</td></tr>
-<tr><td class="l">整合信息理论（Tononi）</td><td class="l">结构（争议）</td><td class="l">“意识＝整合信息”的候选</td><td class="l">泛心论风险；安放争议最大</td></tr>
-<tr><td class="l">预测加工（Clark；Rao &amp; Ballard）</td><td class="l">动力学</td><td class="l">外向计算的贝叶斯基础</td><td class="l">与信息瓶颈的等价是局部的</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>神经科学理论定位表。证据等级 C（安放为本书判断）；<b>注释：</b>“安放争议最大”是地图上的一处张力出口——第 17.3 节会把整合信息理论单独讨论。</div>
-
-<h3 id="sec15-6">15.6　人工智能理论的位置</h3>
-
-<table class="nat">
-<caption class="cap"><b>表 15.4　人工智能理论在母题下的位置与边界</b></caption>
-<tr><th class="l">理论／方法</th><th class="l">轴</th><th class="l">角色</th><th class="l">边界</th></tr>
-<tr><td class="l">注意力机制（Vaswani 等）</td><td class="l">结构</td><td class="l">软选择的计算实现</td><td class="l">不解释容量为何有限</td></tr>
-<tr><td class="l">信息瓶颈（Tishby 等）</td><td class="l">中心</td><td class="l">压缩—相关性权衡</td><td class="l">不给时间常数；互信息难估</td></tr>
-<tr><td class="l">率失真（Shannon）</td><td class="l">结构</td><td class="l">容量的绝对下界</td><td class="l">失真度量需人为指定</td></tr>
-<tr><td class="l">Hopfield 网络（现代版）</td><td class="l">结构</td><td class="l">高容量关联记忆</td><td class="l">容量公式依赖随机模式假设</td></tr>
-<tr><td class="l">强化学习（Sutton &amp; Barto）</td><td class="l">动力学</td><td class="l">奖励定义“相关性”</td><td class="l">不解释表示层的容量与遗忘</td></tr>
-<tr><td class="l">元学习（Finn 等）</td><td class="l">协调</td><td class="l">对容量使用的自适应</td><td class="l">多假定任务分布稳定</td></tr>
-<tr><td class="l">持续学习（Rusu 等）</td><td class="l">动力学</td><td class="l">灾难性遗忘的工程视角</td><td class="l">多为监督设定下的经验方法</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>人工智能理论定位表。证据等级 C（安放为本书判断）；<b>注释：</b>Hopfield 网络与信息瓶颈同属“结构／中心”附近，但二者处理的问题不同：前者是“能存多少模式”，后者是“该保留什么信息”。</div>
-
-<h3 id="sec15-7">15.7　地图如何被证伪</h3>
-
-<p>地图必须能被检验，否则它只是装饰。本书规定三种证伪方式（第 3 章的纪律在此落地）：</p>
+<p>本书对信息瓶颈的依赖是深的。式(4.1)是全书的形式起点，“压缩—相关性权衡”是理解遗忘的钥匙。但本书在三处<b>超出</b>了标准 IB：</p>
 
 <ol>
-<li><b>安放失败。</b>若某个对解释现象必不可少的理论无法被安放到任何轴上而不扭曲其原意，则地图缺一条轴。候选反例：情感显著性（第 17.6 节）——若它不可还原为任何信息论量，则地图需要新增“情感”轴。</li>
-<li><b>边界错误。</b>若某个被标为“不能解释 X”的理论实际上能很好地解释 X，则边界判断错误。</li>
-<li><b>伪整合。</b>若两个被标为“支撑关系”的理论实际上互斥，则内部一致性失败。</li>
+<li><b>时间。</b>标准 IB 是静态的：它给出一个最优编码，不说“为什么需要 <i>τ</i> 秒”。本书把 <i>β</i> 视为随时间和系统状态变化的参数，从而与第 6 章的多尺度结构接轨。</li>
+<li><b>内源计算。</b>标准 IB 要求有输入 <i>X</i>；当 <i>X</i> 被切断（睡眠）时它无定义。本书用内源模拟（第 10 章）填补这个空白。</li>
+<li><b>动力学吸引子。</b>IB 不区分“容易丢”和“难丢”的信息。本书引入吸引子盆（第 8、9 章），说明为什么某些表示更“黏”。</li>
 </ol>
 
-<div class="warning"><span class="bt">纪律　地图只定性，不定量</span>
-地图中的每一条关系都必须是定性的：“A 支撑 B”或“A 与 B 有张力”。<b>把权重、相关系数或概率写进地图，是这类著作最典型的越界。</b>一切定量内容属于方法章节与附录。地图负责说清结构，统计负责说清强度——二者不可互换。</div>
+<p>反过来，IB 保留了本书没有的东西：<b>它给出的是一个真正的优化问题，而本书的许多“机制”只是候选解释。</b>这一点必须承认——不能因为 IB 在具体系统的应用中遇到困难，就否认它在框架层的严格性。</p>
+
+<h3 id="sec15-3">15.3　与自由能原理：重叠与分歧</h3>
+
+<p>自由能原理（FEP）说，系统通过最小化变分自由能 <i>F</i> 来感知与行动：</p>
+
+<div class="eq"><span class="body"><math display="block"><mi>F</mi><mo>=</mo><msub><mi>D</mi><mi mathvariant="normal">KL</mi></msub><mo>[</mo><mi>q</mi><mo>(</mo><mi>s</mi><mo>|</mo><mi>o</mi><mo>)</mo><mi>‖</mi><mi>p</mi><mo>(</mo><mi>s</mi><mo>|</mo><mi>o</mi><mo>)</mo><mo>]</mo><mo>−</mo><msub><mi mathvariant="bold">E</mi><mi>q</mi></msub><mo>[</mo><mi mathvariant="normal">ln</mi><mi>p</mi><mo>(</mo><mi>o</mi><mo>|</mo><mi>s</mi><mo>)</mo><mo>]</mo></math></span><span class="num">(16.1)</span></div>
+
+<p>式(16.1)的两项分别是“复杂性代价”与“准确性收益”。它与 IB 的相似是明显的，但二者优化的是不同的量：IB 权衡<b>输入信息</b>与<b>任务相关性</b>；FEP 权衡<b>模型复杂性</b>与<b>数据拟合</b>。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 15.1　信息瓶颈与自由能原理的分工</b></caption>
+<tr><th class="l">维度</th><th class="l">信息瓶颈</th><th class="l">自由能原理</th></tr>
+<tr><td class="l">被优化的量</td><td class="l"><i>I</i>(<i>X</i>;<i>Z</i>) 与 <i>I</i>(<i>Z</i>;<i>Y</i>)</td><td class="l">复杂性代价与准确性收益</td></tr>
+<tr><td class="l">任务从哪来</td><td class="l">外部给定</td><td class="l">由生成模型与先验隐含</td></tr>
+<tr><td class="l">是否含行动</td><td class="l">否</td><td class="l">是（主动推理）</td></tr>
+<tr><td class="l">是否易处理“探索”</td><td class="l">不易</td><td class="l">部分（通过先验与信息增益）</td></tr>
+<tr><td class="l">本书借用的部分</td><td class="l">压缩—相关性形式</td><td class="l">惊异最小化、行动与环境</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>IB 与 FEP 对照表。证据等级 B（两者均为成熟框架）；<b>数据来源：</b>Tishby et al. (1999)、Friston (2010)，见附录 R 文献表（成熟框架 A／B）。<b>注释：</b>二者在某些条件下可相互推导，但不是普遍等价。本书不主张它们等价。</div>
+
+<p>本书与 FEP 的分歧点在于<b>探索</b>。FEP 倾向最小化惊异；而“有创造性的探索”似乎故意寻求高惊异。第 10 章的内源模拟给出了一个可能的调和：<b>在离线状态下，系统最小化的不是当下的惊异，而是“关于自身结构的自由能”；这允许它暂时接受高惊异，以换取长期的结构改进。</b>这是一个假说，不是结论。</p>
+
+<h3 id="sec15-4">15.4　与强化学习：本书曾遗漏的一环</h3>
+
+<p>前几章谈论“任务相关性”和“重要性”，但始终回避了一个问题：<b>“相关性”从哪来？</b>信息瓶颈把 <i>Y</i> 当作给定，但在真实系统中，<i>Y</i> 是环境奖励塑造出来的。这正是强化学习（RL）的领域，也是本书必须与之对话的地方。</p>
+
+<p>把 RL 与 IB 合并，可以得到一个更完整的目标：</p>
+
+<div class="eq"><span class="body"><math display="block"><msub><mi mathvariant="normal">max</mi><mi>Z</mi></msub><mo>[</mo><mi>I</mi><mo>(</mo><mi>Z</mi><mo>;</mo><mi>R</mi><mo>|</mo><mi>X</mi><mo>)</mo><mo>−</mo><mi>β</mi><mo>·</mo><mi>I</mi><mo>(</mo><mi>Z</mi><mo>;</mo><mi>X</mi><mo>)</mo><mo>]</mo></math></span><span class="num">(16.2)</span></div>
+
+<p>式(16.2)说：表示应当保留“对获得奖励有用”的信息，并压缩其余。它把“什么值得记”从一个外部给定的量，变成了由奖励结构内生决定的量。<b>这一步极大地增强了框架的解释力：不同的智能体因为奖励不同，会有不同的遗忘模式。</b></p>
+
+<p>RL 还给了梦一个新的解释：如果梦是“在想象中的奖励下演练”，那么它同时解释了梦的情感性（奖励的代理）与梦的探索性（新策略的排练）。这个解释仍然属于 C 级，但它比“梦只是巩固”多了一点：<b>它说明了系统为什么愿意在梦中付出“与现实脱节”的代价。</b></p>
+
+<h3 id="sec15-5">15.5　三者的分工：压缩、惊异与奖励</h3>
+
+<img class="fig" src="assets/svg/fig15-IB-FEP-RL.svg" alt="信息瓶颈、自由能原理与强化学习的分工">
+
+<div class="cap"><b>图 15.1　三个框架的分工</b>。信息瓶颈回答“如何压缩”，自由能原理回答“如何行动”，强化学习回答“何为重要”。三者交汇于同一个母题，但各自守住自己的问题域。箭头表示依赖关系：奖励结构定义了相关性，相关性定义了压缩目标，压缩目标约束了行动的表示基础。</div>
+
+<p>这张图是第 14 章地图中最重要的一组连线。它的意义在于：<b>三个框架不是竞争关系，而是分工关系。</b>说“信息瓶颈解释一切”和说“强化学习解释一切”都不对；正确的说法是：它们分别解释了母题的不同侧面，而一个完整的智能理论需要它们同时在场。</p>
+
+<h3 id="sec15-6">15.6　与预测加工／主动推理：形式化对照</h3>
+
+<p>预测加工（Rao &amp; Ballard，1999；Clark，2013）与主动推理（Friston 等，2017）是这个母题最直接的邻居，但本书前文只提了名字，没做对照。现在补上。</p>
+
+<p>预测加工的核心是<b>最小化预测误差</b>：</p>
+
+<div class="eq"><span class="body"><math display="block"><msub><mi mathvariant="normal">min</mi><mi>ŝ</mi></msub><mi mathvariant="bold">E</mi><mo>[</mo><mi>‖</mi><mi>o</mi><mo>−</mo><mi>g</mi><mo>(</mo><mi>ŝ</mi><mo>)</mo><mi>‖</mi><mi>²</mi><mo>]</mo><mo>+</mo><mi>λ</mi><mo>·</mo><mtext>复杂度</mtext><mo>(</mo><mi>ŝ</mi><mo>)</mo></math></span><span class="num">(16.3)</span></div>
+
+<p>主动推理把它升级为<b>期望自由能</b>最小化：<i>G</i> = 复杂性 + 期望惊异 − 信息增益。把式(16.3)与式(4.1)并置，可以看到二者共享同一个“压缩——保真”的骨架：</p>
+
+<table class="nat">
+<caption class="cap"><b>表 15.2　信息瓶颈与预测加工的形式对照</b></caption>
+<tr><th class="l">角色</th><th class="l">信息瓶颈</th><th class="l">预测加工</th></tr>
+<tr><td class="l">保真项</td><td class="l"><i>I</i>(<i>Z</i>;<i>Y</i>)</td><td class="l">−<b>E</b>[‖<i>o</i>−<i>g</i>(<i>ŝ</i>)‖²]</td></tr>
+<tr><td class="l">压缩项</td><td class="l"><i>I</i>(<i>X</i>;<i>Z</i>)</td><td class="l">复杂度(<i>ŝ</i>)</td></tr>
+<tr><td class="l">权衡参数</td><td class="l"><i>β</i></td><td class="l"><i>λ</i></td></tr>
+<tr><td class="l">本书的位置</td><td class="l">母题的中心</td><td class="l">母题在感知—行动侧的实现</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>形式对照表。证据等级 B（两者均为成熟框架）；<b>数据来源：</b>同表 15.1 的文献依据（成熟框架 A／B）。<b>注释：</b>二者在某些条件下可相互推导，但本书<b>不</b>主张等价：IB 压缩的是输入信息，预测加工压缩的是预测误差；它们对“任务从哪来”的回答不同。</div>
+
+<p><b>本书与它们的差异在“行动”与“生成模型”</b>：主动推理假设系统有一个生成模型，并把行动纳入最小化；本书只在表示层工作，不假设生成模型。但第 10 章的内源模拟可以读作“在无外部输入时最小化先验自由能”的一个特例——这是两条线最接近的地方。</p>
+
+<h3 id="sec15-7">15.7　与现代 Hopfield 网络：容量公式的对照</h3>
+
+<p>三个“容量”同时出现时，必须把它们的标度摆在一起，否则“容量”这个词会骗人：</p>
+
+<table class="nat">
+<caption class="cap"><b>表 15.3　三种记忆容量模型的标度对照</b></caption>
+<tr><th class="l">模型</th><th class="l">容量标度</th><th class="l">机制</th><th class="l">本书中的位置</th></tr>
+<tr><td class="l">经典 Hopfield 网络</td><td class="l">≈ 0.138 <i>N</i>（模式数）</td><td class="l">自关联网络，能量下降检索</td><td class="l">“快速层”容量的下界参照</td></tr>
+<tr><td class="l">现代 Hopfield 网络（Ramsauer 等，2021）</td><td class="l">指数级（约 exp(<i>c</i><i>d</i>)）</td><td class="l">连续状态、单步检索 = softmax 注意力</td><td class="l">关联记忆与注意力是同一算子的两个视角</td></tr>
+<tr><td class="l">本书的键值缓存</td><td class="l">≈ <i>d</i> · log <i>n</i>（式 7.4）</td><td class="l">注意力 + 干扰 + 秩衰减</td><td class="l">有效容量的经验标度（等级 C）</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>容量标度对照表。证据等级 B（前两行为成熟结果）／C（第三行为本书估计）；<b>数据来源：</b>前两行为公开结果（Hopfield 1982；Ramsauer et al. 2021），第三行为本书估计（公开估算 B＋本书构造 C）。<b>注释：</b>三种标度（0.138<i>N</i> / exp(<i>c</i><i>d</i>) / <i>d</i> log <i>n</i>）差异巨大，恰好说明<b>“容量”不是系统属性，而是机制属性</b>。现代 Hopfield 的指数容量依赖随机模式与理想化假设，直接套到真实序列上会过于乐观。</div>
+
+<p>最关键的一条连线是：<b>现代 Hopfield 的单步检索就是 softmax 注意力。</b>这意味着第 7 章的“注意力作为条件期望”与关联记忆理论其实是同一个算子的两种解释；本书的“位置偏差”因此可被重新表述为“关联记忆在非随机、长程相关模式上的检索偏差”。这是一个本书没有展开、但值得后续做的问题。</p>
+
+<h3 id="sec15-8">15.8　三条缺席的线索</h3>
+
+<p>本书前三轮修订中被批评“对话不够”，主要就缺下面三条。它们都直接指向本书的核心机制，因此不补上，地图就有洞。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 15.4　三条缺席线索与本书的接口</b></caption>
+<tr><th class="l">线索</th><th class="l">核心主张</th><th class="l">与本书的接口</th></tr>
+<tr><td class="l">隐式梯度下降（in-context learning）</td><td class="l">上下文学习可等价于一步或多步梯度下降</td><td class="l">若成立，第 8 章的“漂移”就是梯度下降在非平稳损失上的累积误差——漂移获得一个更具体的机制</td></tr>
+<tr><td class="l">grokking／相变</td><td class="l">训练中会出现“突然泛化”的相变</td><td class="l">与第 4 章的 IB 三相位、第 5 章的表示坍塌是同一类现象的两种描述</td></tr>
+<tr><td class="l">检索增强（RAG）× 认知记忆</td><td class="l">外部检索可绕过内部压缩</td><td class="l">正是第 4.5 节“绕开被压缩通道”的工程实现；与人类的检索失败／线索依赖对应</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>线索接口表。证据等级 C（本书综合）；<b>数据来源：</b>三条线索取自 2026 年公开预印本，接口为本书综合（公开估算 B／C）。<b>注释：</b>这三条与本书机制直接相关，但本书没有展开证明。把它们写出来，是为了让后续工作知道“地圖上的这三处接口在哪里”。</div>
+
+<h3 id="sec15-9">15.9　一份可操作的对照表</h3>
+
+<table class="nat">
+<caption class="cap"><b>表 15.5　三个框架对本书核心概念的回答</b></caption>
+<tr><th class="l">本书概念</th><th class="l">信息瓶颈</th><th class="l">自由能原理</th><th class="l">强化学习</th></tr>
+<tr><td class="l">容量</td><td class="l"><i>I</i>(<i>X</i>;<i>Z</i>) 的上界</td><td class="l">先验的复杂度</td><td class="l">表示维度（通常不显式）</td></tr>
+<tr><td class="l">遗忘</td><td class="l">压缩的伴生</td><td class="l">先验更新</td><td class="l">价值函数的重估</td></tr>
+<tr><td class="l">重要性</td><td class="l">由 <i>Y</i> 给定</td><td class="l">由先验与精度给定</td><td class="l">由奖励给定</td></tr>
+<tr><td class="l">探索</td><td class="l">不直接处理</td><td class="l">信息增益（部分）</td><td class="l">核心（探索—利用权衡）</td></tr>
+<tr><td class="l">梦</td><td class="l">无定义</td><td class="l">可容纳但未强调</td><td class="l">“想象奖励下的演练”</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>框架对照表。证据等级 B（各框架的表述）；<b>数据来源：</b>三种回答为本书对各框架的综合，非各框架的既有主张（本书构造 C）。<b>注释：</b>“梦”一行的三种回答都是本书的综合，非各框架的既有主张。</div>
 
 <div class="note"><b>本章的关键产出（保底／有条件／推测）</b>
 <ul>
-<li><b>有条件（可用作整理工具）：</b>二十余个理论可在三个轴上被安放，且各自边界被显式标明。［论证，C／甲］</li>
-<li><b>有条件（判断）：</b>安放位置本身是本书判断，可能与原作者不同。［假说，C／乙］</li>
-<li><b>推测：</b>整合信息理论、情感显著性两处安放是否稳健，是本图的压力测试点。［待验证］</li>
+<li><b>保底（可直接使用）：</b>IB、FEP、RL 分别回答压缩、行动、重要性三个不同问题；它们不是竞争关系。［论证，A／甲］</li>
+<li><b>有条件（综合）：</b>式(16.2)给出“奖励定义相关性”的合并目标，增强了框架的解释力。［论证，B／乙］</li>
+<li><b>推测：</b>“梦＝想象奖励下的演练”是一个可检验的假说，但当前证据为 C 级。［假说，C／丙］</li>
 </ul></div>
 
-<div class="note"><b>深思 15.1　轮到你了</b>　本章给每个理论都标了“边界”。请挑一个你最熟悉的领域，问自己：地图对这个领域的理论所标的边界，是不是真的？如果你能指出一个被我们误标的位置，那这幅地图就已经被修好了一次。</div>
-
-<h3 id="sec15-8">15.8　三张地图的对照：同一座山，三种画法</h3>
-<p>本书有一个“理论地图”。把它与另外两张常见的地图并排，会看出三者的取舍。</p>
+<h3 id="sec15-10">15.10　三个理论的分工表：谁负责哪一段</h3>
+<p>信息瓶颈、自由能原理、强化学习，常被摆在一起比较。更公平的方式不是比“谁更对”，而是比“各自负责哪一段”。</p>
 <table class="nat">
-<tr><th class="l">地图</th><th class="l">它把什么放在中心</th><th class="l">它省略了什么</th><th class="l">适合回答</th></tr>
-<tr><td class="l">信息论地图</td><td class="l">压缩与失真</td><td class="l">实现机制、时间尺度</td><td class="l">“代价是多少”</td></tr>
-<tr><td class="l">神经科学地图</td><td class="l">脑区、回路、可塑性</td><td class="l">跨载体的共同约束</td><td class="l">“在哪里发生”</td></tr>
-<tr><td class="l">本书地图</td><td class="l">容量—干扰—时间尺度</td><td class="l">具体机制的细节</td><td class="l">“为什么三个载体受同一种限制”</td></tr>
+<tr><th class="l">理论</th><th class="l">它解释的那一段</th><th class="l">它不解释的那一段</th><th class="l">与本书的关系</th></tr>
+<tr><td class="l">信息瓶颈</td><td class="l">“压多少、保多少相关”的权衡</td><td class="l">为什么是这个压缩而不是那个</td><td class="l">共同的数学骨架</td></tr>
+<tr><td class="l">自由能原理</td><td class="l">系统如何最小化惊奇（预测误差）</td><td class="l">多尺度结构如何涌现</td><td class="l">动机层面的解释</td></tr>
+<tr><td class="l">强化学习</td><td class="l">在反馈下如何调整策略</td><td class="l">表征本身如何被压缩</td><td class="l">训练层面的解释</td></tr>
+<tr><td class="l">本书</td><td class="l">容量、干扰、时间尺度三者如何共同决定“能记住什么”</td><td class="l">具体的神经机制</td><td class="l">—（组织层）</td></tr>
 </table>
-<p><b>三张地图不冲突，因为它们回答的不是同一个问题。</b> 但把它们混用，就会产生两类错误：用信息论地图去回答“在哪里发生”，会得到“哪里都不在”；用神经科学地图去回答“代价是多少”，会得到“要看具体回路”。</p>
-<p>本书选择第三张地图，是因为它的<b>问题</b>是跨载体的。如果换一个作者，问题不同，地图就该不同。<b>地图之争，本质上是问题之争。</b></p>
+<p><b>读法：</b>四个框不是四个竞争者，而是四层描述。信息瓶颈说“代价是多少”，自由能说“为什么要这样”，强化学习说“怎么学会”，本书说“这些代价在三个载体上如何表现”。<b>把它们放在同一层比较，很容易得出“谁更根本”的假问题。</b></p>
+<p>这张表也解释了本书为什么反复强调“同约束、不同构”：<b>四层描述可以共享同一个约束，但不共享同一个机制。</b></p>
 
-<div class="case"><span class="ct">人的尺度</span><p>这张理论地图第一次画出来时，作者把它给一位同行看。对方说：“你把不确定的地方也画出来了。”他说：“不画出来，读者就会以为那是确定的。”<b>地图的价值不在于好看，在于它标出了哪里是空白。</b></p></div>
-<h3 id="sec15-9">15.9　本章小结</h3>
+<div class="case"><span class="ct">人的尺度</span><p>一位做强化学习的工程师读到这里，说了一句很实在的话：“自由能原理和我的代码没关系，但它让我知道我的奖励函数漏了什么。”理论对话最实际的用处，不是统一，是让人回头看自己的设定——<b>那一眼，往往要加班三天。</b></p></div>
+<p><b>反例。</b>若出现一种记忆现象既不能由压缩、也不能由惊异最小化或奖励解释（例如纯粹的发育约束），三框架的分工就漏了一块。</p>
+
+<h3 id="sec15-11">15.11　本章小结</h3>
 
 <ol>
-<li>理论地图是论证工具：它强迫每个理论亮出边界，并暴露空洞与张力。</li>
-<li>母题由四个约束定义；(C1)—(C3) 约束容量、速率与形状，(C4) 是协调假说。</li>
-<li>三个轴（结构、动力学、协调）给出理论的坐标；跨轴理论的边界更复杂。</li>
-<li>地图的证伪方式有三种：安放失败、边界错误、伪整合。</li>
-<li>地图只定性，不定量。</li>
+<li>对话要求说清依赖、偏离与对方不能回答的问题，而不只是引用。</li>
+<li>本书依赖 IB 的压缩—相关性形式，但在时间、内源计算与吸引子三处超出它。</li>
+<li>本书借用 FEP 的惊异最小化与行动观，但在“探索是否需要高惊异”上与它分歧。</li>
+<li>RL 补上了本书曾经的缺口：相关性由奖励内生决定；合并目标见式(16.2)。</li>
+<li>三框架是分工而非竞争：压缩、惊异、奖励，各守其域。</li>
 </ol>
 
-<div class="box box-takeaway"><p><b>一句话带走：</b>一张理论地图的价值不在覆盖，而在让每个理论知道自己站在哪。</p></div>
+<p>三个框架的分工已经谈清。但还有两个更硬的领域必须面对：神经科学的具体细节，与意识理论。这是第 16 章的任务。</p>
 
-<h3>15　本章文献（引用与延伸）</h3>
+<div class="note"><b>若这条判据错了，会看到什么：</b>若奖励项单独就能解释时间与吸引子两处超出 IB 的现象，分工就多余。</div>
+
+<div class="box box-takeaway"><p><b>一句话带走：</b>信息瓶颈、自由能、强化学习给机制；本书问的是“为什么非这样不可”。</p></div>
+
+<h3>16　本章文献（引用与延伸）</h3>
 <div class="refs">
+<p class="refh">本章引用</p>
+<p>★ Friston, K., et al. (2017). Active Inference: A Process Theory. Neural Computation, 29(1), 1–49.</p>
 <p class="refh">延伸阅读</p>
-<p>Baddeley, A. D., &amp; Hitch, G. (1974). Working Memory. Psychology of Learning and Motivation, 8, 47–89.</p>
-<p>Ebbinghaus, H. (1885/1913). Memory: A Contribution to Experimental Psychology. New York: Teachers College.</p>
-<p>Underwood, B. J. (1957). Interference and Forgetting. Psychological Review, 64(1), 49–60.</p>
-<p>Anderson, M. C., Bjork, R. A., &amp; Bjork, E. L. (1994). Remembering Can Cause Forgetting. Journal of Experimental Psychology: Learning, Memory, and Cognition, 20(5), 1063–1087.</p>
-<p>Tononi, G. (2004). An Information Integration Theory of Consciousness. BMC Neuroscience, 5, 42.</p>
+<p>Tishby, N., &amp; Zaslavsky, N. (2015). Deep Learning and the Information Bottleneck Principle. IEEE ITW.</p>
+<p>Friston, K. (2010). The Free-Energy Principle: A Rough Guide to the Brain. Trends in Cognitive Sciences, 13(7), 293–301.</p>
 <p>Sutton, R. S., &amp; Barto, A. G. (2018). Reinforcement Learning: An Introduction (2nd ed.). Cambridge: MIT Press.</p>
+<p>Achille, A., &amp; Soatto, S. (2018). Information Dropout: Learning Optimal Representations Through Noisy Computation. IEEE TPAMI, 40(12), 2897–2905.</p>
+<p>Still, S., &amp; Precup, D. (2012). An Information-Theoretic Approach to Curiosity-Driven Reinforcement Learning. Theory in Biosciences, 131, 139–148.</p>
 </div>

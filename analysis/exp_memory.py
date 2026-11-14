@@ -85,6 +85,27 @@ out["tracking"] = dict(periods=periods, single_best=single_best, dual=dual,
                        single_grid={str(k): v for k, v in single_by_eta.items()},
                        params="level 0.6→0.2, amp=0.4, noise=0.5, eta_slow=0.001, eta_fast∈{0.02,0.05,0.1}")
 
+
+# ---------------------------------------------------------------- 实验三：把式(5.1)拟合到实测曲线上
+# 目的：检验"容量—干扰是指数衰减"这一候选模型，并给出半衰点的实测值。
+# 做法：A(α)=Ainf+(1-Ainf)exp(-k·max(0, α-α0))，四参数（含起点 α0）最小二乘。
+try:
+    from scipy.optimize import curve_fit
+    import numpy as _np
+    _a = _np.array([d["alpha"] for d in hop])
+    _m = _np.array([d["overlap"] for d in hop])
+    _f = lambda x, Ainf, k, a0: Ainf + (1 - Ainf) * _np.exp(-k * _np.clip(x - a0, 0, None))
+    _p, _ = curve_fit(_f, _a, _m, p0=[0.1, 5.0, 0.09],
+                      bounds=([0.0, 0.3, 0.0], [0.7, 60.0, 0.15]), maxfev=60000)
+    _rmse = float(_np.sqrt(((_f(_a, *_p) - _m) ** 2).mean()))
+    out["fit"] = dict(Ainf=round(float(_p[0]), 3), k=round(float(_p[1]), 2), onset=round(float(_p[2]), 3),
+                      halflife_above_onset=round(float(_np.log(2) / _p[1]), 3),
+                      alpha_half=round(float(_p[2] + _np.log(2) / _p[1]), 3),
+                      rmse=round(_rmse, 3), model="Ainf+(1-Ainf)exp(-k*max(0,alpha-onset))")
+    print("fit:", out["fit"])
+except Exception as e:
+    print("fit skipped:", e)
+
 json.dump(out, open(os.path.join(DATA, "exp_memory.json"), "w", encoding="utf-8"),
           ensure_ascii=False, indent=1)
 print("wrote data/exp_memory.json")

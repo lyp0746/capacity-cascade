@@ -3,7 +3,7 @@ message: "If you use this work, please cite it as below. 若使用本作，请�
 type: book
 title: "遗忘的边界：有限容量下的记忆、智能与自我 / The Boundary of Forgetting: Memory, Intelligence, and the Self under Finite Capacity"
 abstract: >-
-  本著作提出“容量级联”框架，用以解释有限容量如何同时塑造记忆、智能与自我。核心主张：大模型的键值缓存、智能体的上下文窗口与人的记忆并非同构，而是同约束——受同一组信息论限制（压缩、干扰、遗忘），却运行在相差约九个数量级的时间尺度上。遗忘因此不是失败，而是学习得以发生的前提。结构与证据：7 部分、26 章、318 页、附录 A–F、27 幅图；新增第 12 章《对账：离线计算为什么需要真值》，把离线计算拆为两个方向——无真值时向内重组（梦），有真值时向外对账（2026 年第一批在役智能体系统的整合方式），并给出定义、上界与一次可复算的替身实验（收益近似正比于可验证性，Δa≈0.16ρ）。诚实的纪律：结论强度不超过证据强度；厂商自报的效果一律只取方向、不取幅度；四条预注册否证条件中有一条被自己的实验打中，按原样保留。边界：同约束不等于同构；“梦=正则化”仍标为最低等级假说，并写明如何检验。本版：2026-11-12，318 页，26 章，27 图，附录 A–F；含可复算脚本 analysis/exp_memory.py 与 analysis/exp_dream.py，内容 CC BY 4.0，代码 MIT。
+  本著作提出“容量级联”框架，用以解释有限容量如何同时塑造记忆、智能与自我。核心主张：大模型的键值缓存、智能体的上下文窗口与人的记忆并非同构，而是同约束——受同一组信息论限制（压缩、干扰、遗忘），却运行在相差约九个数量级的时间尺度上。遗忘因此不是失败，而是学习得以发生的前提。结构与证据：7 部分、26 章、321 页、附录 A–F、27 幅图；新增第 12 章《对账：离线计算为什么需要真值》，把离线计算拆为两个方向——无真值时向内重组（梦），有真值时向外对账（2026 年第一批在役智能体系统的整合方式），并给出定义、上界与一次可复算的替身实验（收益近似正比于可验证性，Δa≈0.16ρ）。诚实的纪律：结论强度不超过证据强度；厂商自报的效果一律只取方向、不取幅度；四条预注册否证条件中有一条被自己的实验打中，按原样保留。边界：同约束不等于同构；“梦=正则化”仍标为最低等级假说，并写明如何检验。本版：2026-11-12，321 页，26 章，27 图，附录 A–F；含可复算脚本 analysis/exp_memory.py 与 analysis/exp_dream.py，内容 CC BY 4.0，代码 MIT。
   Abstract (English). This work presents a “capacity cascade” framework explaining how finite capacity shapes memory, intelligence and the self at once. Core thesis: the KV cache of a model, the context window of an agent and human memory are not isomorphic but iso-constrained — bound by one set of information-theoretic limits (compression, interference, forgetting) across roughly nine orders of magnitude in timescale. Structure and evidence: 7 parts, 26 chapters, 317 pages, appendices A–F, 27 figures. The new chapter 12 splits offline computation into two directions — endogenous reorganisation when there is no ground truth (dreaming), and reconciliation when there is (the consolidation mode adopted by the first shipping agent systems in 2026) — with a definition, an upper bound, and a reproducible stand-in experiment in which the gain scales with verifiability (Δa≈0.16ρ). Discipline: conclusion strength does not exceed evidence strength; vendor-reported effects are used for direction only; one of four preregistered falsification conditions was hit by the book's own experiment and is reported unchanged. Boundaries: iso-constraint is not isomorphism; the “dream as regularisation” claim remains a hypothesis with a stated test. Edition: 2026-11-12, 317 pages, 26 chapters, 27 figures, appendices A–F.
 authors:
   - family-names: "李"
@@ -11,8 +11,8 @@ authors:
     alias: "Li Yipeng"
     email: "1610369302@qq.com"
     affiliation: "独立研究者 / Independent Researcher"
-date-released: 2026-11-12
-version: "2026-11-12"
+date-released: "2026-11-14"
+version: "2026-11-14"
 license: CC-BY-4.0
 doi: 10.5281/zenodo.23936852
 concept-doi: 10.5281/zenodo.23323276
