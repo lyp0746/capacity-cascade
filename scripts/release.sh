@@ -51,6 +51,7 @@ PY
 fi
 copy assets/svg/cover.svg     "$REL/cover.svg"
 copy assets/capacity-cascade-explorer.html  "$REL/capacity-cascade-explorer.html"
+copy assets/capacity-cascade-reader.html    "$REL/capacity-cascade-reader.html"
 
 copy docs/READERS.md          "$REL/README.md"
 copy docs/RELEASE-NOTES.md    "$REL/修订说明.md"
